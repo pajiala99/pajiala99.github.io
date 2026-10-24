@@ -101,11 +101,6 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 .lede{font-size:clamp(17px,1.6vw,19px);color:var(--text-2);max-width:54ch;margin:0 0 28px}
 .lede strong{color:var(--text)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:38px}
-.proofs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line-soft)}
-.proofs li{padding:14px 14px 0 0;display:flex;flex-direction:column;gap:4px}
-.proofs b{font:800 clamp(22px,2.4vw,28px)/1 var(--display);display:flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums}
-.proofs b::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
-.proofs span{font-size:12.5px;color:var(--muted);line-height:1.35}
 .hero-stage{position:relative;display:flex;flex-direction:column;align-items:center}
 #auraCanvas{position:absolute;left:0;top:-50px;width:100%;height:calc(100% + 100px);pointer-events:none}
 .lic-stage{position:relative;width:min(100%,440px);perspective:1400px;container-type:inline-size;animation:float 7s ease-in-out infinite}
@@ -133,33 +128,25 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 .lic-abilities{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.5cqw 4cqw;font:500 3.1cqw/1.25 var(--sans);color:var(--text-2)}
 .lic-abilities li{display:flex;gap:1.8cqw;align-items:center}
 .lic-abilities i{flex:none;width:2.2cqw;height:2.2cqw;border-radius:50%;background:var(--c);box-shadow:0 0 2cqw var(--c)}
-.lic-back-meta{margin:0;display:grid;grid-template-columns:auto auto 1fr;gap:4cqw}
-.lic-back-meta dt{font:500 2.2cqw var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.lic-back-meta dd{margin:0;font:600 2.9cqw/1.3 var(--sans);color:var(--text);overflow-wrap:anywhere}
 .lic-fine{margin:0;font:500 2.3cqw var(--mono);color:var(--muted);letter-spacing:.06em}
 .stage-hint{font:500 11px var(--mono);color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin:22px 0 0;text-align:center}
 
 /* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
-.about-text p{font-size:17px;color:var(--text-2);max-width:62ch;margin:0 0 18px}
-.about-text p:first-child{font:500 clamp(20px,2.2vw,24px)/1.5 var(--display);color:var(--text)}
-.about-side{display:grid;gap:26px;align-content:start}
-.side-block{padding-top:14px;border-top:1px solid var(--line)}
-.side-block h3{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-.side-block ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.side-block li,.side-block p{color:var(--text-2);font-size:15px;margin:0}
-.side-block b{color:var(--text)}
 
 /* ---------- aura ---------- */
-.aura-grid{display:grid;grid-template-columns:250px minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,3vw,40px);align-items:start}
-.types{display:grid;gap:8px}
-.type{display:grid;grid-template-columns:10px 1fr;align-items:center;column-gap:10px;text-align:left;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--ink-2);color:var(--text);cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.aura-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.skill-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.skill{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:14px;border:1px solid var(--line-soft);background:var(--ink-2);transition:border-color .2s,box-shadow .2s}
+.skill:has(.type[aria-pressed="true"]){border-color:var(--c);box-shadow:0 0 26px -12px var(--c)}
+.skill .used{margin:auto 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.skill .used > span{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.skill .linkish{font-size:13.5px}
+.type{display:grid;grid-template-columns:10px 1fr;align-items:center;column-gap:10px;text-align:left;padding:0;border:0;background:none;color:var(--text);cursor:pointer}
 .type .k{grid-row:1/3;width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
-.type .n{font:700 15px/1.3 var(--sans)}
-.type .r{font-size:12.5px;line-height:1.3;color:var(--muted)}
-.type:hover{border-color:var(--c)}
-.type[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--ink-2));box-shadow:0 0 26px -10px var(--c)}
-.glass-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.type .n{font:700 17px/1.3 var(--display)}
+.type .r{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.type:hover .n,.type[aria-pressed="true"] .n{color:var(--c)}
+.glass-fig{margin:0;position:sticky;top:96px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .glass-fig .label{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px}
 .glass-fig .label [lang=ja]{font-family:var(--display);color:var(--accent)}
 #glass{width:100%;max-width:290px;height:auto;overflow:visible}
@@ -201,28 +188,6 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 #glass[data-effect="spe"] .leafvein{stroke:#8e0f20}
 #glass[data-effect="spe"] .leaf{animation:wither 1.2s ease-out forwards}
 @keyframes wither{to{transform:scale(.82) rotate(-14deg)}}
-.radar-col{display:grid;gap:14px}
-#radar{width:100%;height:auto;max-width:470px;display:block;margin-inline:auto;overflow:visible}
-#radar .ring{fill:none;stroke:var(--line);stroke-width:1}
-#radar .ring.outer{stroke:var(--line);stroke-width:1.4}
-#radar .spoke{stroke:var(--line-soft);stroke-width:1}
-#radarPoly{fill:var(--aura);fill-opacity:.2;stroke:var(--aura);stroke-width:2;stroke-linejoin:round;transition:fill .5s,stroke .5s}
-#radar .rdot{fill:var(--c);stroke:var(--ink);stroke-width:2;transition:r .3s}
-#radar .ax{cursor:pointer;outline:none}
-#radar .rl-k{fill:var(--c);font:700 12px var(--display)}
-#radar .rl-n{fill:var(--c);font:600 12.5px var(--sans)}
-#radar .ax:hover .rl-n,#radar .ax:focus-visible .rl-n,#radar .ax.on .rl-n{fill:var(--text);font-weight:700}
-#radar .ax:focus-visible .rl-n{text-decoration:underline}
-#radar .ticklbl{fill:var(--muted);font:500 9.5px var(--mono)}
-.readout{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2)}
-.ro-eyebrow{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--accent));margin:0 0 6px}
-.ro-eyebrow [lang=ja]{font-family:var(--display);letter-spacing:.12em}
-.readout h3{font:800 22px/1.2 var(--display);margin:0 0 8px}
-.readout p{margin:0 0 12px;color:var(--text-2);font-size:15px}
-.readout .ro-label{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.ro-proj{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:16px}
-.ro-proj > span{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.radar-note{font:500 11.5px/1.5 var(--mono);color:var(--muted);text-align:center;margin:0}
 
 /* ---------- hunts ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
@@ -248,16 +213,6 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 .card:hover .open span{transform:translateX(4px)}
 
 /* ---------- record ---------- */
-.track{list-style:none;margin:0 0 44px;padding:8px 2px 16px;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(178px,1fr);overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
-.track li{scroll-snap-align:start;position:relative;padding:36px 18px 0 0}
-.track li::before{content:"";position:absolute;left:0;right:0;top:12px;height:8px;background:var(--line);-webkit-mask:var(--chainmask) repeat-x left center/16px 8px;mask:var(--chainmask) repeat-x left center/16px 8px}
-.track li::after{content:"";position:absolute;left:0;top:8px;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2px solid var(--c,var(--muted))}
-.track li.now::after{background:var(--c);box-shadow:0 0 0 6px color-mix(in srgb,var(--c) 25%,transparent);animation:pulse 2s ease-in-out infinite}
-.track li.future{opacity:.55}
-.track .d{font:600 12px var(--mono);color:var(--c,var(--muted));letter-spacing:.06em}
-.track .t{font:700 16px/1.3 var(--display);margin:4px 0 2px;color:var(--text)}
-.track .s{font-size:13px;color:var(--muted);line-height:1.4}
-@keyframes pulse{50%{box-shadow:0 0 0 10px color-mix(in srgb,var(--c) 10%,transparent)}}
 .record-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:18px}
 .rec{padding:22px;border-radius:16px;border:1px solid var(--line-soft);background:var(--ink-2);display:flex;flex-direction:column;gap:10px}
 .rec .when{font:500 11.5px var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
@@ -267,15 +222,14 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 .rec .big small{font:500 13px var(--sans);color:var(--muted)}
 
 /* ---------- vow ---------- */
-.vow-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:start}
-.vows{list-style:none;margin:0;padding:0}
+.vow-grid{max-width:640px}
+.vows{list-style:none;margin:0;padding:0;max-width:820px}
 .vows li{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:20px 0;border-top:1px solid var(--line-soft)}
 .vows li:last-child{border-bottom:1px solid var(--line-soft)}
-.vows svg{width:30px;height:30px;color:var(--accent);margin-top:2px}
+.vow-n{width:30px;height:30px;display:grid;place-items:center;border:1.5px solid var(--accent);border-radius:8px;color:var(--accent);font:800 15px/1 var(--display);margin-top:2px}
 .vows b{display:block;font:700 19px/1.35 var(--display);color:var(--text);margin-bottom:4px}
 .vows span{color:var(--muted);font-size:14.5px}
 .contact{padding:26px;border-radius:18px;background:linear-gradient(160deg,var(--ink-3),var(--ink-2));border:1px solid var(--line);display:grid;gap:18px}
-.contact h3{font:800 24px var(--display)}
 .c-row{display:grid;gap:6px}
 .c-row .lbl{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .email{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
@@ -422,8 +376,9 @@ td .mk.mo{right:3px}
 
 /* ---------- responsive ---------- */
 @media (max-width:1100px){
-  .aura-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .types{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .aura-grid{grid-template-columns:1fr}
+  .glass-fig{position:static;order:-1}
+  #glass{max-width:200px}
 }
 @media (max-width:980px){
   .card,.card.feat{grid-column:span 3}
@@ -434,7 +389,6 @@ td .mk.mo{right:3px}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr}
   .hero::after{display:none}
-  .about-grid,.vow-grid{grid-template-columns:1fr}
   .d-grid{grid-template-columns:1fr}
 }
 @media (max-width:820px){
@@ -452,19 +406,12 @@ td .mk.mo{right:3px}
   .chat{inset:calc(8px + env(safe-area-inset-top,0px)) 8px calc(8px + env(safe-area-inset-bottom,0px)) 8px;width:auto}
 }
 @media (max-width:720px){
-  .aura-grid{grid-template-columns:1fr}
-  .types{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .skill-list{grid-template-columns:1fr}
 }
 @media (max-width:640px){
   .hunts{grid-template-columns:1fr}
   .card,.card.feat,.card:last-child{grid-column:auto}
   .record-grid{grid-template-columns:1fr}
-  .proofs{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:12px}
-  .brand-name small{display:none}
-}
-@media (max-width:420px){
-  .type{grid-template-columns:1fr;row-gap:2px}
-  .type .k{grid-row:auto}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -479,7 +426,7 @@ td .mk.mo{right:3px}
   <div class="wrap bar">
     <a class="brand" href="#top" aria-label="Hardik Pajiala, back to top">
       <span class="brand-mark" aria-hidden="true">HP</span>
-      <span class="brand-name"><b>Hardik Pajiala</b><small>Backend · Data · ML</small></span>
+      <span class="brand-name"><b>Hardik Pajiala</b></span>
     </a>
     <nav class="nav" aria-label="Sections">
       <a href="#about" data-nav="about">About</a>
@@ -507,19 +454,13 @@ td .mk.mo{right:3px}
   <!-- ============ HERO ============ -->
   <section class="hero wrap" id="top" data-sec="top">
     <div class="hero-copy">
-      <p class="eyebrow">Computer Engineering<span class="sep" aria-hidden="true">·</span>Thapar Institute<span class="sep" aria-hidden="true">·</span>Class of 2028</p>
+      <p class="eyebrow">Open to software, data &amp; ML internships</p>
       <h1>I build the <em>whole system</em>, not one layer of it.</h1>
-      <p class="lede"><strong>Hardik Pajiala</strong>, Computer Engineering at Thapar Institute. Backend APIs, data pipelines, matching algorithms, machine-learning models, an AI agent, and the tests that keep all of them honest.</p>
+      <p class="lede">A third-year engineering student. I build backend APIs, data pipelines, machine-learning models and AI agents, and I write tests for all of them.</p>
       <div class="cta">
         <a class="btn primary" href="#projects">See my projects</a>
         <button class="btn ghost" type="button" data-action="ask">Ask about my work</button>
       </div>
-      <ul class="proofs">
-        <li style="--c:var(--emi)"><b>26</b><span>REST endpoints designed</span></li>
-        <li style="--c:var(--tra)"><b>1.67M</b><span>rows through a lakehouse</span></li>
-        <li style="--c:var(--spe)"><b>96%</b><span>CNN test accuracy</span></li>
-        <li style="--c:var(--gold)"><b>300</b><span>classmates represented</span></li>
-      </ul>
     </div>
     <div class="hero-stage">
       <canvas id="auraCanvas" aria-hidden="true"></canvas>
@@ -537,29 +478,21 @@ td .mk.mo{right:3px}
                 <div class="lic-photo" aria-hidden="true"><span>HP</span></div>
                 <dl class="lic-fields">
                   <div><dt>Name</dt><dd>Hardik Pajiala</dd></div>
-                  <div><dt>Degree</dt><dd>B.E. Computer Engineering</dd></div>
-                  <div><dt>University</dt><dd>Thapar Institute · 2024–28</dd></div>
-                  <div><dt>Focus</dt><dd>Backend · Data · ML</dd></div>
+                  <div><dt>Role</dt><dd>Engineering student</dd></div>
+                  <div><dt>Class of</dt><dd>2028</dd></div>
                 </dl>
               </div>
               <div class="lic-strip" aria-hidden="true">ID&lt;&lt;PAJIALA&lt;HARDIK&lt;&lt;CE2028&lt;&lt;THAPAR&lt;&lt;&lt;&lt;&lt;&lt;</div>
             </div>
             <div class="face back">
               <div class="lic-sheen" aria-hidden="true"></div>
-              <p class="lic-back-title">Skill areas</p>
+              <p class="lic-back-title">Off the clock</p>
               <ul class="lic-abilities">
-                <li style="--c:var(--enh)"><i></i>Core CS</li>
-                <li style="--c:var(--tra)"><i></i>Data engineering</li>
-                <li style="--c:var(--emi)"><i></i>Backend &amp; APIs</li>
-                <li style="--c:var(--con)"><i></i>Algorithms</li>
-                <li style="--c:var(--man)"><i></i>Automation &amp; testing</li>
-                <li style="--c:var(--spe)"><i></i>Machine learning</li>
+                <li style="--c:var(--enh)"><i></i>Gym</li>
+                <li style="--c:var(--tra)"><i></i>Running</li>
+                <li style="--c:var(--spe)"><i></i>Music</li>
+                <li style="--c:var(--con)"><i></i>Anime (as you may have guessed)</li>
               </ul>
-              <dl class="lic-back-meta">
-                <div><dt>CGPA</dt><dd>8.50 / 10</dd></div>
-                <div><dt>Open to</dt><dd>Internships</dd></div>
-                <div><dt>Contact</dt><dd>hardikpajiala@gmail.com</dd></div>
-              </dl>
               <p class="lic-fine">Questions? Ask the guide in the corner.</p>
             </div>
           </div>
@@ -573,29 +506,23 @@ td .mk.mo{right:3px}
   <section class="sec wrap" id="about" data-sec="about">
     <header class="sec-head">
       <p class="eyebrow">About</p>
-      <h2>An engineer who won't stay in one layer.</h2>
+      <h2>How I work</h2>
+      <p class="sec-lede">I learn by building complete systems: the database, the API, the data pipeline and the model. Three rules I follow on every project:</p>
     </header>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I'm in my third year of Computer Engineering at Thapar Institute, with a CGPA of 8.50. I build systems end to end: the database, the API, the pipeline and the model, then the tests that prove they work.</p>
-        <p>My projects cross the stack on purpose. FoodBridge taught me API design, state machines and assignment algorithms. The cricket lakehouse taught me streaming ingestion, data contracts, and how to evaluate a model honestly. The malaria classifier taught me that a model should be able to show why it decided what it decided. PRAMAAN taught me to let a language model gather evidence without letting it decide.</p>
-        <p>What connects them: I test what I build, I measure before I claim, and I keep reading an error until I understand it. I also like working with people. I've been my batch's group leader since 2025.</p>
-      </div>
-      <aside class="about-side" aria-label="Currently">
-        <div class="side-block">
-          <h3>Right now</h3>
-          <ul>
-            <li><b>Building</b> a Kafka → Spark clickstream pipeline with a team of three</li>
-            <li><b>Leading</b> communication for a 300-student batch</li>
-            <li><b>Looking for</b> engineering internships in software, data or ML</li>
-          </ul>
-        </div>
-        <div class="side-block">
-          <h3>Off the clock</h3>
-          <p>Gym, running and music. Also anime, as you may have guessed from this page.</p>
-        </div>
-      </aside>
-    </div>
+    <ol class="vows">
+      <li>
+        <span class="vow-n" aria-hidden="true">1</span>
+        <div><b>Tests first, or it isn't finished.</b><span>My larger projects ship with test suites. In one, a test caught a bug that would have wiped all the data before it reached anyone.</span></div>
+      </li>
+      <li>
+        <span class="vow-n" aria-hidden="true">2</span>
+        <div><b>Report what I measured, even when it looks bad.</b><span>Each project lists its real numbers, plus a short note on what went wrong or what didn't work.</span></div>
+      </li>
+      <li>
+        <span class="vow-n" aria-hidden="true">3</span>
+        <div><b>Own my part, understand the parts around it.</b><span>On team projects I take one layer, then learn enough of the others to keep the connections between them clean.</span></div>
+      </li>
+    </ol>
   </section>
 
   <!-- ============ AURA ============ -->
@@ -603,10 +530,10 @@ td .mk.mo{right:3px}
     <header class="sec-head">
       <p class="eyebrow">Skills</p>
       <h2>What I can do</h2>
-      <p class="sec-lede">Pick what you're hiring for. The glass reacts, and the chart shows how much finished work backs each area. It counts evidence, so it isn't a self-rating.</p>
+      <p class="sec-lede">Six areas, the tools I use in each, and the projects where I used them. Click an area to see the glass react.</p>
     </header>
     <div class="aura-grid">
-      <div class="types" id="typeList" role="group" aria-label="Choose what you're hiring for"></div>
+      <div class="skill-list" id="typeList" role="group" aria-label="Skill areas"></div>
       <figure class="glass-fig">
         <p class="label">Inspired by the Hunter × Hunter water test</p>
         <svg id="glass" viewBox="0 0 260 300" role="img" aria-labelledby="glassTitle">
@@ -647,13 +574,8 @@ td .mk.mo{right:3px}
           <text class="taste" x="130" y="98" text-anchor="middle" lang="ja">甘</text>
           <g class="lvl"><g transform="translate(130 119)"><g class="leaf"><path class="leafpath" d="M-24 0 C-14 -10 10 -10 24 0 C10 10 -14 10 -24 0 Z"/><path class="leafvein" d="M-30 -3 L-24 0 L20 0"/></g></g></g>
         </svg>
-        <figcaption id="glassCaption" aria-live="polite">Pick what you’re hiring for.</figcaption>
+        <figcaption id="glassCaption" aria-live="polite">Click a skill area.</figcaption>
       </figure>
-      <div class="radar-col">
-        <svg id="radar" viewBox="0 0 450 330" role="group" aria-label="Skills chart: evidence behind each of six areas"></svg>
-        <p class="radar-note">Radius = number of shipped skills and results (outer ring = 8)</p>
-        <div class="readout" id="readout" aria-live="polite"></div>
-      </div>
     </div>
   </section>
 
@@ -662,7 +584,7 @@ td .mk.mo{right:3px}
     <header class="sec-head">
       <p class="eyebrow">Projects</p>
       <h2>Selected projects</h2>
-      <p class="sec-lede">Seven projects across backend, data, algorithms, machine learning and AI agents. Filter by skill area, or open one for the full story, including what went wrong.</p>
+      <p class="sec-lede">Filter by skill area. Open a project to see the problem, what I built, the results and what I learned.</p>
     </header>
     <div class="filters" id="filters" role="group" aria-label="Filter projects by skill area"></div>
     <div class="hunts" id="huntGrid"></div>
@@ -672,10 +594,8 @@ td .mk.mo{right:3px}
   <section class="sec wrap" id="experience" data-sec="experience">
     <header class="sec-head">
       <p class="eyebrow">Experience</p>
-      <h2>Experience &amp; education</h2>
-      <p class="sec-lede">What I’ve studied, led and built, in order.</p>
+      <h2>Education &amp; leadership</h2>
     </header>
-    <ol class="track" id="timeline" aria-label="Timeline"></ol>
     <div class="record-grid">
       <article class="rec edu">
         <span class="when">2024 – 2028</span>
@@ -689,16 +609,16 @@ td .mk.mo{right:3px}
       <article class="rec">
         <span class="when">2025 – present</span>
         <h3>Batch Group Leader</h3>
-        <p class="where">Thapar Institute</p>
+        <p class="where">My college batch</p>
         <p class="big">300<small>students</small></p>
-        <p>The link between faculty and the batch: schedule changes, announcements and concerns. I also moderate the batch's 300-member community.</p>
+        <p>I pass schedule changes, announcements and concerns between the faculty and my batch, and I moderate the batch's online community.</p>
       </article>
       <article class="rec">
         <span class="when">2025</span>
         <h3>Volunteer, Saturnalia</h3>
-        <p class="where">Thapar's annual college fest</p>
+        <p class="where">Annual college fest</p>
         <p class="big">25<small>volunteers</small></p>
-        <p>Coordinated logistics with a team of 25, handled registrations, and ran several stage events.</p>
+        <p>Coordinated logistics, handled registrations, and ran several stage events.</p>
       </article>
     </div>
   </section>
@@ -707,26 +627,11 @@ td .mk.mo{right:3px}
   <section class="sec wrap" id="contact" data-sec="contact">
     <header class="sec-head">
       <p class="eyebrow">Contact</p>
-      <h2>How I work</h2>
-      <p class="sec-lede">Three commitments I hold myself to, and how to reach me.</p>
+      <h2>Get in touch</h2>
+      <p class="sec-lede">Email is the quickest way to reach me.</p>
     </header>
     <div class="vow-grid">
-      <ul class="vows">
-        <li>
-          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="9" width="14" height="12" rx="6"/><rect x="13" y="9" width="14" height="12" rx="6"/></svg>
-          <div><b>I ship with tests, or I say it isn't finished.</b><span>The lakehouse's tests caught a bug that silently deleted every row. Tests are why that never shipped.</span></div>
-        </li>
-        <li>
-          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="9" width="14" height="12" rx="6"/><rect x="13" y="9" width="14" height="12" rx="6"/></svg>
-          <div><b>I report the numbers I measured, including the unflattering ones.</b><span>My own impact metric loses to wickets-per-ball for ranking bowlers. That result is in the write-up.</span></div>
-        </li>
-        <li>
-          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="9" width="14" height="12" rx="6"/><rect x="13" y="9" width="14" height="12" rx="6"/></svg>
-          <div><b>I own my layer and learn the ones around it.</b><span>On FoodBridge I owned the backend and matcher, then learned enough about the schema and frontend to keep the contracts between them clean.</span></div>
-        </li>
-      </ul>
       <div class="contact">
-        <h3>Get in touch</h3>
         <div class="c-row">
           <span class="lbl">Email</span>
           <div class="email"><code id="emailText">hardikpajiala@gmail.com</code><button class="btn ghost sm" type="button" id="copyEmail">Copy</button></div>
@@ -738,10 +643,6 @@ td .mk.mo{right:3px}
             <a class="btn ghost sm" href="https://github.com/pajiala99" target="_blank" rel="noopener">GitHub ↗</a>
             <a class="btn ghost sm" href="mailto:hardikpajiala@gmail.com">Open mail app</a>
           </div>
-        </div>
-        <div class="c-row">
-          <span class="lbl">Not sure yet?</span>
-          <div><button class="btn primary sm" type="button" data-action="ask">Ask the guide about my work</button></div>
         </div>
       </div>
     </div>
@@ -821,7 +722,7 @@ td .mk.mo{right:3px}
 <div class="emperor" id="emperor" hidden role="status">
   <b>Easter egg · Emperor Time</b>
   <span class="t" id="empT">30s</span>
-  <span class="note">Every skill maxed for 30 seconds. Not the real numbers.</span>
+  <span class="note">Scarlet aura for 30 seconds.</span>
   <button type="button" id="empEnd">Release</button>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -844,153 +745,137 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 const EMAIL = 'hardikpajiala@gmail.com';
 
 /* ================= DATA ================= */
+// Each fact lives in exactly one place. Skill areas list tools only; numbers live in each project's `facts`.
 const NEN = [
-  { id: 'enh', kanji: '強化系', name: 'Enhancement', role: 'Core CS & languages', short: 'Core CS', tags: 'Python · C/C++ · SQL · DSA', hex: '#f0a93b',
+  { id: 'enh', kanji: '強化系', name: 'Enhancement', role: 'Core CS', short: 'Core CS', hex: '#f0a93b',
     effect: 'The water rose and spilled over the rim.',
-    blurb: 'The fundamentals everything else depends on: languages, data structures, and relational design done properly.',
-    evidence: ['Python', 'C / C++', 'SQL', 'Data structures & algorithms', 'Object-oriented programming', '3NF schema design'],
-    projects: ['lostfound', 'foodbridge'] },
-  { id: 'tra', kanji: '変化系', name: 'Transmutation', role: 'Data engineering', short: 'Data engineering', tags: 'Spark · Delta Lake · Kafka', hex: '#4fc7e0',
-    effect: 'The water looks the same, but its taste changed.',
-    blurb: 'Changing the shape of data without losing any of it: nested JSON into clean tables, raw events into analytics-ready files.',
-    evidence: ['Apache Spark / PySpark', 'Delta Lake', 'Apache Kafka', 'Parquet', 'Medallion lakehouse', 'Delta MERGE upserts', 'Data-quality gates'],
-    projects: ['cricket', 'ecom'] },
-  { id: 'emi', kanji: '放出系', name: 'Emission', role: 'Backend & APIs', short: 'Backend & APIs', tags: 'Node.js · FastAPI · PostgreSQL', hex: '#ff7a59',
+    blurb: 'The fundamentals everything else depends on.',
+    evidence: ['Python', 'C / C++', 'SQL', 'Data structures & algorithms', 'Object-oriented programming', 'Database normalisation (3NF)'] },
+  { id: 'emi', kanji: '放出系', name: 'Emission', role: 'Backend & APIs', short: 'Backend & APIs', hex: '#ff7a59',
     effect: 'The water changed colour.',
-    blurb: 'Services other people call: APIs, authentication, and databases shaped around real workflows.',
-    evidence: ['Node.js + Express', 'TypeScript', 'FastAPI', 'PostgreSQL / PostGIS', 'JWT auth & role guards', '26 REST endpoints', 'MySQL'],
-    projects: ['foodbridge', 'lostfound', 'ecom'] },
-  { id: 'con', kanji: '具現化系', name: 'Conjuration', role: 'Algorithms & system design', short: 'Algorithms', tags: 'Matching · state machines · simulation', hex: '#a98bff',
+    blurb: 'Services and databases other people build on.',
+    evidence: ['Node.js', 'Express', 'TypeScript', 'FastAPI', 'PostgreSQL / PostGIS', 'MySQL', 'JWT authentication'] },
+  { id: 'tra', kanji: '変化系', name: 'Transmutation', role: 'Data engineering', short: 'Data engineering', hex: '#4fc7e0',
+    effect: 'The water looks the same, but its taste changed.',
+    blurb: 'Moving and reshaping data without losing any of it.',
+    evidence: ['Apache Spark / PySpark', 'Delta Lake', 'Apache Kafka', 'Structured Streaming', 'Parquet', 'Data-quality checks'] },
+  { id: 'con', kanji: '具現化系', name: 'Conjuration', role: 'Algorithms & design', short: 'Algorithms', hex: '#a98bff',
     effect: 'Crystals formed in the water.',
-    blurb: 'Turning an idea into a working mechanism: assignment algorithms, state machines, and a simulated cricket league.',
-    evidence: ['Hungarian algorithm', 'Greedy matching with radius expansion', 'Weighted scoring model', 'Domain state machines', 'T20 league simulator', 'LLM agent with a deterministic rule engine'],
-    projects: ['foodbridge', 'cricket', 'pramaan'] },
-  { id: 'man', kanji: '操作系', name: 'Manipulation', role: 'Automation & quality', short: 'Automation', tags: 'Airflow · CI · pytest', hex: '#5fd68f',
+    blurb: 'Turning an idea into a working mechanism.',
+    evidence: ['Hungarian algorithm', 'Greedy matching', 'Weighted scoring', 'State machines', 'Simulation'] },
+  { id: 'man', kanji: '操作系', name: 'Manipulation', role: 'Automation & testing', short: 'Automation', hex: '#5fd68f',
     effect: 'The leaf began to move on its own.',
-    blurb: 'Keeping systems under control: orchestration, CI, and tests that reject bad data and bad code before they spread.',
-    evidence: ['Apache Airflow', 'GitHub Actions CI', 'pytest', 'Vitest', 'DAG orchestrator with retries', 'Streaming/batch parity test'],
-    projects: ['cricket', 'foodbridge', 'pramaan'] },
-  { id: 'spe', kanji: '特質系', name: 'Specialization', role: 'Machine learning', short: 'Machine learning', tags: 'CNNs · MLlib · calibration', hex: '#f266b0',
+    blurb: 'Pipelines that run themselves and tests that catch mistakes early.',
+    evidence: ['Apache Airflow', 'GitHub Actions CI', 'pytest', 'Vitest'] },
+  { id: 'spe', kanji: '特質系', name: 'Specialization', role: 'Machine learning & AI', short: 'ML & AI', hex: '#f266b0',
     effect: 'Something unusual happened: the leaf turned scarlet.',
-    blurb: 'Models that report their own uncertainty and show their reasoning, evaluated on data they have never seen.',
-    evidence: ['TensorFlow / Keras CNN', 'Grad-CAM explainability', 'Spark MLlib gradient-boosted trees', 'Calibration & log loss', 'Time-based validation', 'Win Probability Added metric', 'PyTorch BiLSTM on MediaPipe keypoints'],
-    projects: ['cricket', 'isl', 'malaria'] }
+    blurb: 'Models tested on data they have never seen, and AI agents with guard rails.',
+    evidence: ['TensorFlow / Keras', 'PyTorch', 'Spark MLlib', 'MediaPipe', 'Grad-CAM', 'Claude API (tool use)'] }
 ];
 const NEN_BY = Object.fromEntries(NEN.map(n => [n.id, n]));
-const ORDER = ['enh', 'tra', 'con', 'spe', 'man', 'emi'];
-const MAX_EVIDENCE = 8;
-const TOTAL_EVIDENCE = NEN.reduce((a, n) => a + n.evidence.length, 0);
-const baseVals = () => Object.fromEntries(NEN.map(n => [n.id, n.evidence.length / MAX_EVIDENCE]));
 
 const PROJECTS = [
   { id: 'foodbridge', title: 'FoodBridge', sub: 'Backend API & matching engine', date: 'Jul – Sep 2026', team: 'Team of 3 · I owned the backend and matcher',
-    nen: ['emi', 'con', 'man'], metric: ['26', 'REST endpoints · 10 tables'],
-    summary: 'A food-redistribution platform that matches donors’ surplus food with recipient organisations before it expires.',
+    nen: ['emi', 'con', 'man', 'enh'], metric: ['26', 'REST endpoints'],
+    summary: 'Matches donors’ surplus food with shelters before it expires.',
+    problem: 'Shops and restaurants throw away good food while shelters go short. The hard part is getting the right food to the right place before it expires.',
     stack: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'PostGIS', 'Python', 'FastAPI', 'Vitest', 'pytest'],
     points: [
-      'Designed <b>26 REST endpoints</b> over a 10-table PostgreSQL schema, with JWT authentication and role guards on every route group.',
-      'Made state machines the single source of truth for every donation, match and pickup transition, so an illegal transition fails loudly instead of corrupting data.',
-      'Built the Python <b>FastAPI matching service</b>: hard eligibility filters (capacity, service radius, food compatibility, at least 30 minutes to pick up), then a weighted score of urgency 0.40, proximity 0.35 and capacity 0.25.',
-      'Greedy matching by default, with progressive radius expansion from 5 to 25 km and a waitlist; the <b>Hungarian algorithm</b> as a second strategy for a globally optimal one-to-one assignment.',
-      'Distances come from PostGIS <code>ST_DWithin</code> / <code>ST_Distance</code>. Offers expire after 30 minutes, and rejected or timed-out donations go back into matching.',
-      'Covered the API with Vitest and the matcher with pytest, including a test that shows greedy losing to Hungarian.'
+      'The backend API, with login (JWT) and role-based access on every route.',
+      'A PostgreSQL + PostGIS database, so distances between donors and shelters are worked out inside the database.',
+      'State machines for every donation, match and pickup. An invalid step, like collecting a cancelled donation, fails loudly instead of corrupting data.',
+      'A matching service in FastAPI. It first removes impossible pairs (too far, not enough space, wrong food type, not enough time), then scores the rest on urgency, distance and capacity.',
+      'Two matching strategies: a fast <b>greedy</b> one that widens its search if nothing is found, and the <b>Hungarian algorithm</b> for the best overall result.',
+      'Tests for both parts: Vitest for the API and pytest for the matcher.'
     ],
-    facts: [['Endpoints', '26'], ['Tables', '10'], ['Score weights', '.40 / .35 / .25'], ['Radius expansion', '5 → 25 km'], ['Offer timeout', '30 min']],
-    story: { title: 'Why ship two strategies?', body: 'Greedy is fast and easy to explain: the most urgent donation picks first. But urgent-first can be wrong overall. Giving donation A its favourite shelter can leave donation B with nothing good. Hungarian solves the whole score matrix at once. The demo below reproduces that trade-off.' },
+    facts: [['REST endpoints', '26'], ['Database tables', '10'], ['Score weights', 'urgency .40 · distance .35 · capacity .25'], ['Search radius', '5 → 25 km'], ['Offer expires after', '30 min']],
+    story: { title: 'Why two matching strategies?', body: 'Greedy is fast and easy to explain: the most urgent donation picks first. But that can be wrong overall. Giving donation A its favourite shelter can leave donation B with nothing good. The Hungarian algorithm looks at every pair at once. Try the demo below to see the difference.' },
     demo: 'assign', links: [] },
   { id: 'cricket', title: 'Cricket Win-Probability Lakehouse', sub: 'Data platform with a live model', date: 'Aug – Sep 2026', team: 'Solo',
-    nen: ['tra', 'spe', 'man', 'con'], metric: ['1.67M', 'ball-by-ball rows · 180 s build'],
-    summary: 'Turns ball-by-ball cricket data into live win probabilities and a validated player-impact metric.',
+    nen: ['tra', 'spe', 'man', 'con'], metric: ['1.67M', 'ball-by-ball rows'],
+    summary: 'Turns ball-by-ball cricket data into live win probabilities and a player-impact score.',
+    problem: 'A scorecard tells you who won, not how each ball changed the odds. I wanted live win chances during a match, and a fair way to measure each player’s impact.',
     stack: ['PySpark', 'Delta Lake', 'Structured Streaming', 'Spark MLlib', 'Airflow', 'Streamlit', 'pytest', 'GitHub Actions'],
     points: [
-      'Built a bronze → silver → gold <b>medallion lakehouse</b> on Delta Lake: 7,009 nested JSON match documents become <b>1,667,611 ball-by-ball rows</b>, and the 12-task build runs in 180 s on a laptop.',
-      'Exactly-once ingestion with Spark Structured Streaming checkpoints. Corrected match revisions replace old data atomically through Delta <code>MERGE</code>, with 0 lost balls and 0 duplicate keys on the incremental load.',
-      'Declarative data-quality gates: 12/12 silver and 7/7 gold checks pass, and a failed error-level check stops every downstream task.',
-      'Gradient-boosted trees against logistic regression, chosen on validation log loss. The winner scored <b>AUC 0.777</b>, 23.8% Brier skill and 1.8 pp calibration error on seasons it never saw.',
-      'Live scoring with <code>applyInPandasWithState</code>, plus a parity test that replays whole matches and checks that the streaming features match the batch ones.',
-      'Wrote a T20 league simulator in the exact Cricsheet format, because cricsheet.org blocks automated downloads. Its players have hidden skills, so the impact metric could be checked against the truth.'
+      'A three-layer <b>lakehouse</b> on Delta Lake (raw → cleaned → ready for analysis) that turns nested JSON match files into one row per ball.',
+      'Streaming ingestion that loads each ball exactly once, and safe updates when a match file is corrected later.',
+      'Data-quality checks between layers. If a check fails, the pipeline stops before bad data spreads.',
+      'A win-probability model (gradient-boosted trees), chosen over logistic regression and tested only on seasons it had never seen.',
+      'Live scoring during a match, plus a test that checks live and batch results agree.',
+      'A T20 league simulator where every player has a hidden skill level, so I could check whether my impact score finds the genuinely good players.'
     ],
-    facts: [['AUC', '0.777'], ['Log loss', '0.556'], ['Brier skill', '23.8%'], ['Calibration error', '1.8 pp'], ['Accuracy: first → last 5 overs', '58.5% → 83.7%'], ['Tests', '14 pytest']],
-    story: { title: 'The bug the tests caught', body: 'The first integration test finished with zero balls in the table. The micro-batch was cached, but its plan still read the table being written. Spark’s cache invalidation re-ran it, the “newer revision” filter came back empty, and the MERGE’s delete clause removed everything. The fix was <code>localCheckpoint()</code> for a true snapshot, and writing balls before the match row so the match row works as a commit marker.' },
+    facts: [['Match files', '7,009'], ['Rows built', '1,667,611'], ['Full build time', '180 s on a laptop'], ['Model AUC', '0.777'], ['Calibration error', '1.8 pp'], ['Accuracy, early → late in a chase', '58.5% → 83.7%'], ['Quality checks passing', '19 / 19'], ['Tests', '14 + CI']],
+    story: { title: 'The bug the tests caught', body: 'The first integration test finished with zero balls in the table. Spark had quietly re-run a cached step, the “newer version” filter came back empty, and the update deleted everything. The fix was to take a true snapshot with <code>localCheckpoint()</code> and to write the balls before the match record. Without the test, that bug would have shipped.' },
     demo: 'wpa', links: [{ label: 'Repository', href: 'https://github.com/pajiala99/cricket-winprob-lakehouse' }] },
-  { id: 'pramaan', title: 'PRAMAAN', sub: 'Recruitment-scam investigation agent', date: 'Oct 2026', team: 'Homingo Hackathon · Agents track',
-    nen: ['con', 'man', 'spe'], metric: ['5', 'agent tools · fixed rules decide'],
-    summary: 'An LLM agent that investigates a job offer and returns a cited evidence report with one of four verdicts.',
+  { id: 'pramaan', title: 'PRAMAAN', sub: 'AI agent that checks job offers for scams', date: 'Oct 2026', team: 'Homingo Hackathon · Agents track',
+    nen: ['spe', 'con', 'man'], metric: ['5', 'investigation tools'],
+    summary: 'An AI agent that investigates a job offer and gives a verdict backed by cited evidence.',
+    problem: 'Fake job offers trick students into paying “registration fees”. Checking one by hand means looking up the company, its website and past complaints.',
     stack: ['Python', 'Claude API', 'Tool use', 'Web search', 'RDAP / WHOIS', 'Streamlit', 'pytest'],
     points: [
-      'Claude plans the investigation and calls <b>five tools</b>: entity extraction, red-flag rules, domain checks (free-mail recruiters, lookalike domains, registration age, HTTPS), careers-page verification and a scam-report search through Claude’s web search.',
-      'The model gathers evidence but never decides. Every finding is cited and tagged with the independent source it came from, and an ordered rulebook picks <b>Likely genuine, Suspicious, Likely scam or Not enough evidence</b>.',
-      'It never calls an offer a scam on one source. “Asks for a fee” and “pay by UPI” both come from the message, so a second, independent source has to agree.',
-      'A link from web search only counts if the search tool really returned it, so a made-up citation can’t become evidence.',
-      'A tool-call budget, timeouts, a fixed playbook when the API is down, and a test where text inside the offer tries to talk the agent into “genuine” and fails.',
-      'The agent core knows nothing about jobs and can be reused. Streamlit UI with a live tool-call trace and <b>61 tests</b>, including the real SDK against a mocked API.'
+      'Claude plans the investigation and decides which checks to run.',
+      'The checks: red-flag phrases (fees, UPI payment, WhatsApp-only), the recruiter’s email domain and how old it is, the company’s real careers page, and a web search for scam reports.',
+      'The AI gathers evidence but <b>never decides</b>. Fixed rules give the verdict, so the same evidence always gives the same answer.',
+      'It never calls an offer a scam on one source alone, and a link only counts if the search really returned it.',
+      'Safety limits: a cap on tool calls, timeouts, a fallback when the API is down, and a test where the offer text tries to trick the agent.',
+      'A Streamlit app that shows each step of the investigation live.'
     ],
-    facts: [['Agent tools', '5'], ['Verdicts', '4'], ['Independent evidence sources', '5'], ['Tool-call budget', '8'], ['Tests', '61 pytest']],
-    story: { title: 'Why the model doesn’t decide', body: 'A scam message can contain instructions aimed at the model, and models can be talked into things. So Claude only chooses which checks to run. The verdict comes from fixed rules over cited evidence: the same evidence always gives the same answer, and anyone can ask exactly which rule fired.' },
+    facts: [['Investigation tools', '5'], ['Possible verdicts', 'Likely genuine · Suspicious · Likely scam · Not enough evidence'], ['Tool-call limit', '8'], ['Tests', '61']],
+    story: { title: 'Why the AI doesn’t decide', body: 'A scam message can contain hidden instructions aimed at the AI, and models can be talked into things. So Claude only chooses which checks to run. The verdict comes from fixed rules over cited evidence, and anyone can see exactly which rule fired.' },
     demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/pramaan' }] },
-  { id: 'isl', title: 'Indian Sign Language Recognition', sub: 'Keypoints to words to speech, live', date: 'Oct 2026', team: 'College minor project · team',
-    nen: ['spe', 'tra'], metric: ['94.5%', 'top-1 from 5 examples per word'],
-    summary: 'Recognises 61 Indian Sign Language words from video and speaks them aloud, live on a laptop webcam.',
+  { id: 'isl', title: 'Indian Sign Language Recognition', sub: 'Webcam signs to spoken words', date: 'Oct 2026', team: 'College minor project · team',
+    nen: ['spe', 'tra'], metric: ['94.5%', 'accuracy from 5 examples per word'],
+    summary: 'Recognises Indian Sign Language words from a webcam and speaks them aloud.',
+    problem: 'Most people can’t read sign language. A tool that turns signs into speech, using only a laptop webcam, helps signers be understood.',
     stack: ['Python', 'PyTorch', 'MediaPipe', 'BiLSTM', 'OpenCV', 'scikit-learn'],
     points: [
-      'MediaPipe pose and hand landmarks become <b>signer-invariant features</b>: body-relative and wrist-local coordinates, resampled to 64 frames, plus velocities.',
-      'A <b>BiLSTM with temporal attention</b> in PyTorch, trained on an Apple-silicon GPU in 2.2 minutes, compared against SVM and Random Forest baselines.',
-      'Showed the standard split is saturated: one signer recorded every word in one session, so even a Random Forest scores 100%. Evaluated on harder protocols instead.',
-      'Data efficiency: <b>49.5%</b> top-1 from one example per word (chance is 1.6%) and 94.5% from five. Robust to rotation, scale, shift and tempo; hiding one hand drops it to 31.9%, as expected for two-handed signs.',
-      'An ablation showed that mirroring augmentation <b>costs about 12 points</b>, because mirrored clips are inputs the test data never contains.',
-      'Live demo: a word is spoken only after confidence, stability and repeat filters, in an Indian-English voice.'
+      'MediaPipe tracks body and hand points in every frame. I convert them so they don’t depend on who is signing or where they stand.',
+      'A <b>BiLSTM with attention</b> (PyTorch) reads the movement over time. SVM and Random Forest models serve as baselines.',
+      'The standard test was too easy (even a Random Forest scored 100%), so I tested harder questions: how few examples it needs, and what breaks it.',
+      'An experiment showed that adding mirrored videos to training actually hurt accuracy.',
+      'A live demo that only speaks a word once the prediction is confident and stable.'
     ],
-    facts: [['Word classes', '61'], ['Clips used', '1,210'], ['1 example per word', '49.5% top-1'], ['5 examples per word', '94.5% top-1'], ['Mirroring augmentation', '−12 pts']],
-    story: { title: 'Why 100% was not the result', body: 'Every word was recorded by one person in one session, so test clips are near-copies of training clips. A Random Forest scores 100%, which means the benchmark can’t rank models. The real evaluation asks harder questions: how few examples are enough, which perturbations break it, and which augmentations actually help.' },
+    facts: [['Words recognised', '61'], ['Video clips', '1,210'], ['Accuracy, 1 example per word', '49.5% (chance: 1.6%)'], ['Accuracy, 5 examples per word', '94.5%'], ['Effect of mirrored training data', '−12 points'], ['With one hand hidden', '31.9%'], ['Training time', '2.2 min']],
+    story: { title: 'Why 100% was not the result', body: 'Every word was recorded by one person in one session, so test clips were near-copies of training clips. A score of 100% only proved the test was too easy. The real evaluation asked harder questions instead.' },
     demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/isl-recognition' }] },
-  { id: 'ecom', title: 'E-Commerce Data Lake Pipeline', sub: 'Real-time clickstream ETL', date: 'In progress', team: 'Team of 3',
-    nen: ['tra', 'emi'], metric: ['Real-time', 'Kafka → Spark → Parquet'],
-    summary: 'Streams clickstream events from Kafka into a validated, analytics-ready data lake.',
+  { id: 'ecom', title: 'E-Commerce Data Lake Pipeline', sub: 'Real-time clickstream pipeline', date: 'In progress', team: 'Team of 3',
+    nen: ['tra', 'emi'], metric: ['Live', 'Kafka → Spark → Parquet'],
+    summary: 'Streams website click events from Kafka into a clean, query-ready data lake.',
+    problem: 'An online shop produces a constant stream of clicks. To analyse them, each event has to be checked and stored as it arrives.',
     stack: ['Apache Kafka', 'Apache Spark', 'PySpark', 'Structured Streaming', 'Parquet'],
     points: [
-      'A Spark Structured Streaming job that consumes live clickstream events from an Apache Kafka topic.',
-      'Parses raw JSON messages into an enforced schema (<code>user_id</code>, <code>event_type</code>, <code>page</code>, <code>product_id</code>) and validates them in PySpark.',
-      'Writes curated, analytics-ready Parquet for fast downstream queries and reporting.',
-      'Sorted out the Kafka–Spark connector and Java/Spark version conflicts that were blocking the team.'
+      'A Spark Structured Streaming job reads live click events from Kafka.',
+      'Each JSON event is checked against a fixed schema (user, event type, page, product).',
+      'Clean events are saved as Parquet files for fast analysis.',
+      'I fixed the Kafka–Spark connector and Java version conflicts that were blocking the team.'
     ],
     facts: null, story: null, demo: null, links: [] },
-  { id: 'malaria', title: 'Malaria Cell Classification', sub: 'CNN with Grad-CAM explainability', date: 'Apr – May 2026', team: '',
+  { id: 'malaria', title: 'Malaria Cell Classification', sub: 'Image model that explains itself', date: 'Apr – May 2026', team: '',
     nen: ['spe'], metric: ['96%', 'test accuracy'],
-    summary: 'Classifies microscope images of red blood cells as malaria-infected or healthy, and shows where it looked.',
+    summary: 'Classifies blood-cell images as infected or healthy, and shows where it looked.',
+    problem: 'Diagnosing malaria means a trained person checking blood cells under a microscope, one by one.',
     stack: ['Python', 'TensorFlow', 'Keras', 'CNN', 'Grad-CAM'],
     points: [
-      'Trained a CNN that classifies microscope images of red blood cells as infected or healthy, with <b>96% test accuracy</b>.',
-      'Grad-CAM class-activation heatmaps highlight the regions behind each prediction.',
-      'Evaluated beyond accuracy: precision, recall, F1-score, the ROC curve and a confusion matrix.'
+      'Trained a convolutional neural network on microscope images of red blood cells.',
+      'Used <b>Grad-CAM</b> heatmaps to show which part of each image led to the prediction.',
+      'Measured more than accuracy: precision, recall, F1-score, the ROC curve and a confusion matrix.'
     ],
-    facts: [['Test accuracy', '96%']],
-    story: { title: 'Why Grad-CAM', body: 'In a medical setting, the right answer for the wrong reason is still a failure. The heatmaps let a person check that the network is looking at the parasite and not the edge of the slide.' },
+    facts: null,
+    story: { title: 'Why show where it looked', body: 'In medicine, the right answer for the wrong reason is still a failure. The heatmaps let a person check that the model is looking at the parasite, not the edge of the slide.' },
     demo: null, links: [] },
-  { id: 'lostfound', title: 'Lost & Found System', sub: 'Relational design and a web app', date: 'May – Jun 2026', team: '',
-    nen: ['enh', 'emi'], metric: ['3NF', '5-entity schema'],
-    summary: 'A campus lost-and-found service with item claims and admin verification.',
+  { id: 'lostfound', title: 'Lost & Found System', sub: 'Database design and a web app', date: 'May – Jun 2026', team: '',
+    nen: ['enh', 'emi'], metric: ['3NF', '5-entity database'],
+    summary: 'A campus lost-and-found service where people report items and claim them.',
+    problem: 'People need one place to report lost or found items, and someone needs to check each claim before an item is handed back.',
     stack: ['MySQL', 'SQL', 'Web interface'],
     points: [
-      'Designed a normalised (3NF) relational schema of five entities covering items, claims and admin verification.',
-      'Built a web interface where people report lost or found items and claim them.'
+      'Designed a MySQL database of five entities, normalised to 3NF so no information is stored twice.',
+      'Built a web interface to report items and claim them, with admin verification of every claim.'
     ],
     facts: null, story: null, demo: null, links: [] }
 ];
 const PROJ_BY = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
-
-const TIMELINE = [
-  { d: '2024', t: 'Entered Thapar Institute', s: 'B.E. Computer Engineering', c: 'enh' },
-  { d: '2025', t: 'Batch Group Leader', s: 'Faculty ↔ batch liaison, 300 students', c: 'gold' },
-  { d: '2025', t: 'Saturnalia volunteer', s: '25-person logistics team', c: 'gold' },
-  { d: 'Apr 2026', t: 'Malaria CNN', s: '96% test accuracy, Grad-CAM', c: 'spe' },
-  { d: 'May 2026', t: 'Lost & Found System', s: '3NF schema, web app', c: 'enh' },
-  { d: 'Jul 2026', t: 'FoodBridge', s: 'Backend and matching engine', c: 'emi' },
-  { d: 'Aug 2026', t: 'Cricket lakehouse', s: '1.67M rows, live model', c: 'tra' },
-  { d: 'Oct 2026', t: 'ISL recognition', s: 'BiLSTM on MediaPipe keypoints', c: 'spe' },
-  { d: 'Oct 2026', t: 'PRAMAAN', s: 'Hackathon AI agent', c: 'con' },
-  { d: 'Now', t: 'E-commerce pipeline', s: 'Kafka → Spark → Parquet', c: 'tra', now: true },
-  { d: '2028', t: 'Expected graduation', s: 'B.E. Computer Engineering', c: 'muted', future: true }
-];
+const projectsFor = id => PROJECTS.filter(p => p.nen.includes(id));
 
 const SEC_ORDER = ['top', 'about', 'skills', 'projects', 'experience', 'contact'];
 const SEC_LABEL = { top: 'Intro', about: 'About', skills: 'Skills', projects: 'Projects', experience: 'Experience', contact: 'Contact' };
@@ -998,13 +883,13 @@ const SEC_LABEL = { top: 'Intro', about: 'About', skills: 'Skills', projects: 'P
 const LINES = {
   top: "I'm Kurapika, your guide to Hardik's work. Every number on this page is real. Ask me anything.",
   about: "He works across the stack: APIs, data pipelines, algorithms and models. That's uncommon at his stage.",
-  skills: "Pick what you're hiring for. The glass will react, and I'll show you the work behind it.",
+  skills: 'Click a skill area and the glass will react. Each one lists the projects that prove it.',
   projects: 'Seven projects. Open one for the full story. FoodBridge has a demo worth trying.',
   experience: 'Leadership counts too. Three hundred classmates rely on him to pass information on accurately.',
   contact: 'If his work fits what you need, write to him. The email is right there.',
   scarlet: '…You noticed my eyes. Let’s continue.',
-  emperor: "An easter egg: every skill at full strength for thirty seconds. Don't mistake it for the real numbers.",
-  emperorEnd: 'Enough. Back to the real numbers.'
+  emperor: 'An easter egg: Emperor Time, for thirty seconds. It changes nothing on his record.',
+  emperorEnd: 'Enough. Back to work.'
 };
 const TYPE_LINES = {
   enh: 'The fundamentals. Unglamorous, and the reason everything else holds up.',
@@ -1095,76 +980,20 @@ function runEffect(id) {
   $('#glassCaption').textContent = NEN_BY[id].role + '. ' + NEN_BY[id].effect;
 }
 
-/* ================= types + readout ================= */
+/* ================= skills ================= */
 function buildTypes() {
-  $('#typeList').innerHTML = NEN.map(n => `<button class="type" type="button" data-type="${n.id}" style="--c:var(--${n.id})" aria-pressed="false"><span class="k" aria-hidden="true"></span><span class="n">${esc(n.role)}</span><span class="r">${esc(n.tags)}</span></button>`).join('');
+  $('#typeList').innerHTML = NEN.map(n => `<div class="skill" data-skill="${n.id}" style="--c:var(--${n.id})">
+    <button class="type" type="button" data-type="${n.id}" aria-pressed="false"><span class="k" aria-hidden="true"></span><span class="n">${esc(n.role)}</span><span class="r">${esc(n.blurb)}</span></button>
+    <ul class="chips">${n.evidence.map(e => `<li>${esc(e)}</li>`).join('')}</ul>
+    <p class="used"><span>Used in</span>${projectsFor(n.id).map(p => `<button type="button" class="linkish" data-open="${p.id}">${esc(p.title)}</button>`).join('')}</p>
+  </div>`).join('');
 }
 function selectType(id, { speak = true } = {}) {
   currentType = id;
   $$('.type').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.type === id)));
   runEffect(id);
-  renderReadout();
   refreshAura();
-  paintRadar();
   if (speak) guideSay(TYPE_LINES[id]);
-}
-function renderReadout() {
-  const el = $('#readout');
-  if (!currentType) {
-    el.style.removeProperty('--c');
-    el.innerHTML = `<p class="ro-eyebrow">Reading</p><h3>No single area dominates.</h3><p>${TOTAL_EVIDENCE} skills and results across six areas. Backend, data engineering and machine learning have seven each, and algorithms, automation and fundamentals the rest. Pick an area to see exactly what backs it.</p>`;
-    return;
-  }
-  const n = NEN_BY[currentType];
-  el.style.setProperty('--c', `var(--${n.id})`);
-  el.innerHTML = `<p class="ro-eyebrow">Skill area</p><h3>${esc(n.role)}</h3><p>${esc(n.blurb)}</p><p class="ro-label">Evidence · ${n.evidence.length} pieces</p><ul class="chips">${n.evidence.map(e => `<li>${esc(e)}</li>`).join('')}</ul><div class="ro-proj"><span>Proven in</span>${n.projects.map(id => `<button type="button" class="linkish" data-open="${id}">${esc(PROJ_BY[id].title)}</button>`).join('')}<button type="button" class="linkish" data-filter="${n.id}" data-jump="1">Show matching projects ↓</button></div>`;
-}
-
-/* ================= radar ================= */
-const CX = 225, CY = 165, R = 100;
-const ang = i => -Math.PI / 2 + i * Math.PI / 3;
-const pt = (i, r) => [CX + r * Math.cos(ang(i)), CY + r * Math.sin(ang(i))];
-const fmt = p => p.map(v => v.toFixed(1)).join(',');
-let radarVals = Object.fromEntries(ORDER.map(id => [id, 0.12]));
-let radarRaf = 0;
-function buildRadar() {
-  let s = '';
-  [0.25, 0.5, 0.75, 1].forEach(f => { s += `<polygon class="ring${f === 1 ? ' outer' : ''}" points="${ORDER.map((_, i) => fmt(pt(i, R * f))).join(' ')}"/>`; });
-  ORDER.forEach((_, i) => { const [x, y] = pt(i, R); s += `<line class="spoke" x1="${CX}" y1="${CY}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`; });
-  [2, 4, 6, 8].forEach(v => { s += `<text class="ticklbl" x="${CX + 4}" y="${(CY - R * v / 8 + 11).toFixed(1)}">${v}</text>`; });
-  s += '<polygon id="radarPoly" points=""/>';
-  ORDER.forEach(id => { s += `<circle class="rdot" data-dot="${id}" r="4.5" cx="${CX}" cy="${CY}" style="--c:var(--${id})"/>`; });
-  ORDER.forEach((id, i) => {
-    const n = NEN_BY[id]; const [x, y] = pt(i, R + 24); const c = Math.cos(ang(i));
-    const anchor = Math.abs(c) < 0.2 ? 'middle' : (c > 0 ? 'start' : 'end');
-    const ny = i === 0 ? y - 4 : i === 3 ? y + 14 : y + 4;
-    s += `<g class="ax" data-type="${id}" role="button" tabindex="0" aria-label="${esc(n.role)}: ${n.evidence.length} pieces of evidence" style="--c:var(--${id})"><text class="rl-n" x="${x.toFixed(1)}" y="${ny.toFixed(1)}" text-anchor="${anchor}">${esc(n.short)}</text></g>`;
-  });
-  const svg = $('#radar');
-  svg.innerHTML = s;
-  svg.addEventListener('click', e => { const g = e.target.closest('.ax'); if (g) selectType(g.dataset.type); });
-  svg.addEventListener('keydown', e => { const g = e.target.closest('.ax'); if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); selectType(g.dataset.type); } });
-}
-function paintRadar() {
-  const pts = ORDER.map((id, i) => pt(i, R * Math.max(0.04, radarVals[id])));
-  $('#radarPoly').setAttribute('points', pts.map(fmt).join(' '));
-  ORDER.forEach((id, i) => {
-    const d = $(`[data-dot="${id}"]`);
-    d.setAttribute('cx', pts[i][0].toFixed(1)); d.setAttribute('cy', pts[i][1].toFixed(1));
-    d.setAttribute('r', id === currentType ? '7' : '4.5');
-  });
-  $$('#radar .ax').forEach(g => g.classList.toggle('on', g.dataset.type === currentType));
-}
-function tweenRadar(target) {
-  const from = { ...radarVals }; const t0 = performance.now(); const dur = reduced ? 0 : 750;
-  cancelAnimationFrame(radarRaf);
-  const step = now => {
-    const k = dur ? Math.min(1, (now - t0) / dur) : 1; const e = 1 - Math.pow(1 - k, 3);
-    ORDER.forEach(id => { radarVals[id] = from[id] + (target[id] - from[id]) * e; });
-    paintRadar();
-    if (k < 1) radarRaf = requestAnimationFrame(step);
-  };
-  radarRaf = requestAnimationFrame(step);
 }
 
 /* ================= hunts ================= */
@@ -1186,14 +1015,6 @@ function renderHunts() {
 function filterHunts(id) {
   $$('.fchip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === id)));
   $$('.card').forEach(c => c.classList.toggle('dim', id !== 'all' && !c.dataset.nen.split(' ').includes(id)));
-}
-
-/* ================= timeline ================= */
-function renderTimeline() {
-  $('#timeline').innerHTML = TIMELINE.map(t => {
-    const c = t.c === 'gold' ? 'var(--gold)' : t.c === 'muted' ? 'var(--muted)' : `var(--${t.c})`;
-    return `<li class="${t.now ? 'now' : ''}${t.future ? ' future' : ''}" style="--c:${c}"><div class="d">${esc(t.d)}</div><div class="t">${esc(t.t)}</div><div class="s">${esc(t.s)}</div></li>`;
-  }).join('');
 }
 
 /* ================= dossier ================= */
@@ -1254,17 +1075,17 @@ function dossierHTML(p) {
   return `<div class="d-in">
     <p class="eyebrow">Project details<span class="sep">·</span>${esc(p.date)}${p.team ? `<span class="sep">·</span>${esc(p.team)}` : ''}</p>
     <h2 id="dTitle">${esc(p.title)}</h2>
-    <p class="d-sub">${esc(p.summary)}</p>
+    <h3 class="d-h">The problem</h3>
+    <p class="d-sub">${esc(p.problem)}</p>
     <div class="d-grid">
-      <div><h3 class="d-h">What I did</h3><ul class="d-points">${p.points.map(x => `<li>${x}</li>`).join('')}</ul></div>
+      <div><h3 class="d-h">What I built</h3><ul class="d-points">${p.points.map(x => `<li>${x}</li>`).join('')}</ul></div>
       <div class="d-side">
-        <div><h3 class="d-h">Skill areas</h3><ul class="nen-chips">${p.nen.map(id => `<li style="--c:var(--${id})">${esc(NEN_BY[id].short)}</li>`).join('')}</ul></div>
-        <div><h3 class="d-h">Stack</h3><ul class="chips">${p.stack.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>
-        ${p.facts ? `<div><h3 class="d-h">Measured</h3><dl class="facts">${p.facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></div>` : ''}
+        ${p.facts ? `<div><h3 class="d-h">Results</h3><dl class="facts">${p.facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></div>` : ''}
+        <div><h3 class="d-h">Tech used</h3><ul class="chips">${p.stack.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>
         ${p.links.length ? `<div><h3 class="d-h">Links</h3>${p.links.map(l => `<a class="btn ghost sm" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join(' ')}</div>` : ''}
       </div>
     </div>
-    ${p.story ? `<div class="story"><h3>${esc(p.story.title)}</h3><p>${p.story.body}</p></div>` : ''}
+    ${p.story ? `<div class="story"><p class="d-h">What I learned</p><h3>${esc(p.story.title)}</h3><p>${p.story.body}</p></div>` : ''}
     ${p.demo === 'assign' ? ASSIGN_HTML : ''}${p.demo === 'wpa' ? wpaHTML() : ''}
   </div>`;
 }
@@ -1441,7 +1262,6 @@ function emperor() {
   root.dataset.scarlet = 'on'; root.dataset.emperor = 'on';
   $('#scarletBtn').setAttribute('aria-pressed', 'true');
   refreshAura();
-  tweenRadar(Object.fromEntries(ORDER.map(id => [id, 1])));
   empLeft = 30; $('#empT').textContent = empLeft + 's'; $('#emperor').hidden = false;
   guideSay(LINES.emperor, { force: true });
   empTimer = setInterval(() => { empLeft--; $('#empT').textContent = empLeft + 's'; if (empLeft <= 0) endEmperor(); }, 1000);
@@ -1451,7 +1271,6 @@ function endEmperor() {
   clearInterval(empTimer); emperorOn = false;
   root.dataset.emperor = 'off';
   setScarlet(empPrevScarlet, { persist: false });
-  tweenRadar(baseVals());
   $('#emperor').hidden = true;
   guideSay(LINES.emperorEnd, { force: true });
 }
@@ -1494,7 +1313,7 @@ const INTENTS = [
   { k: ['lost', 'found', 'mysql', '3nf', 'normalisation', 'normalization', 'schema', 'database', 'dbms', 'sql'], a: 'His database work ranges from the Lost & Found system, a 3NF MySQL schema of five entities for claims and admin verification, to FoodBridge’s ten-table PostgreSQL and PostGIS schema with spatial queries.' },
   { k: ['pramaan', 'agent', 'agents', 'agentic', 'llm', 'llms', 'claude', 'anthropic', 'genai', 'generative ai', 'tool use', 'scam', 'fraud', 'hackathon'], a: 'PRAMAAN is his hackathon agent for spotting recruitment scams. Claude chooses which of five checks to run, from domain registration age to a web search for complaints, but fixed rules decide the verdict from cited evidence. It never calls an offer a scam on a single source, and it has 61 tests.' },
   { k: ['sign language', 'isl', 'mediapipe', 'bilstm', 'lstm', 'pytorch', 'torch', 'gesture', 'webcam', 'keypoint', 'keypoints', 'accessibility'], a: 'His sign-language project turns MediaPipe hand and pose keypoints into words, then speech, live on a webcam, using a BiLSTM with attention in PyTorch. The standard test split was too easy, so he measured harder things: 49.5% from one example per word, and an ablation where mirroring hurt by 12 points.' },
-  { k: ['big data', 'ml engineer', 'data engineer', 'specialist', 'versatile', 'generalist', 'kind of engineer', 'what type', 'which role', 'dominant', 'only data', 'only ml', 'full stack', 'one trick'], a: 'He isn\u2019t limited to one area. Of the 39 skills and results on this page, backend, data engineering and machine learning have seven each; algorithms, automation and fundamentals make up the rest. If you need someone who can build the API, the pipeline and the model, and test all three, that is his profile.' },
+  { k: ['big data', 'ml engineer', 'data engineer', 'specialist', 'versatile', 'generalist', 'kind of engineer', 'what type', 'which role', 'dominant', 'only data', 'only ml', 'full stack', 'one trick'], a: 'He isn\u2019t limited to one area. His projects cover backend APIs, data engineering, algorithms, machine learning, AI agents and automated testing. If you need someone who can build the API, the pipeline and the model, and test all three, that is his profile.' },
   { k: ['ml', 'machine learning', 'model', 'models', 'ai', 'calibration', 'auc', 'accuracy'], a: 'His ML work is measured, not decorated. A Spark MLlib gradient-boosted model scored AUC 0.777 with 1.8 points of calibration error on seasons it never saw, chosen over logistic regression on validation log loss. The malaria CNN reached 96%, and his sign-language BiLSTM was judged on harder protocols than its saturated test split. He grades probabilities, not just accuracy.' },
   { k: ['education', 'cgpa', 'gpa', 'grade', 'grades', 'college', 'university', 'thapar', 'degree', 'coursework', 'graduate', 'graduation', 'student'], a: 'B.E. Computer Engineering at Thapar Institute of Engineering & Technology, 2024 to 2028, with a CGPA of 8.50 out of 10. His coursework includes DSA, DBMS, OOP, software engineering, probability and statistics, machine learning and deep learning.' },
   { k: ['leader', 'leadership', 'lead', 'volunteer', 'saturnalia', 'communication', 'soft skill', 'people', 'team', 'teamwork', 'manage'], a: 'He has been his batch’s group leader since 2025, the link between faculty and a 300-student community. At Saturnalia 2025 he coordinated logistics with 25 volunteers, covering registrations and several stage events. People trust him with information. That matters.' },
@@ -1603,7 +1422,7 @@ function buildIndex() {
   const out = secs.map(([id, label, hint]) => ({ label, hint: 'Section', kw: hint, run: () => go(id) }));
   PROJECTS.forEach(p => out.push({ label: p.title, hint: 'Project', kw: p.sub + ' ' + p.stack.join(' ') + ' ' + p.summary, run: () => openDossier(p.id) }));
   NEN.forEach(n => {
-    out.push({ label: n.role, hint: 'Skill area', kw: n.tags + ' ' + n.evidence.join(' '), run: () => { go('skills'); selectType(n.id); } });
+    out.push({ label: n.role, hint: 'Skill area', kw: n.blurb + ' ' + n.evidence.join(' '), run: () => { go('skills'); selectType(n.id); } });
     n.evidence.forEach(ev => out.push({ label: ev, hint: 'Skill · ' + n.short, kw: n.role, run: () => { go('skills'); selectType(n.id); } }));
   });
   out.push({ label: 'Ask Kurapika', hint: 'Action', kw: 'chat question guide', run: openChat });
@@ -1673,12 +1492,8 @@ function bindGlobal() {
 /* ================= boot ================= */
 buildGlass();
 buildTypes();
-buildRadar();
-paintRadar();
-renderReadout();
 renderFilters();
 renderHunts();
-renderTimeline();
 initRope();
 setScarlet(store.get('scarlet', false), { persist: false });
 initLicense();
@@ -1688,6 +1503,5 @@ initGuide();
 initChat();
 initPalette();
 bindGlobal();
-tweenRadar(baseVals());
 })();
 </script>
