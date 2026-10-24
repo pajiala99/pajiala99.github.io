@@ -84,10 +84,6 @@ h3{font:700 20px/1.25 var(--display);margin:0;text-wrap:balance}
 .btn.sm{height:38px;padding:0 14px;font-size:13.5px}
 .chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px}
 .chips li{font:500 12.5px/1.3 var(--sans);padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--text-2);background:var(--ink-3)}
-.nen-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.nen-chips li{font:500 11.5px var(--mono);padding:3px 9px;border-radius:999px;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 45%,transparent);background:color-mix(in srgb,var(--c) 9%,transparent)}
-.linkish{background:none;border:0;padding:0 0 1px;color:var(--text);font:600 14px var(--sans);cursor:pointer;border-bottom:1.5px dashed var(--c,var(--accent));text-align:left}
-.linkish:hover{color:var(--c,var(--accent))}
 .sec{padding-block:clamp(72px,10vw,128px) 0}
 .sec-head{max-width:760px;margin-bottom:clamp(28px,4vw,48px)}
 .sec-lede{color:var(--text-2);font-size:17px;max-width:62ch;margin:0}
@@ -134,18 +130,17 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 /* ---------- about ---------- */
 
 /* ---------- aura ---------- */
-.aura-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
-.skill-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.skill{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:14px;border:1px solid var(--line-soft);background:var(--ink-2);transition:border-color .2s,box-shadow .2s}
-.skill:has(.type[aria-pressed="true"]){border-color:var(--c);box-shadow:0 0 26px -12px var(--c)}
-.skill .used{margin:auto 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
-.skill .used > span{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.skill .linkish{font-size:13.5px}
-.type{display:grid;grid-template-columns:10px 1fr;align-items:center;column-gap:10px;text-align:left;padding:0;border:0;background:none;color:var(--text);cursor:pointer}
-.type .k{grid-row:1/3;width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
-.type .n{font:700 17px/1.3 var(--display)}
-.type .r{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.aura-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.skill-list{border-top:1px solid var(--line-soft)}
+.type{width:100%;display:grid;grid-template-columns:10px 210px minmax(0,1fr);align-items:baseline;gap:4px 18px;padding:18px 14px;text-align:left;border:0;border-bottom:1px solid var(--line-soft);background:none;color:var(--text);cursor:pointer;transition:background .2s}
+.type:hover{background:var(--ink-2)}
+.type[aria-pressed="true"]{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.type .k{align-self:start;margin-top:6px;width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+.type .n{font:700 17px/1.3 var(--display);transition:color .2s}
 .type:hover .n,.type[aria-pressed="true"] .n{color:var(--c)}
+.type .skill-tools{font-size:15px;line-height:1.6;color:var(--text-2)}
+.type .sep{margin:0 3px 0 7px;color:var(--muted)}
+.type .tool{white-space:nowrap}
 .glass-fig{margin:0;position:sticky;top:96px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .glass-fig .label{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px}
 .glass-fig .label [lang=ja]{font-family:var(--display);color:var(--accent)}
@@ -195,22 +190,29 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 .fchip i{width:8px;height:8px;border-radius:50%;background:var(--c,var(--accent))}
 .fchip:hover{color:var(--text);border-color:var(--c,var(--accent))}
 .fchip[aria-pressed="true"]{border-color:var(--c,var(--accent));color:var(--text);background:color-mix(in srgb,var(--c,var(--accent)) 14%,transparent)}
-.hunts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
-.card{grid-column:span 2;position:relative;display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:16px;background:var(--ink-2);border:1px solid var(--line-soft);cursor:pointer;transition:transform .25s,border-color .25s,opacity .35s,filter .35s}
-.card.feat{grid-column:span 3;background:linear-gradient(160deg,var(--ink-3),var(--ink-2) 62%)}
+.hunts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{position:relative;display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:18px;background:linear-gradient(160deg,var(--ink-3),var(--ink-2) 62%);border:1px solid var(--line-soft);cursor:pointer;transition:transform .25s,border-color .25s,opacity .35s,filter .35s}
 .card:hover{transform:translateY(-3px);border-color:var(--line)}
-.card.dim{opacity:.3;filter:saturate(.25)}
-.card .meta{display:flex;flex-wrap:wrap;gap:4px 14px;font:500 11.5px var(--mono);color:var(--muted);letter-spacing:.04em}
-.card h3{font:800 clamp(21px,2vw,26px)/1.15 var(--display)}
-.card .sub{margin:-6px 0 0;color:var(--text-2);font-size:14.5px}
-.card .metric{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:4px 0 0}
-.card .metric b{font:800 clamp(30px,3.2vw,40px)/1 var(--display);color:var(--accent);transition:color .4s;font-variant-numeric:tabular-nums}
-.card .metric span{font-size:13px;color:var(--muted)}
-.card .sum{margin:0;color:var(--text-2);font-size:15px}
-.card .nen-chips{margin-top:auto}
-.open{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;background:none;border:0;padding:4px 0;color:var(--text);font:700 14px var(--sans);cursor:pointer;border-bottom:1.5px solid var(--accent)}
+.card.dim,.mini.dim{opacity:.3;filter:saturate(.25)}
+.meta{display:flex;flex-wrap:wrap;margin:0;font:500 11.5px var(--mono);color:var(--muted);letter-spacing:.04em}
+.meta span+span::before{content:"·";margin:0 8px;color:var(--line)}
+.card h3{font:800 clamp(22px,2.2vw,28px)/1.15 var(--display)}
+.card .sum{margin:0 0 12px;color:var(--text-2);font-size:15.5px}
+.card-foot{margin-top:auto;padding-top:18px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 20px}
+.metric{display:flex;flex-direction:column;gap:5px;margin:0}
+.metric b{font:800 clamp(30px,3vw,38px)/1 var(--display);color:var(--accent);transition:color .4s;font-variant-numeric:tabular-nums}
+.metric span{font-size:13px;line-height:1.35;color:var(--muted)}
+.open{display:inline-flex;gap:8px;align-items:center;background:none;border:0;padding:4px 0;color:var(--text);font:700 14px var(--sans);cursor:pointer;border-bottom:1.5px solid var(--accent)}
 .open span{transition:transform .2s}
-.card:hover .open span{transform:translateX(4px)}
+.card:hover .open span,.mini:hover .open span{transform:translateX(4px)}
+.hunts-more{margin:52px 0 10px;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.minis{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-soft)}
+.mini{display:grid;grid-template-columns:minmax(0,1fr) 210px auto;align-items:center;gap:12px 32px;padding:20px 14px;border-bottom:1px solid var(--line-soft);cursor:pointer;transition:background .2s,opacity .35s,filter .35s}
+.mini:hover{background:var(--ink-2)}
+.mini h4{margin:4px 0;font:700 19px/1.3 var(--display);transition:color .2s}
+.mini:hover h4{color:var(--accent)}
+.mini .sum{margin:0;color:var(--text-2);font-size:15px}
+.mini .metric b{font-size:26px}
 
 /* ---------- record ---------- */
 .record-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:18px}
@@ -381,8 +383,6 @@ td .mk.mo{right:3px}
   #glass{max-width:200px}
 }
 @media (max-width:980px){
-  .card,.card.feat{grid-column:span 3}
-  .card:last-child{grid-column:1/-1}
   .record-grid{grid-template-columns:1fr 1fr}
   .rec.edu{grid-column:1/-1}
 }
@@ -405,12 +405,14 @@ td .mk.mo{right:3px}
   .avatar{width:54px;height:54px}
   .chat{inset:calc(8px + env(safe-area-inset-top,0px)) 8px calc(8px + env(safe-area-inset-bottom,0px)) 8px;width:auto}
 }
-@media (max-width:720px){
-  .skill-list{grid-template-columns:1fr}
+@media (max-width:760px){
+  .hunts{grid-template-columns:1fr}
+  .mini{grid-template-columns:minmax(0,1fr) auto;padding-inline:4px}
+  .mini-main{grid-column:1/-1}
+  .type{grid-template-columns:10px minmax(0,1fr);padding-inline:4px}
+  .type .skill-tools{grid-column:2}
 }
 @media (max-width:640px){
-  .hunts{grid-template-columns:1fr}
-  .card,.card.feat,.card:last-child{grid-column:auto}
   .record-grid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
@@ -530,7 +532,7 @@ td .mk.mo{right:3px}
     <header class="sec-head">
       <p class="eyebrow">Skills</p>
       <h2>What I can do</h2>
-      <p class="sec-lede">Six areas, the tools I use in each, and the projects where I used them. Click an area to see the glass react.</p>
+      <p class="sec-lede">The tools I use, in six areas. Click an area to see the glass react.</p>
     </header>
     <div class="aura-grid">
       <div class="skill-list" id="typeList" role="group" aria-label="Skill areas"></div>
@@ -588,6 +590,8 @@ td .mk.mo{right:3px}
     </header>
     <div class="filters" id="filters" role="group" aria-label="Filter projects by skill area"></div>
     <div class="hunts" id="huntGrid"></div>
+    <h3 class="hunts-more">More projects</h3>
+    <ul class="minis" id="miniList"></ul>
   </section>
 
   <!-- ============ RECORD ============ -->
@@ -749,27 +753,21 @@ const EMAIL = 'hardikpajiala@gmail.com';
 const NEN = [
   { id: 'enh', kanji: '強化系', name: 'Enhancement', role: 'Core CS', short: 'Core CS', hex: '#f0a93b',
     effect: 'The water rose and spilled over the rim.',
-    blurb: 'The fundamentals everything else depends on.',
     evidence: ['Python', 'C / C++', 'SQL', 'Data structures & algorithms', 'Object-oriented programming', 'Database normalisation (3NF)'] },
   { id: 'emi', kanji: '放出系', name: 'Emission', role: 'Backend & APIs', short: 'Backend & APIs', hex: '#ff7a59',
     effect: 'The water changed colour.',
-    blurb: 'Services and databases other people build on.',
     evidence: ['Node.js', 'Express', 'TypeScript', 'FastAPI', 'PostgreSQL / PostGIS', 'MySQL', 'JWT authentication'] },
   { id: 'tra', kanji: '変化系', name: 'Transmutation', role: 'Data engineering', short: 'Data engineering', hex: '#4fc7e0',
     effect: 'The water looks the same, but its taste changed.',
-    blurb: 'Moving and reshaping data without losing any of it.',
     evidence: ['Apache Spark / PySpark', 'Delta Lake', 'Apache Kafka', 'Structured Streaming', 'Parquet', 'Data-quality checks'] },
   { id: 'con', kanji: '具現化系', name: 'Conjuration', role: 'Algorithms & design', short: 'Algorithms', hex: '#a98bff',
     effect: 'Crystals formed in the water.',
-    blurb: 'Turning an idea into a working mechanism.',
     evidence: ['Hungarian algorithm', 'Greedy matching', 'Weighted scoring', 'State machines', 'Simulation'] },
   { id: 'man', kanji: '操作系', name: 'Manipulation', role: 'Automation & testing', short: 'Automation', hex: '#5fd68f',
     effect: 'The leaf began to move on its own.',
-    blurb: 'Pipelines that run themselves and tests that catch mistakes early.',
     evidence: ['Apache Airflow', 'GitHub Actions CI', 'pytest', 'Vitest'] },
   { id: 'spe', kanji: '特質系', name: 'Specialization', role: 'Machine learning & AI', short: 'ML & AI', hex: '#f266b0',
     effect: 'Something unusual happened: the leaf turned scarlet.',
-    blurb: 'Models tested on data they have never seen, and AI agents with guard rails.',
     evidence: ['TensorFlow / Keras', 'PyTorch', 'Spark MLlib', 'MediaPipe', 'Grad-CAM', 'Claude API (tool use)'] }
 ];
 const NEN_BY = Object.fromEntries(NEN.map(n => [n.id, n]));
@@ -875,7 +873,6 @@ const PROJECTS = [
     facts: null, story: null, demo: null, links: [] }
 ];
 const PROJ_BY = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
-const projectsFor = id => PROJECTS.filter(p => p.nen.includes(id));
 
 const SEC_ORDER = ['top', 'about', 'skills', 'projects', 'experience', 'contact'];
 const SEC_LABEL = { top: 'Intro', about: 'About', skills: 'Skills', projects: 'Projects', experience: 'Experience', contact: 'Contact' };
@@ -883,7 +880,7 @@ const SEC_LABEL = { top: 'Intro', about: 'About', skills: 'Skills', projects: 'P
 const LINES = {
   top: "I'm Kurapika, your guide to Hardik's work. Every number on this page is real. Ask me anything.",
   about: "He works across the stack: APIs, data pipelines, algorithms and models. That's uncommon at his stage.",
-  skills: 'Click a skill area and the glass will react. Each one lists the projects that prove it.',
+  skills: 'Click a skill area and watch the glass react.',
   projects: 'Seven projects. Open one for the full story. FoodBridge has a demo worth trying.',
   experience: 'Leadership counts too. Three hundred classmates rely on him to pass information on accurately.',
   contact: 'If his work fits what you need, write to him. The email is right there.',
@@ -982,11 +979,7 @@ function runEffect(id) {
 
 /* ================= skills ================= */
 function buildTypes() {
-  $('#typeList').innerHTML = NEN.map(n => `<div class="skill" data-skill="${n.id}" style="--c:var(--${n.id})">
-    <button class="type" type="button" data-type="${n.id}" aria-pressed="false"><span class="k" aria-hidden="true"></span><span class="n">${esc(n.role)}</span><span class="r">${esc(n.blurb)}</span></button>
-    <ul class="chips">${n.evidence.map(e => `<li>${esc(e)}</li>`).join('')}</ul>
-    <p class="used"><span>Used in</span>${projectsFor(n.id).map(p => `<button type="button" class="linkish" data-open="${p.id}">${esc(p.title)}</button>`).join('')}</p>
-  </div>`).join('');
+  $('#typeList').innerHTML = NEN.map(n => `<button class="type" type="button" data-type="${n.id}" style="--c:var(--${n.id})" aria-pressed="false"><span class="k" aria-hidden="true"></span><span class="n">${esc(n.role)}</span><span class="skill-tools">${n.evidence.map(e => `<span class="tool">${esc(e)}</span>`).join('<span class="sep" aria-hidden="true">·</span><span class="sr">,</span> ')}</span></button>`).join('');
 }
 function selectType(id, { speak = true } = {}) {
   currentType = id;
@@ -1001,20 +994,25 @@ function renderFilters() {
   $('#filters').innerHTML = `<button class="fchip" type="button" data-filter="all" aria-pressed="true">All projects</button>` +
     NEN.map(n => `<button class="fchip" type="button" data-filter="${n.id}" style="--c:var(--${n.id})" aria-pressed="false"><i></i>${esc(n.short)}</button>`).join('');
 }
+const FEATURED = 4; // the first four projects get full cards; the rest go in the compact list
+const metaHTML = p => `<p class="meta"><span>${esc(p.date)}</span>${p.team ? `<span>${esc(p.team)}</span>` : ''}</p>`;
+const metricHTML = p => `<p class="metric"><b>${esc(p.metric[0])}</b><span>${esc(p.metric[1])}</span></p>`;
 function renderHunts() {
-  $('#huntGrid').innerHTML = PROJECTS.map((p, i) => `<article class="card${i < 2 ? ' feat' : ''}" data-id="${p.id}" data-nen="${p.nen.join(' ')}">
-    <div class="meta"><span>${esc(p.date)}</span>${p.team ? `<span>${esc(p.team)}</span>` : ''}</div>
+  $('#huntGrid').innerHTML = PROJECTS.slice(0, FEATURED).map(p => `<article class="card" data-id="${p.id}" data-nen="${p.nen.join(' ')}">
+    ${metaHTML(p)}
     <h3>${esc(p.title)}</h3>
-    <p class="sub">${esc(p.sub)}</p>
-    <p class="metric"><b>${esc(p.metric[0])}</b><span>${esc(p.metric[1])}</span></p>
     <p class="sum">${esc(p.summary)}</p>
-    <ul class="nen-chips" aria-label="Skill areas">${p.nen.map(id => `<li style="--c:var(--${id})">${esc(NEN_BY[id].short)}</li>`).join('')}</ul>
-    <button class="open" type="button" data-open="${p.id}">View details <span aria-hidden="true">→</span></button>
+    <div class="card-foot">${metricHTML(p)}<button class="open" type="button" data-open="${p.id}">View details <span aria-hidden="true">→</span></button></div>
   </article>`).join('');
+  $('#miniList').innerHTML = PROJECTS.slice(FEATURED).map(p => `<li class="mini" data-id="${p.id}" data-nen="${p.nen.join(' ')}">
+    <div class="mini-main">${metaHTML(p)}<h4>${esc(p.title)}</h4><p class="sum">${esc(p.summary)}</p></div>
+    ${metricHTML(p)}
+    <button class="open" type="button" data-open="${p.id}">Details <span aria-hidden="true">→</span></button>
+  </li>`).join('');
 }
 function filterHunts(id) {
   $$('.fchip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === id)));
-  $$('.card').forEach(c => c.classList.toggle('dim', id !== 'all' && !c.dataset.nen.split(' ').includes(id)));
+  $$('#projects [data-nen]').forEach(c => c.classList.toggle('dim', id !== 'all' && !c.dataset.nen.split(' ').includes(id)));
 }
 
 /* ================= dossier ================= */
@@ -1223,7 +1221,7 @@ function initRope() {
     if (e.pointerType !== 'mouse') return;
     if (!active) pts.forEach((p, i) => { p.x = p.px = e.clientX + 10; p.y = p.py = e.clientY + 14 + i * L; });
     mx = e.clientX + 10; my = e.clientY + 14; active = true;
-    hot = !!(e.target.closest && e.target.closest('a,button,[role=button],input,.card,.ax'));
+    hot = !!(e.target.closest && e.target.closest('a,button,[role=button],input,.card,.mini'));
     kick();
   }, { passive: true });
   document.addEventListener('mouseleave', () => { active = false; ctx.clearRect(0, 0, W, H); });
@@ -1422,7 +1420,7 @@ function buildIndex() {
   const out = secs.map(([id, label, hint]) => ({ label, hint: 'Section', kw: hint, run: () => go(id) }));
   PROJECTS.forEach(p => out.push({ label: p.title, hint: 'Project', kw: p.sub + ' ' + p.stack.join(' ') + ' ' + p.summary, run: () => openDossier(p.id) }));
   NEN.forEach(n => {
-    out.push({ label: n.role, hint: 'Skill area', kw: n.blurb + ' ' + n.evidence.join(' '), run: () => { go('skills'); selectType(n.id); } });
+    out.push({ label: n.role, hint: 'Skill area', kw: n.evidence.join(' '), run: () => { go('skills'); selectType(n.id); } });
     n.evidence.forEach(ev => out.push({ label: ev, hint: 'Skill · ' + n.short, kw: n.role, run: () => { go('skills'); selectType(n.id); } }));
   });
   out.push({ label: 'Ask Kurapika', hint: 'Action', kw: 'chat question guide', run: openChat });
@@ -1470,7 +1468,7 @@ function bindGlobal() {
     const op = t.closest('[data-open]'); if (op) { openDossier(op.dataset.open); return; }
     const f = t.closest('[data-filter]'); if (f) { filterHunts(f.dataset.filter); if (f.dataset.jump) go('projects'); return; }
     const ty = t.closest('.type'); if (ty) { selectType(ty.dataset.type); return; }
-    const card = t.closest('.card'); if (card && !t.closest('a')) { openDossier(card.dataset.id); }
+    const card = t.closest('.card, .mini'); if (card && !t.closest('a')) { openDossier(card.dataset.id); }
   });
   $('#copyEmail').addEventListener('click', copyEmail);
   $('#scarletBtn').addEventListener('click', () => { if (emperorOn) return; const on = !isScarlet(); setScarlet(on); if (on) guideSay(LINES.scarlet); });
