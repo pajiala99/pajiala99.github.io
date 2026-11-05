@@ -1,6 +1,6 @@
 # Hardik Pajiala — portfolio
 
-Live at **https://pajiala99.github.io**
+Live at **https://pajiala99.github.io** · [LinkedIn](https://linkedin.com/in/hardik-pajiala)
 
 A single-file interactive portfolio (`index.html`, no build step): projects written up as
 problem → what I built → results → what I learned, a skills list that links each area to the
