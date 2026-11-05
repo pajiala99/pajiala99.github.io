@@ -394,7 +394,7 @@ td .mk.mo{right:3px}
 .isl-top{list-style:none;margin:0;padding:0;display:grid;gap:7px}
 .isl-top li{display:grid;grid-template-columns:minmax(0,9.5em) 1fr 4.4em;gap:10px;align-items:center;font-size:14px;color:var(--text-2)}
 .isl-top li b{font:600 13px var(--mono);text-align:right;color:var(--text);font-variant-numeric:tabular-nums}
-.isl-top .bar{height:8px;border-radius:4px;background:var(--ink-3);overflow:hidden}
+.isl-top .bar{display:block;min-height:0;height:8px;border-radius:4px;background:var(--ink-3);overflow:hidden}  /* undo the header's .bar */
 .isl-top .bar i{display:block;height:100%;background:var(--line);border-radius:4px}
 .isl-top li:first-child{color:var(--text);font-weight:700}
 .isl-top li:first-child .bar i{background:var(--accent)}
@@ -1293,8 +1293,11 @@ function islLoad(status) {
     const [rt, meta] = await Promise.all([isl.loadRuntimes(), fetch(ISL_DIR + 'isl_meta.json').then(r => r.json())]);
     const got = [0, 0, 0], tot = ISL_BYTES.slice();
     const mb = a => (a.reduce((x, y) => x + y) / 1e6).toFixed(1);
+    // when one download fails the others keep going, and their progress must not cover the error
+    let failed = false;
     const [hand, pose, onnx] = await Promise.all(['hand_landmarker.task', 'pose_landmarker_lite.task', 'isl_bilstm.onnx'].map((f, i) =>
-      isl.fetchBytes(ISL_DIR + f, (l, t) => { got[i] = l; if (t) tot[i] = t; status(`Downloading the models: ${mb(got)} of ${mb(tot)} MB`); })));
+      isl.fetchBytes(ISL_DIR + f, (l, t) => { if (failed) return; got[i] = l; if (t) tot[i] = t; status(`Downloading the models: ${mb(got)} of ${mb(tot)} MB`); })))
+      .catch(e => { failed = true; throw e; });
     status('Starting the model…');
     return { isl, ...rt, hand, pose, clf: await isl.Classifier.create(rt.ort, onnx), classes: meta.classes };
   })();
@@ -1358,7 +1361,7 @@ function initIsl() {
       status(`${frames.length} frames → 64 × 478 features → 61 words`);
       el.ref.innerHTML = `Python on the same file: ${esc(pretty(c.python.top1))} ${pct(c.python.p)}` + (top[0][0] === c.python.top1 ? ' · <b>same word ✓</b>' : ' · a different word');
     } catch (e) {
-      if (!(e && e.name === 'AbortError')) status('Something went wrong: ' + (e && e.message || e));
+      if (!(e && e.name === 'AbortError')) status('Something went wrong: ' + (e && e.message || e) + '. Run the model again to retry.');
     } finally {
       if (ex) ex.close();
       if (url) URL.revokeObjectURL(url);
