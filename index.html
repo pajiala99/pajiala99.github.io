@@ -205,6 +205,15 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 .open{display:inline-flex;gap:8px;align-items:center;background:none;border:0;padding:4px 0;color:var(--text);font:700 14px var(--sans);cursor:pointer;border-bottom:1.5px solid var(--accent)}
 .open span{transition:transform .2s}
 .card:hover .open span,.mini:hover .open span{transform:translateX(4px)}
+.award{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;margin:0;padding:4px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);font:600 12px var(--mono);letter-spacing:.03em}
+.mini .award{margin:4px 0 2px}
+.win-chip{display:inline-flex;align-items:center;gap:8px;margin:18px 0 0;padding:7px 14px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--text);font:600 14px var(--sans);cursor:pointer;transition:background .2s}
+.win-chip:hover{background:color-mix(in srgb,var(--accent) 20%,transparent)}
+.win-chip b{color:var(--accent)}
+.rec-h{margin:0 0 14px;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.rec-h.next{margin-top:40px}
+.rec.win{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.rec .proj{margin-top:auto;align-self:flex-start}
 .hunts-more{margin:52px 0 10px;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .minis{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-soft)}
 .mini{display:grid;grid-template-columns:minmax(0,1fr) 210px auto;align-items:center;gap:12px 32px;padding:20px 14px;border-bottom:1px solid var(--line-soft);cursor:pointer;transition:background .2s,opacity .35s,filter .35s}
@@ -458,11 +467,12 @@ td .mk.mo{right:3px}
     <div class="hero-copy">
       <p class="eyebrow">Open to software, data &amp; ML internships</p>
       <h1>I build the <em>whole system</em>, not one layer of it.</h1>
-      <p class="lede">A third-year engineering student. I build backend APIs, data pipelines, machine-learning models and AI agents, and I write tests for all of them.</p>
+      <p class="lede">A third-year engineering student. I build backend APIs, data pipelines, machine-learning models, AI agents and the apps on top of them, and I write tests for all of them.</p>
       <div class="cta">
         <a class="btn primary" href="#projects">See my projects</a>
         <button class="btn ghost" type="button" data-action="ask">Ask about my work</button>
       </div>
+      <button class="win-chip" type="button" data-open="safetrail">🏆 <span><b>Problem statement winner</b> · BIOS V2 hackathon</span> <span aria-hidden="true">→</span></button>
     </div>
     <div class="hero-stage">
       <canvas id="auraCanvas" aria-hidden="true"></canvas>
@@ -598,8 +608,36 @@ td .mk.mo{right:3px}
   <section class="sec wrap" id="experience" data-sec="experience">
     <header class="sec-head">
       <p class="eyebrow">Experience</p>
-      <h2>Education &amp; leadership</h2>
+      <h2>Hackathons, education &amp; leadership</h2>
     </header>
+    <h3 class="rec-h">Hackathons</h3>
+    <div class="record-grid">
+      <article class="rec win">
+        <span class="when">Oct – Nov 2026</span>
+        <h3>BIOS V2 hackathon</h3>
+        <p class="where">Thapar Institute, Patiala · team of 2</p>
+        <p class="big">Winner<small>problem statement</small></p>
+        <p>Built SafeTrail, a trail-safety app whose alerts and SOS keep working with no signal and never depend on the AI. I was the top contributor.</p>
+        <button class="open proj" type="button" data-open="safetrail">SafeTrail <span aria-hidden="true">→</span></button>
+      </article>
+      <article class="rec">
+        <span class="when">Sep 2026</span>
+        <h3>Smart India Hackathon</h3>
+        <p class="where">Problem statement SIH26003 · MDoNER · team</p>
+        <p class="big">2<small>builds: web + tablet</small></p>
+        <p>Built Smriti, a memory and cognitive-care companion for elders with dementia in North East India, with a caregiver dashboard.</p>
+        <button class="open proj" type="button" data-open="smriti">Smriti <span aria-hidden="true">→</span></button>
+      </article>
+      <article class="rec">
+        <span class="when">Oct 2026</span>
+        <h3>Homingo Hackathon</h3>
+        <p class="where">Agents track</p>
+        <p class="big">61<small>tests</small></p>
+        <p>Built PRAMAAN, an AI agent that investigates job offers for scams, where fixed rules, not the model, decide the verdict.</p>
+        <button class="open proj" type="button" data-open="pramaan">PRAMAAN <span aria-hidden="true">→</span></button>
+      </article>
+    </div>
+    <h3 class="rec-h next">Education &amp; leadership</h3>
     <div class="record-grid">
       <article class="rec edu">
         <span class="when">2024 – 2028</span>
@@ -753,42 +791,42 @@ const EMAIL = 'hardikpajiala@gmail.com';
 const NEN = [
   { id: 'enh', kanji: '強化系', name: 'Enhancement', role: 'Core CS', short: 'Core CS', hex: '#f0a93b',
     effect: 'The water rose and spilled over the rim.',
-    evidence: ['Python', 'C / C++', 'SQL', 'Data structures & algorithms', 'Object-oriented programming', 'Database normalisation (3NF)'] },
+    evidence: ['Python', 'C / C++', 'SQL', 'Data structures & algorithms', 'Object-oriented programming', 'Java', 'Database normalisation (3NF)'] },
   { id: 'emi', kanji: '放出系', name: 'Emission', role: 'Backend & APIs', short: 'Backend & APIs', hex: '#ff7a59',
     effect: 'The water changed colour.',
-    evidence: ['Node.js', 'Express', 'TypeScript', 'FastAPI', 'PostgreSQL / PostGIS', 'MySQL', 'JWT authentication'] },
+    evidence: ['Node.js', 'Express', 'TypeScript', 'FastAPI', 'PostgreSQL / PostGIS', 'MySQL', 'JWT authentication', 'React', 'Server-Sent Events'] },
   { id: 'tra', kanji: '変化系', name: 'Transmutation', role: 'Data engineering', short: 'Data engineering', hex: '#4fc7e0',
     effect: 'The water looks the same, but its taste changed.',
     evidence: ['Apache Spark / PySpark', 'Delta Lake', 'Apache Kafka', 'Structured Streaming', 'Parquet', 'Data-quality checks'] },
   { id: 'con', kanji: '具現化系', name: 'Conjuration', role: 'Algorithms & design', short: 'Algorithms', hex: '#a98bff',
     effect: 'Crystals formed in the water.',
-    evidence: ['Hungarian algorithm', 'Greedy matching', 'Weighted scoring', 'State machines', 'Simulation'] },
+    evidence: ['Hungarian algorithm', 'Greedy matching', 'Graph colouring', 'Backtracking search', 'Simulated annealing', 'State machines', 'Simulation'] },
   { id: 'man', kanji: '操作系', name: 'Manipulation', role: 'Automation & testing', short: 'Automation', hex: '#5fd68f',
     effect: 'The leaf began to move on its own.',
-    evidence: ['Apache Airflow', 'GitHub Actions CI', 'pytest', 'Vitest'] },
+    evidence: ['Apache Airflow', 'GitHub Actions CI', 'pytest', 'Vitest', 'Benchmark harnesses'] },
   { id: 'spe', kanji: '特質系', name: 'Specialization', role: 'Machine learning & AI', short: 'ML & AI', hex: '#f266b0',
     effect: 'Something unusual happened: the leaf turned scarlet.',
-    evidence: ['TensorFlow / Keras', 'PyTorch', 'Spark MLlib', 'MediaPipe', 'Grad-CAM', 'Claude API (tool use)'] }
+    evidence: ['TensorFlow / Keras', 'PyTorch', 'Spark MLlib', 'MediaPipe', 'Grad-CAM', 'Claude API (tool use)', 'LLM guardrails & evaluation'] }
 ];
 const NEN_BY = Object.fromEntries(NEN.map(n => [n.id, n]));
 
 const PROJECTS = [
-  { id: 'foodbridge', title: 'FoodBridge', sub: 'Backend API & matching engine', date: 'Jul – Sep 2026', team: 'Team of 3 · I owned the backend and matcher',
-    nen: ['emi', 'con', 'man', 'enh'], metric: ['26', 'REST endpoints'],
-    summary: 'Matches donors’ surplus food with shelters before it expires.',
-    problem: 'Shops and restaurants throw away good food while shelters go short. The hard part is getting the right food to the right place before it expires.',
-    stack: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'PostGIS', 'Python', 'FastAPI', 'Vitest', 'pytest'],
+  { id: 'safetrail', title: 'SafeTrail', sub: 'Trail-safety app that keeps SOS working without signal', date: 'Oct – Nov 2026', team: 'BIOS V2 hackathon · team of 2 · top contributor', award: 'Problem statement winner · BIOS V2',
+    nen: ['emi', 'spe', 'man', 'con'], metric: ['82%', 'fewer AI tokens per trip than a naive build'],
+    summary: 'Warns trekkers and pilgrims before danger, keeps their SOS safe with no signal, and gives responders one live map.',
+    problem: 'On treks and pilgrimage routes, signal drops exactly where accidents happen. Tourists need a warning before they walk into danger and an SOS that isn’t lost without network, and responders need one clear picture of who needs help.',
+    stack: ['FastAPI', 'SQLModel', 'React', 'TypeScript', 'Vite PWA', 'MapLibre', 'Server-Sent Events', 'Ed25519', 'LLM APIs', 'pytest'],
     points: [
-      'The backend API, with login (JWT) and role-based access on every route.',
-      'A PostgreSQL + PostGIS database, so distances between donors and shelters are worked out inside the database.',
-      'State machines for every donation, match and pickup. An invalid step, like collecting a cancelled donation, fails loudly instead of corrupting data.',
-      'A matching service in FastAPI. It first removes impossible pairs (too far, not enough space, wrong food type, not enough time), then scores the rest on urgency, distance and capacity.',
-      'Two matching strategies: a fast <b>greedy</b> one that widens its search if nothing is found, and the <b>Hungarian algorithm</b> for the best overall result.',
-      'Tests for both parts: Vitest for the API and pytest for the matcher.'
+      'A phone-first <b>PWA</b> with geofenced danger zones: entering one sets off an alarm, a spoken warning and a red frame.',
+      'An SOS that is saved on the phone and sent when signal returns, with SMS as a fallback.',
+      'A responder view: a live map, SOS calls grouped into incidents, safety checks, and signed digital passes that can be checked offline.',
+      'The <b>AI is never in the emergency path</b>. Alerts, SOS, counts and priority are plain code; the AI only writes and translates safety packs, warnings and incident reports, with a labelled standard text when it can’t be used.',
+      'A budget governor that estimates every AI call first and drops to a smaller model, or to standard text, before it overspends.',
+      'A benchmark that replays a simulated scenario through four builds and measures tokens, cost per trip and per emergency, cache hits and latency.'
     ],
-    facts: [['REST endpoints', '26'], ['Database tables', '10'], ['Score weights', 'urgency .40 · distance .35 · capacity .25'], ['Search radius', '5 → 25 km'], ['Offer expires after', '30 min']],
-    story: { title: 'Why two matching strategies?', body: 'Greedy is fast and easy to explain: the most urgent donation picks first. But that can be wrong overall. Giving donation A its favourite shelter can leave donation B with nothing good. The Hungarian algorithm looks at every pair at once. Try the demo below to see the difference.' },
-    demo: 'assign', links: [] },
+    facts: [['Result', 'Problem statement winner'], ['Tokens per trip vs a naive build', '82% fewer'], ['Repeat-day AI calls served from cache', '72%'], ['Counts correct', '100% (computed, never AI)'], ['Backend tests', '86']],
+    story: { title: 'Why the AI stays out of emergencies', body: 'An SOS can’t wait for a model, a rate limit or a budget. So everything that keeps someone safe runs as plain code, and the AI only writes and translates text. If the AI is slow, over budget or down, the app shows a labelled standard text and nothing else changes.' },
+    demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/BIOS-SafeTrail' }, { label: 'Team repository', href: 'https://github.com/gaurvit06/Safetrail' }] },
   { id: 'cricket', title: 'Cricket Win-Probability Lakehouse', sub: 'Data platform with a live model', date: 'Aug – Sep 2026', team: 'Solo',
     nen: ['tra', 'spe', 'man', 'con'], metric: ['1.67M', 'ball-by-ball rows'],
     summary: 'Turns ball-by-ball cricket data into live win probabilities and a player-impact score.',
@@ -805,6 +843,22 @@ const PROJECTS = [
     facts: [['Match files', '7,009'], ['Rows built', '1,667,611'], ['Full build time', '180 s on a laptop'], ['Model AUC', '0.777'], ['Calibration error', '1.8 pp'], ['Accuracy, early → late in a chase', '58.5% → 83.7%'], ['Quality checks passing', '19 / 19'], ['Tests', '14 + CI']],
     story: { title: 'The bug the tests caught', body: 'The first integration test finished with zero balls in the table. Spark had quietly re-run a cached step, the “newer version” filter came back empty, and the update deleted everything. The fix was to take a true snapshot with <code>localCheckpoint()</code> and to write the balls before the match record. Without the test, that bug would have shipped.' },
     demo: 'wpa', links: [{ label: 'Repository', href: 'https://github.com/pajiala99/cricket-winprob-lakehouse' }] },
+  { id: 'foodbridge', title: 'FoodBridge', sub: 'Backend API & matching engine', date: 'Jul – Sep 2026', team: 'Team of 3 · I owned the backend and matcher',
+    nen: ['emi', 'con', 'man', 'enh'], metric: ['26', 'REST endpoints'],
+    summary: 'Matches donors’ surplus food with shelters before it expires.',
+    problem: 'Shops and restaurants throw away good food while shelters go short. The hard part is getting the right food to the right place before it expires.',
+    stack: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'PostGIS', 'Python', 'FastAPI', 'Vitest', 'pytest'],
+    points: [
+      'The backend API, with login (JWT) and role-based access on every route.',
+      'A PostgreSQL + PostGIS database, so distances between donors and shelters are worked out inside the database.',
+      'State machines for every donation, match and pickup. An invalid step, like collecting a cancelled donation, fails loudly instead of corrupting data.',
+      'A matching service in FastAPI. It first removes impossible pairs (too far, not enough space, wrong food type, not enough time), then scores the rest on urgency, distance and capacity.',
+      'Two matching strategies: a fast <b>greedy</b> one that widens its search if nothing is found, and the <b>Hungarian algorithm</b> for the best overall result.',
+      'Tests for both parts: Vitest for the API and pytest for the matcher.'
+    ],
+    facts: [['REST endpoints', '26'], ['Database tables', '10'], ['Score weights', 'urgency .40 · distance .35 · capacity .25'], ['Search radius', '5 → 25 km'], ['Offer expires after', '30 min']],
+    story: { title: 'Why two matching strategies?', body: 'Greedy is fast and easy to explain: the most urgent donation picks first. But that can be wrong overall. Giving donation A its favourite shelter can leave donation B with nothing good. The Hungarian algorithm looks at every pair at once. Try the demo below to see the difference.' },
+    demo: 'assign', links: [{ label: 'Repository', href: 'https://github.com/pajiala99/project_SE3' }] },
   { id: 'pramaan', title: 'PRAMAAN', sub: 'AI agent that checks job offers for scams', date: 'Oct 2026', team: 'Homingo Hackathon · Agents track',
     nen: ['spe', 'con', 'man'], metric: ['5', 'investigation tools'],
     summary: 'An AI agent that investigates a job offer and gives a verdict backed by cited evidence.',
@@ -821,6 +875,21 @@ const PROJECTS = [
     facts: [['Investigation tools', '5'], ['Possible verdicts', 'Likely genuine · Suspicious · Likely scam · Not enough evidence'], ['Tool-call limit', '8'], ['Tests', '61']],
     story: { title: 'Why the AI doesn’t decide', body: 'A scam message can contain hidden instructions aimed at the AI, and models can be talked into things. So Claude only chooses which checks to run. The verdict comes from fixed rules over cited evidence, and anyone can see exactly which rule fired.' },
     demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/pramaan' }] },
+  { id: 'smriti', title: 'Smriti', sub: 'Memory and care companion for elders with dementia', date: 'Sep 2026', team: 'Smart India Hackathon · SIH26003 · team',
+    nen: ['spe', 'emi', 'con'], metric: ['2', 'builds: web app and Flutter tablet app'],
+    summary: 'Helps elders with dementia in North East India stay oriented, and shows caregivers how they are doing.',
+    problem: 'Problem statement SIH26003, from the Ministry of Development of North Eastern Region, asked for cognitive games and memory assistance for elderly dementia patients in the North East, where internet is patchy and generic apps ignore local culture.',
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Web Audio API', 'Web Speech API', 'Flutter', 'SQLite'],
+    points: [
+      'An <b>elder companion screen</b>: a large clock and orientation card, read-aloud, audio clues, the day’s routine, family voice messages and a one-tap SOS bar.',
+      'A <b>caregiver dashboard</b>: cognitive-engagement and sundowning charts, routine pace, tasks, voice memos and a geofence map.',
+      'Games rooted in local culture, like a Bihu rhythm game, with an Assamese folk-flute sound synthesised in the browser (pentatonic scale, vibrato and a bamboo-like filter).',
+      'An offline-first Flutter tablet build: a local SQLite store, a 5-tone hearing screen that switches the app to visual cues when high tones are missed, and the Luka-Suri memory game with adaptive difficulty.',
+      'A decline detector that raises an alert when scores drop by 15% or more across recent sessions.'
+    ],
+    facts: [['Problem statement', 'SIH26003 · MDoNER'], ['Builds', 'Web app + Flutter tablet app'], ['Hearing screen', '5 tones, 500 Hz – 6 kHz'], ['Decline alert', '15%+ drop, last 3 vs previous 3 sessions']],
+    story: { title: 'Designed for the person, not the demo', body: 'The users are elderly, may be losing their hearing, and live in the North East. So the screen reads itself aloud, hearing loss changes how the app speaks to them, and the games and sounds come from Assamese culture instead of generic puzzles.' },
+    demo: null, links: [{ label: 'Web app', href: 'https://github.com/urgirlgeet/Smriti' }, { label: 'Flutter app', href: 'https://github.com/khushidangi/Smriti' }] },
   { id: 'isl', title: 'Indian Sign Language Recognition', sub: 'Webcam signs to spoken words', date: 'Oct 2026', team: 'College minor project · team',
     nen: ['spe', 'tra'], metric: ['94.5%', 'accuracy from 5 examples per word'],
     summary: 'Recognises Indian Sign Language words from a webcam and speaks them aloud.',
@@ -836,6 +905,19 @@ const PROJECTS = [
     facts: [['Words recognised', '61'], ['Video clips', '1,210'], ['Accuracy, 1 example per word', '49.5% (chance: 1.6%)'], ['Accuracy, 5 examples per word', '94.5%'], ['Effect of mirrored training data', '−12 points'], ['With one hand hidden', '31.9%'], ['Training time', '2.2 min']],
     story: { title: 'Why 100% was not the result', body: 'Every word was recorded by one person in one session, so test clips were near-copies of training clips. A score of 100% only proved the test was too easy. The real evaluation asked harder questions instead.' },
     demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/isl-recognition' }] },
+  { id: 'timetable', title: 'Academic Timetable Generator', sub: 'Clash-free timetables for a whole department', date: 'Oct 2026', team: '',
+    nen: ['con', 'enh'], metric: ['2-stage', 'backtracking + simulated annealing'],
+    summary: 'Builds clash-free weekly timetables for a department, and explains when no timetable can exist.',
+    problem: 'Timetabling a department by hand takes days. No batch, teacher or room can be double-booked, labs need lab rooms, and people want sensible days.',
+    stack: ['Java', 'JavaFX', 'MySQL', 'JDBC', 'Maven'],
+    points: [
+      'Modelled the problem as <b>constrained graph colouring</b>: classes are vertices, clashes are edges and time slots are colours.',
+      'Before searching, a maximum-clique bound and Hall’s-theorem matching checks look for proof that no timetable exists, and explain why in plain words.',
+      'A <b>backtracking solver</b> (MRV ordering, forward checking, exact room matching, random restarts) meets every hard constraint.',
+      '<b>Simulated annealing</b> then improves it: fewer idle gaps, even teaching load, spaced-out sessions and fewer building changes.',
+      'A JavaFX desktop app over MySQL for rooms, batches, faculty and courses.'
+    ],
+    facts: null, story: null, demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/academic-timetable-generator' }] },
   { id: 'ecom', title: 'E-Commerce Data Lake Pipeline', sub: 'Real-time clickstream pipeline', date: 'In progress', team: 'Team of 3',
     nen: ['tra', 'emi'], metric: ['Live', 'Kafka → Spark → Parquet'],
     summary: 'Streams website click events from Kafka into a clean, query-ready data lake.',
@@ -881,8 +963,8 @@ const LINES = {
   top: "I'm Kurapika, your guide to Hardik's work. Every number on this page is real. Ask me anything.",
   about: "He works across the stack: APIs, data pipelines, algorithms and models. That's uncommon at his stage.",
   skills: 'Click a skill area and watch the glass react.',
-  projects: 'Seven projects. Open one for the full story. FoodBridge has a demo worth trying.',
-  experience: 'Leadership counts too. Three hundred classmates rely on him to pass information on accurately.',
+  projects: 'Ten projects. SafeTrail won its problem statement at BIOS V2. FoodBridge has a demo worth trying.',
+  experience: 'Three hackathons, one problem statement won. And three hundred classmates rely on him to pass information on accurately.',
   contact: 'If his work fits what you need, write to him. The email is right there.',
   scarlet: '…You noticed my eyes. Let’s continue.',
   emperor: 'An easter egg: Emperor Time, for thirty seconds. It changes nothing on his record.',
@@ -994,18 +1076,20 @@ function renderFilters() {
   $('#filters').innerHTML = `<button class="fchip" type="button" data-filter="all" aria-pressed="true">All projects</button>` +
     NEN.map(n => `<button class="fchip" type="button" data-filter="${n.id}" style="--c:var(--${n.id})" aria-pressed="false"><i></i>${esc(n.short)}</button>`).join('');
 }
-const FEATURED = 4; // the first four projects get full cards; the rest go in the compact list
+const FEATURED = 6; // the first six projects get full cards; the rest go in the compact list
 const metaHTML = p => `<p class="meta"><span>${esc(p.date)}</span>${p.team ? `<span>${esc(p.team)}</span>` : ''}</p>`;
+const awardHTML = p => p.award ? `<p class="award">🏆 ${esc(p.award)}</p>` : '';
 const metricHTML = p => `<p class="metric"><b>${esc(p.metric[0])}</b><span>${esc(p.metric[1])}</span></p>`;
 function renderHunts() {
   $('#huntGrid').innerHTML = PROJECTS.slice(0, FEATURED).map(p => `<article class="card" data-id="${p.id}" data-nen="${p.nen.join(' ')}">
     ${metaHTML(p)}
+    ${awardHTML(p)}
     <h3>${esc(p.title)}</h3>
     <p class="sum">${esc(p.summary)}</p>
     <div class="card-foot">${metricHTML(p)}<button class="open" type="button" data-open="${p.id}">View details <span aria-hidden="true">→</span></button></div>
   </article>`).join('');
   $('#miniList').innerHTML = PROJECTS.slice(FEATURED).map(p => `<li class="mini" data-id="${p.id}" data-nen="${p.nen.join(' ')}">
-    <div class="mini-main">${metaHTML(p)}<h4>${esc(p.title)}</h4><p class="sum">${esc(p.summary)}</p></div>
+    <div class="mini-main">${metaHTML(p)}${awardHTML(p)}<h4>${esc(p.title)}</h4><p class="sum">${esc(p.summary)}</p></div>
     ${metricHTML(p)}
     <button class="open" type="button" data-open="${p.id}">Details <span aria-hidden="true">→</span></button>
   </li>`).join('');
@@ -1295,8 +1379,12 @@ Contact: ${EMAIL}; linkedin.com/in/hardik-pajiala; github.com/pajiala99. Looking
 5) Lost & Found Management System (May-Jun 2026): MySQL schema normalised to 3NF with 5 entities covering claims and admin verification; web interface to report and claim items.
 6) PRAMAAN, recruitment-scam investigation agent (Oct 2026, Homingo Hackathon, Agents track). Python, Claude API tool use, Streamlit. Claude plans the investigation and calls five tools: regex entity extraction, red-flag rules (fees, UPI/crypto payment, OTP requests, WhatsApp-only, no interview), domain checks (free-mail recruiter, brand-lookalike domains, RDAP registration age, HTTPS), careers-page verification and scam-report search through Claude's server-side web search. The model never decides the verdict: findings become cited evidence tagged by one of five independent sources, and an ordered rulebook picks Likely genuine, Suspicious, Likely scam or Not enough evidence; it never calls an offer a scam on a single source. Web URLs only count if the search tool really returned them. Tool-call budget (8), timeouts, a fixed playbook when the API is unavailable, prompt-injection test, reusable agent core, live tool-call trace, 61 pytest tests.
 7) Indian Sign Language word recognition (Oct 2026, college minor project in a team). Python, PyTorch, MediaPipe. Pose and hand keypoints become signer-invariant features (64 frames, plus velocities) for a BiLSTM with temporal attention, compared with SVM and Random Forest baselines; 61 word classes, 1,210 clips. The standard split is saturated (one signer, so even Random Forest hits 100%), so he evaluated harder protocols: 49.5% top-1 from one example per word (chance 1.6%) and 94.5% from five; robust to rotation, scale, shift and tempo; occluding one hand drops it to 31.9%. Mirroring augmentation hurt by about 12 points. Live webcam demo with text and Indian-English speech output.
+8) SafeTrail (Oct-Nov 2026, BIOS V2 hackathon at Thapar, team of 2 with Gaurvit; Hardik was the top contributor). WON its problem statement. A trail-safety PWA for treks, pilgrimages and national parks: geofenced danger zones that alert with an alarm, voice and a red frame; an SOS saved on the phone and sent when signal returns, with SMS as a fallback; a responder view with a live map, SOS grouped into incidents, safety checks and Ed25519-signed digital passes that work offline; a family link that shows trip status but never location. The AI is never in the emergency path: alerts, SOS, counts and priority are plain code, and LLMs only write and translate safety packs, warnings, incident reports and summaries, with a labelled standard text when the AI can't be used. A budget governor estimates each AI call and drops to a smaller model or standard text before it overspends; validators reject invented facts; prompt-injection attempts become flags, never blocks. FastAPI + SQLModel backend, React + TypeScript + Vite PWA with MapLibre, Server-Sent Events with a polling fallback for free tunnels; 86 backend tests. Benchmark of four builds on a simulated 100-trip scenario: 82% fewer tokens per trip than a naive build; on a repeat day 72% of AI calls came from an exact cache; counts 100% correct. Repo: github.com/pajiala99/BIOS-SafeTrail.
+9) Smriti (Sep 2026, Smart India Hackathon, problem statement SIH26003 from the Ministry of Development of North Eastern Region, team project built on Hardik's laptop). A memory and cognitive-care companion for elders with dementia in North East India. Web app (React, TypeScript, Vite, Tailwind): an elder screen with a large orientation clock, read-aloud (Web Speech), audio clues, daily routine, family voice messages, a Bihu rhythm game and an SOS bar; a caregiver dashboard with cognitive-engagement and sundowning charts, routine pace, tasks, voice memos and a geofence map; an Assamese folk-flute sound synthesised with the Web Audio API. Flutter tablet build: offline SQLite, a 5-tone hearing screen (500 Hz to 6 kHz) that switches the app to visual cues, the Luka-Suri memory game with adaptive difficulty, and a decline alert on a 15%+ score drop. No result is claimed for SIH.
+10) Academic Timetable Generator (Oct 2026). Java, JavaFX, MySQL via JDBC. Timetabling as constrained graph colouring; maximum-clique and Hall's-theorem checks prove infeasibility before search and explain it; backtracking with MRV, forward checking, exact room matching and restarts meets every hard constraint; simulated annealing optimises soft constraints (idle gaps, teaching load, spacing, building changes).
+Hackathons: BIOS V2 (won the problem statement, SafeTrail), Smart India Hackathon (Smriti), Homingo Hackathon Agents track (PRAMAAN).
 Leadership: Batch Group Leader at Thapar (2025-present), the link between faculty and batchmates, moderates a 300-student community. Volunteer at Saturnalia 2025 (Thapar's annual fest), coordinated logistics with 25 volunteers, registrations and stage events.
-Skills: Python, SQL, TypeScript/JavaScript, C/C++, R; Spark, Delta Lake, Kafka, Airflow; Node.js, Express, FastAPI, PostgreSQL/PostGIS, MySQL; TensorFlow, Keras, PyTorch, MediaPipe, Spark MLlib; LLM agents with the Claude API (tool use, web search); pytest, Vitest, Git, GitHub Actions.
+Skills: Python, SQL, TypeScript/JavaScript, Java, C/C++, R; Spark, Delta Lake, Kafka, Airflow; Node.js, Express, FastAPI, PostgreSQL/PostGIS, MySQL, React, PWAs, Server-Sent Events; TensorFlow, Keras, PyTorch, MediaPipe, Spark MLlib; LLM agents with the Claude API (tool use, web search), LLM guardrails, budgets and evaluation; pytest, Vitest, Git, GitHub Actions.
 Honest gaps: no industry internship yet; no cloud deployments yet (projects run locally).
 Off the clock: gym, running, music, anime.`;
 
@@ -1309,15 +1397,19 @@ const INTENTS = [
   { k: ['kafka', 'ecommerce', 'e commerce', 'clickstream', 'parquet', 'etl'], a: 'The e-commerce pipeline is still in progress, in a team of three: Kafka clickstream events, parsed and validated in Spark Structured Streaming, written out as Parquet. He was the one who untangled the Kafka–Spark connector and Java version conflicts.' },
   { k: ['malaria', 'cnn', 'grad cam', 'gradcam', 'vision', 'image', 'images', 'deep learning', 'tensorflow', 'keras', 'medical'], a: 'The malaria classifier is a TensorFlow/Keras CNN with 96% test accuracy, checked with precision, recall, F1, ROC and a confusion matrix. Grad-CAM heatmaps show where it looked. In medicine, the right answer for the wrong reason is still wrong.' },
   { k: ['lost', 'found', 'mysql', '3nf', 'normalisation', 'normalization', 'schema', 'database', 'dbms', 'sql'], a: 'His database work ranges from the Lost & Found system, a 3NF MySQL schema of five entities for claims and admin verification, to FoodBridge’s ten-table PostgreSQL and PostGIS schema with spatial queries.' },
-  { k: ['pramaan', 'agent', 'agents', 'agentic', 'llm', 'llms', 'claude', 'anthropic', 'genai', 'generative ai', 'tool use', 'scam', 'fraud', 'hackathon'], a: 'PRAMAAN is his hackathon agent for spotting recruitment scams. Claude chooses which of five checks to run, from domain registration age to a web search for complaints, but fixed rules decide the verdict from cited evidence. It never calls an offer a scam on a single source, and it has 61 tests.' },
+  { k: ['safetrail', 'safe trail', 'bios', 'trek', 'trekking', 'pilgrim', 'pilgrimage', 'sos', 'emergency', 'geofence', 'responder', 'pwa', 'react', 'frontend', 'front end', 'won', 'win', 'winner', 'award', 'prize'], a: 'SafeTrail won its problem statement at the BIOS V2 hackathon, with Hardik as the top contributor in a team of two. It warns trekkers before danger, keeps their SOS safe with no signal, and gives responders a live map. The AI is never in the emergency path: it only writes text, under a budget, with a standard fallback.' },
+  { k: ['hackathon', 'hackathons', 'sih', 'smart india', 'competition', 'competitions'], a: 'Three hackathons. At BIOS V2 his team won its problem statement with SafeTrail. At the Smart India Hackathon his team built Smriti for elders with dementia (SIH26003). At the Homingo Hackathon he built PRAMAAN, an AI agent for recruitment scams.' },
+  { k: ['smriti', 'dementia', 'elder', 'elderly', 'alzheimer', 'memory', 'caregiver', 'north east', 'assam', 'assamese', 'flutter', 'mobile', 'tablet'], a: 'Smriti was his team’s Smart India Hackathon project, SIH26003: a memory and care companion for elders with dementia in North East India. There is a React web app with an elder screen and a caregiver dashboard, and an offline Flutter tablet build with a hearing screen and an adaptive memory game.' },
+  { k: ['timetable', 'scheduling', 'schedule', 'graph colouring', 'graph coloring', 'backtracking', 'annealing', 'java', 'javafx', 'constraint'], a: 'His timetable generator treats scheduling as graph colouring. Clique and Hall’s-theorem checks prove when no timetable can exist, backtracking meets every hard constraint, and simulated annealing improves the soft ones. It is a JavaFX app over MySQL.' },
+  { k: ['pramaan', 'agent', 'agents', 'agentic', 'llm', 'llms', 'claude', 'anthropic', 'genai', 'generative ai', 'tool use', 'scam', 'fraud'], a: 'PRAMAAN is his hackathon agent for spotting recruitment scams. Claude chooses which of five checks to run, from domain registration age to a web search for complaints, but fixed rules decide the verdict from cited evidence. It never calls an offer a scam on a single source, and it has 61 tests.' },
   { k: ['sign language', 'isl', 'mediapipe', 'bilstm', 'lstm', 'pytorch', 'torch', 'gesture', 'webcam', 'keypoint', 'keypoints', 'accessibility'], a: 'His sign-language project turns MediaPipe hand and pose keypoints into words, then speech, live on a webcam, using a BiLSTM with attention in PyTorch. The standard test split was too easy, so he measured harder things: 49.5% from one example per word, and an ablation where mirroring hurt by 12 points.' },
   { k: ['big data', 'ml engineer', 'data engineer', 'specialist', 'versatile', 'generalist', 'kind of engineer', 'what type', 'which role', 'dominant', 'only data', 'only ml', 'full stack', 'one trick'], a: 'He isn\u2019t limited to one area. His projects cover backend APIs, data engineering, algorithms, machine learning, AI agents and automated testing. If you need someone who can build the API, the pipeline and the model, and test all three, that is his profile.' },
   { k: ['ml', 'machine learning', 'model', 'models', 'ai', 'calibration', 'auc', 'accuracy'], a: 'His ML work is measured, not decorated. A Spark MLlib gradient-boosted model scored AUC 0.777 with 1.8 points of calibration error on seasons it never saw, chosen over logistic regression on validation log loss. The malaria CNN reached 96%, and his sign-language BiLSTM was judged on harder protocols than its saturated test split. He grades probabilities, not just accuracy.' },
   { k: ['education', 'cgpa', 'gpa', 'grade', 'grades', 'college', 'university', 'thapar', 'degree', 'coursework', 'graduate', 'graduation', 'student'], a: 'B.E. Computer Engineering at Thapar Institute of Engineering & Technology, 2024 to 2028, with a CGPA of 8.50 out of 10. His coursework includes DSA, DBMS, OOP, software engineering, probability and statistics, machine learning and deep learning.' },
   { k: ['leader', 'leadership', 'lead', 'volunteer', 'saturnalia', 'communication', 'soft skill', 'people', 'team', 'teamwork', 'manage'], a: 'He has been his batch’s group leader since 2025, the link between faculty and a 300-student community. At Saturnalia 2025 he coordinated logistics with 25 volunteers, covering registrations and several stage events. People trust him with information. That matters.' },
-  { k: ['skill', 'skills', 'stack', 'language', 'languages', 'tools', 'tech', 'technologies', 'python', 'c++', 'know'], a: 'Languages: Python, SQL, TypeScript/JavaScript, C/C++, R. Data: Spark, Delta Lake, Kafka, Airflow. Backend: Node.js, Express, FastAPI, PostgreSQL/PostGIS, MySQL. ML: PyTorch, TensorFlow, Keras, MediaPipe, Spark MLlib. AI agents: the Claude API with tool use. Quality: pytest, Vitest, GitHub Actions.' },
+  { k: ['skill', 'skills', 'stack', 'language', 'languages', 'tools', 'tech', 'technologies', 'python', 'c++', 'know'], a: 'Languages: Python, SQL, TypeScript/JavaScript, Java, C/C++, R. Data: Spark, Delta Lake, Kafka, Airflow. Backend: Node.js, Express, FastAPI, PostgreSQL/PostGIS, MySQL. Apps: React PWAs, JavaFX. ML: PyTorch, TensorFlow, Keras, MediaPipe, Spark MLlib. AI agents: the Claude API with tool use. Quality: pytest, Vitest, GitHub Actions.' },
   { k: ['test', 'tests', 'testing', 'quality', 'ci', 'bug', 'bugs'], a: 'He tests what he builds. The lakehouse has 14 pytest tests and CI, and one integration test caught a caching bug that silently deleted every row during a MERGE. FoodBridge’s matcher and API are covered with pytest and Vitest.' },
-  { k: ['strongest', 'best', 'impressive', 'proud', 'favourite', 'favorite', 'recommend', 'which project', 'top project'], a: 'It depends on the role. For backend, FoodBridge. For data engineering, the cricket lakehouse: it survived a bug that deleted every row because the tests caught it. For ML, the lakehouse again for its calibration work, or the sign-language model for computer vision. For AI agents, PRAMAAN.' },
+  { k: ['strongest', 'best', 'impressive', 'proud', 'favourite', 'favorite', 'recommend', 'which project', 'top project'], a: 'It depends on the role. For backend, FoodBridge. For data engineering, the cricket lakehouse: it survived a bug that deleted every row because the tests caught it. For ML, the lakehouse again for its calibration work, or the sign-language model for computer vision. For AI agents, PRAMAAN. And SafeTrail is the one that won.' },
   { k: ['weak', 'weakness', 'improve', 'lack', 'gap', 'gaps', 'concern', 'downside', 'missing'], a: 'Honestly? No industry internship yet, and no cloud deployments. Every project here is academic or self-directed and runs locally. What he has instead is evidence: tests, measured results, and written accounts of what went wrong.' },
   { k: ['intern', 'internship', 'available', 'availability', 'job', 'looking', 'open to', 'opportunit'], a: `He's looking for engineering internships and collaborations in software, data or ML. For dates and details, ask him directly: ${EMAIL}.` },
   { k: ['kurapika', 'who are you', 'anime', 'hunter', 'nen', 'chain', 'chains', 'scarlet', 'phantom', 'gon', 'killua'], a: "I'm Kurapika, a character from Hunter × Hunter, here as the guide. The anime theme is decoration. Everything I tell you comes from his real record." },
@@ -1330,16 +1422,16 @@ INTENTS.forEach(it => { it.re = it.k.map(k => { const n = norm(k); return { w: n
 const NOT_ON_RECORD = [
   [['kubernetes', 'k8s', 'docker', 'terraform', 'containers'], 'GitHub Actions CI and Airflow orchestration, all run locally'],
   [['aws', 'gcp', 'azure', 'cloud', 'databricks', 'snowflake', 'bigquery', 'redshift', 'emr', 'glue'], 'Spark and Delta Lake, run locally rather than on a cloud platform'],
-  [['react', 'angular', 'vue', 'frontend', 'front end', 'css'], 'backend APIs. On FoodBridge a teammate owned the React frontend'],
+  [['angular', 'vue', 'svelte'], 'React and TypeScript, in SafeTrail'],
   [['mongodb', 'mongo', 'redis', 'cassandra', 'dynamodb'], 'PostgreSQL/PostGIS and MySQL'],
   [['django', 'flask', 'spring', 'rails', 'laravel'], 'FastAPI and Node.js/Express'],
   [['dbt', 'hadoop', 'hive'], 'Spark SQL and Delta Lake'],
-  [['java', 'scala', 'kotlin', 'golang', 'rust', 'ruby', 'php', 'c#'], 'Python, SQL, TypeScript and C/C++'],
+  [['scala', 'kotlin', 'golang', 'rust', 'ruby', 'php', 'c#'], 'Python, SQL, TypeScript, Java and C/C++'],
   [['tableau', 'power bi', 'powerbi', 'looker'], 'a Streamlit dashboard reading Delta tables'],
   [['langchain', 'rag', 'openai', 'gpt'], 'the Claude API used directly, with tool use and web search, in his PRAMAAN agent'],
-  [['flutter', 'swift', 'android', 'ios', 'mobile'], 'web backends; there is no mobile work on his record']
+  [['swift', 'android', 'ios', 'react native'], 'phone-first PWAs in SafeTrail, and a Flutter tablet app built by his Smart India Hackathon team']
 ].map(([ks, near]) => ({ ks, near, re: ks.map(k => new RegExp('\\b' + reEsc(norm(k)) + (/\w$/.test(k) ? '\\b' : ''))) }));
-const TOOL_NAME = { aws: 'AWS', gcp: 'GCP', emr: 'EMR', k8s: 'Kubernetes', llm: 'LLMs', llms: 'LLMs', rag: 'RAG', gpt: 'GPT', css: 'CSS', php: 'PHP', ios: 'iOS', dbt: 'dbt', 'power bi': 'Power BI', powerbi: 'Power BI', genai: 'GenAI', 'generative ai': 'Generative AI', openai: 'OpenAI', pytorch: 'PyTorch', torch: 'PyTorch', mongodb: 'MongoDB', mongo: 'MongoDB', dynamodb: 'DynamoDB', bigquery: 'BigQuery', golang: 'Go', langchain: 'LangChain', 'front end': 'Frontend work', frontend: 'Frontend work', mobile: 'Mobile development', cloud: 'Cloud platforms', containers: 'Containers', 'c#': 'C#' };
+const TOOL_NAME = { svelte: 'Svelte', 'react native': 'React Native', aws: 'AWS', gcp: 'GCP', emr: 'EMR', k8s: 'Kubernetes', llm: 'LLMs', llms: 'LLMs', rag: 'RAG', gpt: 'GPT', css: 'CSS', php: 'PHP', ios: 'iOS', dbt: 'dbt', 'power bi': 'Power BI', powerbi: 'Power BI', genai: 'GenAI', 'generative ai': 'Generative AI', openai: 'OpenAI', pytorch: 'PyTorch', torch: 'PyTorch', mongodb: 'MongoDB', mongo: 'MongoDB', dynamodb: 'DynamoDB', bigquery: 'BigQuery', golang: 'Go', langchain: 'LangChain', 'front end': 'Frontend work', frontend: 'Frontend work', mobile: 'Mobile development', cloud: 'Cloud platforms', containers: 'Containers', 'c#': 'C#' };
 function answerLocal(q) {
   const t = norm(q); let best = null, score = 0;
   for (const g of NOT_ON_RECORD) { const i = g.re.findIndex(r => r.test(t)); if (i >= 0) { const k = g.ks[i]; const name = TOOL_NAME[k] || k[0].toUpperCase() + k.slice(1); return `${name}: not on his record, and I won't claim it for him. The closest he has worked with is ${g.near}. If it matters for the role, ask him directly: ${EMAIL}.`; } }

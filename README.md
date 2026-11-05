@@ -7,8 +7,9 @@ problem → what I built → results → what I learned, a skills list that link
 projects that use it, and a guide character who answers questions from my record. Themed as a
 fan homage to Hunter × Hunter.
 
-Projects featured: FoodBridge, Cricket Win-Probability Lakehouse, PRAMAAN (AI agent),
-Indian Sign Language Recognition, E-Commerce Data Lake Pipeline, Malaria Cell Classification,
-Lost & Found System.
+Projects featured: SafeTrail (problem statement winner, BIOS V2 hackathon), Cricket
+Win-Probability Lakehouse, FoodBridge, PRAMAAN (AI agent), Smriti (Smart India Hackathon),
+Indian Sign Language Recognition, Academic Timetable Generator, E-Commerce Data Lake Pipeline,
+Malaria Cell Classification, Lost & Found System.
 
 Run locally: open `index.html` in a browser, or `python3 -m http.server` in this folder.
