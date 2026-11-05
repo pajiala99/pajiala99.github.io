@@ -1,0 +1,265 @@
+{
+ "classes": [
+  "bear",
+  "break",
+  "brinjal",
+  "budget",
+  "busy",
+  "cabbage",
+  "carrot",
+  "cauliflower",
+  "chilli",
+  "clean",
+  "close",
+  "come",
+  "cook",
+  "crocodile",
+  "cry",
+  "cucumber",
+  "deer",
+  "drink",
+  "elephant",
+  "exam",
+  "fedup",
+  "fever",
+  "giraffe",
+  "give",
+  "good_afternoon",
+  "good_morning",
+  "hello",
+  "hug",
+  "injury",
+  "interview",
+  "jump",
+  "karnataka",
+  "key",
+  "knife",
+  "lemon",
+  "lion",
+  "man",
+  "maths",
+  "maybe",
+  "monkey",
+  "onion",
+  "peacock",
+  "pigeon",
+  "pour",
+  "radish",
+  "sparrow",
+  "still",
+  "switch",
+  "tea",
+  "temple",
+  "thank_you",
+  "tiger",
+  "turtle",
+  "umbrella",
+  "uncle",
+  "vegetables",
+  "volcano",
+  "what_is_your_name",
+  "wife",
+  "writer",
+  "wrong"
+ ],
+ "clips": [
+  {
+   "file": "hello.mp4",
+   "word": "hello",
+   "source": "Hello/WIN_20231103_13_22_54_Pro.mp4",
+   "fps": 29.99759880900927,
+   "frame_count": 122,
+   "python": {
+    "top1": "hello",
+    "p": 0.92026686668396,
+    "top5": [
+     [
+      "hello",
+      0.92026686668396
+     ],
+     [
+      "tea",
+      0.008631151169538498
+     ],
+     [
+      "brinjal",
+      0.007706552278250456
+     ],
+     [
+      "switch",
+      0.00527708325535059
+     ],
+     [
+      "man",
+      0.004693785682320595
+     ]
+    ]
+   }
+  },
+  {
+   "file": "thank_you.mp4",
+   "word": "thank_you",
+   "source": "Thank you/WIN_20231103_13_48_35_Pro.mp4",
+   "fps": 30.0,
+   "frame_count": 128,
+   "python": {
+    "top1": "thank_you",
+    "p": 0.9341752529144287,
+    "top5": [
+     [
+      "thank_you",
+      0.9341752529144287
+     ],
+     [
+      "onion",
+      0.004764861427247524
+     ],
+     [
+      "cry",
+      0.0044054859317839146
+     ],
+     [
+      "hello",
+      0.003858019597828388
+     ],
+     [
+      "bear",
+      0.0036250499542802572
+     ]
+    ]
+   }
+  },
+  {
+   "file": "good_morning.mp4",
+   "word": "good_morning",
+   "source": "Good Morning/WIN_20231103_13_18_31_Pro.mp4",
+   "fps": 30.0,
+   "frame_count": 148,
+   "python": {
+    "top1": "good_morning",
+    "p": 0.903491735458374,
+    "top5": [
+     [
+      "good_morning",
+      0.903491735458374
+     ],
+     [
+      "fever",
+      0.004930200055241585
+     ],
+     [
+      "maybe",
+      0.003973294049501419
+     ],
+     [
+      "what_is_your_name",
+      0.003897731425240636
+     ],
+     [
+      "good_afternoon",
+      0.0033260765485465527
+     ]
+    ]
+   }
+  },
+  {
+   "file": "tea.mp4",
+   "word": "tea",
+   "source": "Tea/WIN_20230831_12_06_37_Pro.mp4",
+   "fps": 29.998789434181536,
+   "frame_count": 242,
+   "python": {
+    "top1": "tea",
+    "p": 0.7391065955162048,
+    "top5": [
+     [
+      "tea",
+      0.7391065955162048
+     ],
+     [
+      "hello",
+      0.06726385653018951
+     ],
+     [
+      "brinjal",
+      0.05324087664484978
+     ],
+     [
+      "giraffe",
+      0.008852331899106503
+     ],
+     [
+      "good_afternoon",
+      0.006343530956655741
+     ]
+    ]
+   }
+  },
+  {
+   "file": "elephant.mp4",
+   "word": "elephant",
+   "source": "Elephant/WIN_20231102_12_59_25_Pro.mp4",
+   "fps": 30.0,
+   "frame_count": 204,
+   "python": {
+    "top1": "elephant",
+    "p": 0.9152873754501343,
+    "top5": [
+     [
+      "elephant",
+      0.9152873754501343
+     ],
+     [
+      "lemon",
+      0.015024982392787933
+     ],
+     [
+      "wrong",
+      0.004075175616890192
+     ],
+     [
+      "carrot",
+      0.003624193836003542
+     ],
+     [
+      "fedup",
+      0.003125387243926525
+     ]
+    ]
+   }
+  },
+  {
+   "file": "what_is_your_name.mp4",
+   "word": "what_is_your_name",
+   "source": "What is your Name/WIN_20230901_09_59_18_Pro.mp4",
+   "fps": 30.0,
+   "frame_count": 216,
+   "python": {
+    "top1": "what_is_your_name",
+    "p": 0.9102135300636292,
+    "top5": [
+     [
+      "what_is_your_name",
+      0.9102135300636292
+     ],
+     [
+      "writer",
+      0.005116678308695555
+     ],
+     [
+      "budget",
+      0.004728997591882944
+     ],
+     [
+      "key",
+      0.004614673089236021
+     ],
+     [
+      "deer",
+      0.003436520230025053
+     ]
+    ]
+   }
+  }
+ ]
+}

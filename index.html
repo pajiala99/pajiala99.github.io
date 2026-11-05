@@ -377,6 +377,54 @@ td .mk.mo{right:3px}
 .wpa .tick{stroke:var(--line-soft);stroke-width:1}
 .wpa .tl{fill:var(--muted);font:500 10.5px var(--mono)}
 .wpa .val{fill:var(--text);font:600 12.5px var(--mono)}
+.live-tag{display:inline-flex;align-items:center;gap:7px;margin:0 0 8px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--man)}
+.live-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--man);box-shadow:0 0 8px var(--man)}
+.demo .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.isl-modes{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 14px}
+.isl-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 22px;align-items:start}
+.isl-view{position:relative;border-radius:12px;overflow:hidden;background:#05070f;border:1px solid var(--line-soft);aspect-ratio:4/3;display:grid;place-items:center}
+.isl-view canvas{width:100%;height:100%;object-fit:contain;display:block}
+.isl-view .ph{position:absolute;margin:0;padding:0 24px;text-align:center;color:var(--muted);font-size:14px}
+.isl-badge{position:absolute;left:10px;top:10px;margin:0;padding:3px 10px;border-radius:999px;background:rgba(5,7,15,.78);font:600 12px var(--mono);color:var(--text)}
+.isl-badge.rec{background:var(--scarlet);color:#fff}
+.isl-count{position:absolute;inset:0;display:grid;place-items:center;margin:0;font:800 96px var(--display);color:var(--accent);text-shadow:0 4px 30px #000;pointer-events:none}
+.isl-side .btn{margin:0 8px 8px 0}
+.isl-words{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.isl-status{margin:10px 0 8px;min-height:1.5em;font:500 12.5px var(--mono);color:var(--muted)}
+.isl-top{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.isl-top li{display:grid;grid-template-columns:minmax(0,9.5em) 1fr 4.4em;gap:10px;align-items:center;font-size:14px;color:var(--text-2)}
+.isl-top li b{font:600 13px var(--mono);text-align:right;color:var(--text);font-variant-numeric:tabular-nums}
+.isl-top .bar{height:8px;border-radius:4px;background:var(--ink-3);overflow:hidden}
+.isl-top .bar i{display:block;height:100%;background:var(--line);border-radius:4px}
+.isl-top li:first-child{color:var(--text);font-weight:700}
+.isl-top li:first-child .bar i{background:var(--accent)}
+.isl-ref{margin:10px 0 0;font-size:13.5px;color:var(--text-2)}
+.isl-ref b{color:var(--man);font-weight:600}
+.isl-vocab{margin-top:10px;font-size:13.5px;color:var(--text-2)}
+.isl-vocab summary{cursor:pointer;color:var(--text)}
+.isl-vocab p{margin:8px 0 0}
+.demo-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);display:grid;gap:8px}
+.wi-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 28px;align-items:center;margin:16px 0 4px}
+.wi-ctl{display:grid;gap:12px}
+.wi-ctl label{display:grid;grid-template-columns:1fr auto;gap:2px 12px;font-size:14px;color:var(--text-2)}
+.wi-ctl output{font:600 14px var(--mono);color:var(--text);font-variant-numeric:tabular-nums}
+.wi-ctl input{grid-column:1/-1;width:100%;margin:0;height:28px;accent-color:var(--accent)}
+.wi-big{margin:0;display:flex;flex-direction:column;gap:6px}
+.wi-big b{font:800 clamp(46px,6vw,62px)/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.wi-big span{font-size:14px;color:var(--text-2)}
+.wi-line{margin:12px 0 0;font:500 13px/1.55 var(--mono);color:var(--text-2)}
+.wi-sup{margin:8px 0 0;font-size:13.5px;color:var(--text-2);display:flex;gap:8px;align-items:baseline}
+.wi-sup i{flex:none;width:9px;height:9px;border-radius:50%;background:var(--man)}
+.wi-sup[data-l="1"] i{background:var(--enh)}
+.wi-sup[data-l="0"] i{background:var(--scarlet)}
+.wi-curve{width:100%;height:auto;display:block;margin:14px 0 4px}
+.wi-curve .ax{stroke:var(--line-soft);stroke-width:1}
+.wi-curve .tx{fill:var(--muted);font:500 11px var(--mono)}
+.wi-curve .rare{fill:var(--ink-3)}
+.wi-curve .ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.wi-curve .at{stroke:var(--accent);stroke-width:1;stroke-dasharray:3 4;opacity:.7}
+.wi-curve .dot{fill:var(--accent);stroke:var(--ink);stroke-width:2.5}
+@media (max-width:700px){.isl-grid,.wi-grid{grid-template-columns:1fr}.wi-curve .tx{font-size:19px}}
 #palette{width:min(620px,calc(100vw - 24px));margin:12vh auto auto}
 .pz{background:var(--ink-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px -20px #000}
 .p-in{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line-soft)}
@@ -537,6 +585,7 @@ td .mk.mo{right:3px}
     <button class="proof-item" type="button" data-open="safetrail"><b>SafeTrail</b><span>first place, BIOS 2026</span><i>✓</i></button>
     <button class="proof-item" type="button" data-open="cricket"><b>Cricket lakehouse</b><span>19 / 19 quality checks pass</span><i>✓</i></button>
     <button class="proof-item" type="button" data-open="pramaan"><b>PRAMAAN</b><span>61 tests, prompt injection included</span><i>✓</i></button>
+    <button class="proof-item" type="button" data-open="isl"><b>Sign-language model</b><span>runs in your browser, same word as Python on 181 / 182 clips</span><i>✓</i></button>
   </div>
 
   <!-- ============ ABOUT ============ -->
@@ -872,7 +921,7 @@ const PROJECTS = [
     ],
     facts: [['Match files', '7,009'], ['Rows built', '1,667,611'], ['Full build time', '180 s on a laptop'], ['Model AUC', '0.777'], ['Calibration error', '1.8 pp'], ['Accuracy, early → late in a chase', '58.5% → 83.7%'], ['Quality checks passing', '19 / 19'], ['Tests', '14 + CI']],
     story: { title: 'The bug the tests caught', body: 'The first integration test finished with zero balls in the table. Spark had quietly re-run a cached step, the “newer version” filter came back empty, and the update deleted everything. The fix was to take a true snapshot with <code>localCheckpoint()</code> and to write the balls before the match record. Without the test, that bug would have shipped.' },
-    demo: 'wpa', links: [{ label: 'Repository', href: 'https://github.com/pajiala99/cricket-winprob-lakehouse' }] },
+    live: 'winprob', demo: 'wpa', links: [{ label: 'Repository', href: 'https://github.com/pajiala99/cricket-winprob-lakehouse' }] },
   { id: 'foodbridge', title: 'FoodBridge', sub: 'Backend API & matching engine', date: 'Jul – Sep 2026', team: 'Team of 3 · I owned the backend and matcher',
     nen: ['emi', 'con', 'man', 'enh'], metric: ['26', 'REST endpoints'],
     summary: 'Matches donors’ surplus food with shelters before it expires.',
@@ -921,20 +970,21 @@ const PROJECTS = [
     story: { title: 'Designed for the person, not the demo', body: 'The users are elderly, may be losing their hearing, and live in the North East. So the screen reads itself aloud, hearing loss changes how the app speaks to them, and the games and sounds come from Assamese culture instead of generic puzzles.' },
     demo: null, links: [{ label: 'Web app', href: 'https://github.com/urgirlgeet/Smriti' }, { label: 'Flutter app', href: 'https://github.com/khushidangi/Smriti' }] },
   { id: 'isl', title: 'Indian Sign Language Recognition', sub: 'Webcam signs to spoken words', date: 'Oct 2026', team: 'College minor project · team',
-    nen: ['spe', 'tra'], metric: ['94.5%', 'accuracy from 5 examples per word'],
+    nen: ['spe', 'tra'], metric: ['95.6%', 'accuracy from 5 examples per word'],
     summary: 'Recognises Indian Sign Language words from a webcam and speaks them aloud.',
     problem: 'Most people can’t read sign language. A tool that turns signs into speech, using only a laptop webcam, helps signers be understood.',
-    stack: ['Python', 'PyTorch', 'MediaPipe', 'BiLSTM', 'OpenCV', 'scikit-learn'],
+    stack: ['Python', 'PyTorch', 'MediaPipe', 'BiLSTM', 'ONNX', 'onnxruntime-web', 'OpenCV', 'scikit-learn'],
     points: [
       'MediaPipe tracks body and hand points in every frame. I convert them so they don’t depend on who is signing or where they stand.',
       'A <b>BiLSTM with attention</b> (PyTorch) reads the movement over time. SVM and Random Forest models serve as baselines.',
       'The standard test was too easy (even a Random Forest scored 100%), so I tested harder questions: how few examples it needs, and what breaks it.',
       'An experiment showed that adding mirrored videos to training actually hurt accuracy.',
-      'A live demo that only speaks a word once the prediction is confident and stable.'
+      'A live demo that only speaks a word once the prediction is confident and stable.',
+      'The same model runs in your browser, below: exported to <b>ONNX</b> for onnxruntime-web, with MediaPipe’s JavaScript tasks and my feature code ported line for line. Its features match numpy bit for bit, and it chose the same word as the Python pipeline on 181 of 182 held-out clips.'
     ],
-    facts: [['Words recognised', '61'], ['Video clips', '1,210'], ['Accuracy, 1 example per word', '49.5% (chance: 1.6%)'], ['Accuracy, 5 examples per word', '94.5%'], ['Effect of mirrored training data', '−12 points'], ['With one hand hidden', '31.9%'], ['Training time', '2.2 min']],
+    facts: [['Words recognised', '61'], ['Video clips', '1,210'], ['Accuracy, 1 example per word', '48.9% (chance: 1.6%)'], ['Accuracy, 5 examples per word', '95.6%'], ['Effect of mirrored training data', '−10 points'], ['With one hand hidden', '25.8%'], ['Training time', '2.2 min'], ['Browser vs Python, same word', '181 / 182 clips']],
     story: { title: 'Why 100% was not the result', body: 'Every word was recorded by one person in one session, so test clips were near-copies of training clips. A score of 100% only proved the test was too easy. The real evaluation asked harder questions instead.' },
-    demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/isl-recognition' }] },
+    live: 'isl', demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/isl-recognition' }] },
   { id: 'timetable', title: 'Academic Timetable Generator', sub: 'Clash-free timetables for a whole department', date: 'Oct 2026', team: '',
     nen: ['con', 'enh'], metric: ['2-stage', 'backtracking + simulated annealing'],
     summary: 'Builds clash-free weekly timetables for a department, and explains when no timetable can exist.',
@@ -1013,7 +1063,8 @@ const TIPS = [
   'The eye button at the top switches to a red theme.',
   'Click my portrait five times for an easter egg.',
   'Ask me anything about his work. I answer only from his record.',
-  'The ID card at the top flips over.'
+  'The ID card at the top flips over.',
+  'Two of his models run live on this page: open the sign-language or cricket project.'
 ];
 
 /* ================= helpers ================= */
@@ -1183,6 +1234,274 @@ function wpaHTML() {
   s += '</svg>';
   return `<div class="demo"><h3>Does the metric find real skill?</h3><p class="demo-note">Spearman rank correlation between each statistic and the simulator's hidden player skill (1 = perfect ranking). Gold bars are Win Probability Added, the metric this project introduces.</p><div class="wpa-scroll">${s}</div><p class="demo-note">WPA beats strike rate and economy because it knows the game situation. Wickets per ball still ranks bowlers best, so the write-up says so: impact metrics complement traditional statistics rather than replace them.</p></div>`;
 }
+/* ================= live models ================= */
+// Both models run in the visitor's browser: GitHub Pages only serves files, so nothing here calls a server.
+let liveStop = null;
+function stopLive() { const s = liveStop; liveStop = null; if (s) s(); }
+function liveHTML(p) { return p.live === 'isl' ? ISL_HTML : p.live === 'winprob' ? WINPROB_HTML : ''; }
+function initLive(id) { if (id === 'isl') initIsl(); else if (id === 'winprob') initWinprob(); }
+function openFromHash() {
+  const m = /^#demo-(isl|cricket)$/.exec(location.hash);
+  if (!m) return;
+  openDossier(m[1]);
+  setTimeout(() => {
+    const el = $('#liveDemo'), dz = $('.dz');
+    if (el) dz.scrollTop += el.getBoundingClientRect().top - dz.getBoundingClientRect().top - 12;
+  }, 450);
+}
+const pct = (p, d = 1) => (p * 100).toFixed(d) + '%';
+const pretty = w => w.charAt(0).toUpperCase() + w.slice(1).replace(/_/g, ' ');
+
+const ISL_DIR = 'assets/isl/';
+const ISL_BYTES = [7819105, 5777746, 6692924];   // hand landmarker, pose landmarker, BiLSTM (for progress if a size header is missing)
+const ISL_HTML = `<div class="demo" id="liveDemo">
+  <p class="live-tag">Runs in your browser</p>
+  <h3>Try it: the sign-language model, live</h3>
+  <p class="demo-note">The same pipeline as the Python code: MediaPipe finds the body and both hands, the features are computed the same way (64 frames, plus velocities), and the BiLSTM runs as an ONNX model. Nothing is uploaded. The first run downloads about 27 MB.</p>
+  <div class="isl-modes" role="group" aria-label="What to run the model on">
+    <button class="fchip" type="button" data-isl-mode="clip" aria-pressed="true">Held-out test clips</button>
+    <button class="fchip" type="button" data-isl-mode="cam" aria-pressed="false">Try it live: your webcam</button>
+  </div>
+  <div class="isl-grid">
+    <div class="isl-view"><canvas id="islCanvas" width="640" height="480" role="img" aria-label="Video frames with the tracked body and hand points"></canvas><p class="ph" id="islPh">Pick a clip, then run the model.</p><p class="isl-badge" id="islBadge" hidden></p><p class="isl-count" id="islCount" hidden></p></div>
+    <div class="isl-side">
+      <div id="islClipCtl">
+        <h4 class="d-h">Clips the model never trained on</h4>
+        <div class="isl-words" id="islWords"></div>
+        <button class="btn primary sm" type="button" id="islRun">Run the model</button>
+      </div>
+      <div id="islCamCtl" hidden>
+        <p class="demo-note">Press record, wait for the countdown, then sign one of the 61 words. It records 5 seconds, about the length of a training clip. Your video never leaves this device.</p>
+        <button class="btn primary sm" type="button" id="islCam">Start camera</button><button class="btn ghost sm" type="button" id="islRec" disabled>Record a sign</button>
+        <details class="isl-vocab"><summary>The 61 words it knows</summary><p id="islVocab"></p></details>
+      </div>
+      <p class="isl-status" id="islStatus" role="status"></p>
+      <ol class="isl-top" id="islTop" aria-label="The model's top five words"></ol>
+      <p class="isl-ref" id="islRef"></p>
+    </div>
+  </div>
+  <div class="demo-foot">
+    <p class="demo-note"><b>Same answer as Python.</b> On the 182 held-out test clips, this pipeline and the Python one picked the same word for 181. The exception is the least confident clip, a near-tie between radish and cry that re-encoding the video already flips in Python. Given the same keypoints, the features match numpy bit for bit.</p>
+    <p class="demo-note"><b>Limits.</b> One person in one room recorded every training clip, so expect mistakes on your own signing: this shows the pipeline working, not an interpreter. Your webcam view is mirrored like a selfie, but the model reads the image as filmed, like the training clips. Test clips: <a href="https://www.kaggle.com/datasets/prasadshet/indian-sign-language-video-dataset" target="_blank" rel="noopener">Indian Sign Language Video Dataset</a> (MIT licence), converted to H.264 because browsers can't play the originals.</p>
+  </div>
+</div>`;
+let islP = null;
+function islLoad(status) {
+  islP ??= (async () => {
+    status('Loading MediaPipe and onnxruntime-web…');
+    const isl = await import('./' + ISL_DIR + 'isl.js');
+    const [rt, meta] = await Promise.all([isl.loadRuntimes(), fetch(ISL_DIR + 'isl_meta.json').then(r => r.json())]);
+    const got = [0, 0, 0], tot = ISL_BYTES.slice();
+    const mb = a => (a.reduce((x, y) => x + y) / 1e6).toFixed(1);
+    const [hand, pose, onnx] = await Promise.all(['hand_landmarker.task', 'pose_landmarker_lite.task', 'isl_bilstm.onnx'].map((f, i) =>
+      isl.fetchBytes(ISL_DIR + f, (l, t) => { got[i] = l; if (t) tot[i] = t; status(`Downloading the models: ${mb(got)} of ${mb(tot)} MB`); })));
+    status('Starting the model…');
+    return { isl, ...rt, hand, pose, clf: await isl.Classifier.create(rt.ort, onnx), classes: meta.classes };
+  })();
+  islP.catch(() => { islP = null; });
+  return islP;
+}
+function initIsl() {
+  const el = Object.fromEntries(['Canvas', 'Ph', 'Badge', 'Count', 'Words', 'Run', 'Cam', 'Rec', 'Vocab', 'Status', 'Top', 'Ref', 'ClipCtl', 'CamCtl'].map(k => [k.toLowerCase(), $('#isl' + k)]));
+  if (!el.canvas) return;
+  const ctx = el.canvas.getContext('2d');
+  const status = t => { el.status.textContent = t; };
+  const clear = () => { el.top.innerHTML = ''; el.ref.textContent = ''; };
+  const showTop = top => { el.top.innerHTML = top.map(([w, p]) => `<li><span>${esc(pretty(w))}</span><span class="bar"><i style="width:${(p * 100).toFixed(1)}%"></i></span><b>${pct(p)}</b></li>`).join(''); };
+  let clips = [], pick = 0, busy = false;
+  const setBusy = b => { busy = b; el.run.disabled = b; };
+  fetch(ISL_DIR + 'clips.json').then(r => r.json()).then(d => {
+    clips = d.clips;
+    el.words.innerHTML = clips.map((c, i) => `<button class="fchip" type="button" data-isl-clip="${i}" aria-pressed="${i === 0}">${esc(pretty(c.word))}</button>`).join('');
+    el.vocab.textContent = d.classes.map(pretty).join(', ');
+  }).catch(() => status('Could not load the clip list.'));
+  const setMode = m => {
+    stopLive(); clear(); status('');
+    $$('[data-isl-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.islMode === m)));
+    el.clipctl.hidden = m !== 'clip'; el.camctl.hidden = m !== 'cam';
+    ctx.clearRect(0, 0, el.canvas.width, el.canvas.height);
+    el.ph.hidden = false; el.ph.textContent = m === 'clip' ? 'Pick a clip, then run the model.' : 'Start the camera to see what the model sees.';
+    el.badge.hidden = el.count.hidden = true;
+  };
+  $('#liveDemo').addEventListener('click', e => {
+    if (busy) return;
+    const c = e.target.closest('[data-isl-clip]');
+    if (c) { pick = +c.dataset.islClip; $$('[data-isl-clip]').forEach(b => b.setAttribute('aria-pressed', String(b === c))); clear(); }
+    const m = e.target.closest('[data-isl-mode]');
+    if (m) setMode(m.dataset.islMode);
+  });
+
+  // a held-out clip, through the same every-third-frame path the parity check runs
+  el.run.addEventListener('click', async () => {
+    if (busy || !clips.length) return;
+    const c = clips[pick], abort = new AbortController(), stop = () => abort.abort();
+    setBusy(true); clear(); liveStop = stop;
+    let ex = null, url = null;
+    try {
+      const P = await islLoad(status);
+      status('Opening the clip…');
+      url = URL.createObjectURL(await (await fetch(ISL_DIR + 'clips/' + c.file)).blob());
+      const video = document.createElement('video');
+      video.muted = true; video.playsInline = true; video.setAttribute('playsinline', ''); video.preload = 'auto'; video.src = url;
+      ex = await P.isl.LandmarkExtractor.create(P.vision, P.mp, P.hand, P.pose);
+      const total = Math.ceil(c.frame_count / P.isl.STRIDE);
+      let n = 0;
+      el.ph.hidden = true;
+      const frames = await P.isl.runVideo(ex, video, { fps: c.fps, frameCount: c.frame_count, signal: abort.signal, onFrame: (fr, idx, src) => {
+        el.canvas.width = src.width; el.canvas.height = src.height;
+        ctx.drawImage(src, 0, 0); P.isl.drawFrame(ctx, fr, src.width, src.height);
+        status(`Tracking the body and hands: frame ${++n} of ${total}`);
+      } });
+      status('Reading the movement with the BiLSTM…');
+      const top = P.isl.topK(await P.clf.predict(frames), P.classes, 5);
+      showTop(top);
+      status(`${frames.length} frames → 64 × 478 features → 61 words`);
+      el.ref.innerHTML = `Python on the same file: ${esc(pretty(c.python.top1))} ${pct(c.python.p)}` + (top[0][0] === c.python.top1 ? ' · <b>same word ✓</b>' : ' · a different word');
+    } catch (e) {
+      if (!(e && e.name === 'AbortError')) status('Something went wrong: ' + (e && e.message || e));
+    } finally {
+      if (ex) ex.close();
+      if (url) URL.revokeObjectURL(url);
+      if (liveStop === stop) liveStop = null;
+      setBusy(false);
+    }
+  });
+
+  // the webcam, about 10 frames a second like the training clips. The model reads each frame as filmed, the way
+  // record.py saves webcam clips ("unmirrored, like the dataset"); only the view is mirrored, like a selfie
+  el.cam.addEventListener('click', async () => {
+    if (busy) return;
+    setBusy(true); el.cam.disabled = true; clear();
+    try {
+      if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) throw new Error('this browser gives pages no camera access');
+      const P = await islLoad(status);
+      status('Asking for the camera…');
+      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } }, audio: false });
+      const video = document.createElement('video');
+      video.muted = true; video.playsInline = true; video.setAttribute('playsinline', ''); video.srcObject = stream;
+      await video.play();
+      const ex = await P.isl.LandmarkExtractor.create(P.vision, P.mp, P.hand, P.pose);
+      const work = document.createElement('canvas'), wctx = work.getContext('2d');
+      let raf = 0, lastT = -1e9, last = null, rec = null, alive = true;
+      const finish = async frames => {
+        el.badge.className = 'isl-badge'; el.badge.textContent = `${frames.length} frames recorded`;
+        el.rec.disabled = false;
+        if (frames.length < 8) { status('Too few frames were tracked. Keep this tab in front while recording.'); return; }
+        showTop(P.isl.topK(await P.clf.predict(frames), P.classes, 5));
+        status(`${frames.length} frames → 64 × 478 features → 61 words`);
+        el.ref.textContent = 'It knows only these 61 words, from one signer, so a wrong answer on your signing is expected.';
+      };
+      const loop = now => {
+        if (!alive) return;
+        raf = requestAnimationFrame(loop);
+        const w = video.videoWidth, h = video.videoHeight;
+        if (!w) return;
+        if (work.width !== w || work.height !== h) { work.width = el.canvas.width = w; work.height = el.canvas.height = h; }
+        wctx.drawImage(video, 0, 0, w, h);                // one snapshot, so both landmarkers see the same frame
+        if (now - lastT >= 100) {
+          lastT = now; last = ex.frame(work, now);
+          if (rec && now >= rec.t0) rec.frames.push(last);
+        }
+        ctx.setTransform(-1, 0, 0, 1, w, 0); ctx.drawImage(work, 0, 0); ctx.setTransform(1, 0, 0, 1, 0, 0);
+        if (last) P.isl.drawFrame(ctx, last, w, h, { mirror: true });
+        if (!rec) return;
+        if (now < rec.t0) { el.count.hidden = false; el.count.textContent = Math.ceil((rec.t0 - now) / 1000); return; }
+        el.count.hidden = true; el.badge.hidden = false; el.badge.className = 'isl-badge rec';
+        el.badge.textContent = `● REC ${Math.min(5, (now - rec.t0) / 1000).toFixed(1)} s`;
+        if (now - rec.t0 >= 5000) { const frames = rec.frames; rec = null; finish(frames); }
+      };
+      el.rec.onclick = () => { if (rec) return; clear(); el.rec.disabled = true; rec = { t0: performance.now() + 3000, frames: [] }; status('Get ready…'); };
+      liveStop = () => {
+        alive = false; cancelAnimationFrame(raf); stream.getTracks().forEach(t => t.stop()); ex.close();
+        el.rec.disabled = true; el.cam.disabled = false; el.badge.hidden = el.count.hidden = true;
+      };
+      raf = requestAnimationFrame(loop);
+      el.ph.hidden = true; el.rec.disabled = false;
+      status('Camera on. Press “Record a sign”.');
+    } catch (e) {
+      status(e && e.name === 'NotAllowedError' ? 'Camera permission was denied.' : 'Could not start the camera: ' + (e && e.message || e));
+      el.cam.disabled = false;
+    } finally {
+      setBusy(false);
+    }
+  });
+}
+
+const WINPROB_HTML = `<div class="demo" id="liveDemo">
+  <p class="live-tag">The model's own predictions</p>
+  <h3>Try it: what does the model make of this chase?</h3>
+  <p class="demo-note">Set the chase with the sliders. Every number is the trained model's own prediction for that exact state: Spark scored all 39,920 states in advance and this page only looks them up. Nothing is interpolated or smoothed.</p>
+  <div class="wi-grid">
+    <div class="wi-ctl">
+      <label>Overs left <output id="wiOv">10</output><input type="range" id="wiO" min="1" max="20" step="1" value="10"></label>
+      <label>Wickets in hand <output id="wiWv">7</output><input type="range" id="wiW" min="1" max="10" step="1" value="7"></label>
+      <label>Runs needed <output id="wiRv">80</output><input type="range" id="wiR" min="1" max="250" step="1" value="80"></label>
+    </div>
+    <div>
+      <p class="wi-big"><b id="wiP" aria-live="polite">…</b><span>chance the chasing side wins</span></p>
+      <p class="wi-line" id="wiLine"></p>
+      <p class="wi-sup" id="wiSup"><i></i><span></span></p>
+    </div>
+  </div>
+  <svg class="wi-curve" id="wiCurve" viewBox="0 0 600 212" role="img" aria-label="Win probability against runs needed"></svg>
+  <div class="demo-foot">
+    <p class="demo-note" id="wiPast"></p>
+    <p class="demo-note" id="wiModel"></p>
+    <p class="demo-note"><b>Why the line has steps.</b> A tree model predicts in steps, so one run can move it several points; this shows its raw output instead of smoothing it. The sharp dip where the required rate equals the run rate so far is a flaw this widget exposed: the features use a rate gap of exactly 0 for every first-innings ball, so the model treats a chase exactly on the required rate as partly a first innings. The fix is a separate value for “not chasing”, then retraining.</p>
+  </div>
+</div>`;
+let wpData = null;
+async function initWinprob() {
+  const O = $('#wiO'), W = $('#wiW'), R = $('#wiR');
+  if (!O) return;
+  try { wpData ??= await fetch('assets/cricket/winprob_grid.json').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }); }
+  catch (e) { $('#wiP').textContent = '–'; $('#wiLine').textContent = 'Could not load the model’s predictions.'; return; }
+  const g = wpData.grid, m = wpData.model, a = wpData.assumptions, curve = $('#wiCurve');
+  const SUP = ['Fewer than 5 real chases came within 5 runs of this state: the model is extrapolating.',
+    '5–24 real chases came within 5 runs of this state: thin data.',
+    '25–99 real chases came within 5 runs of this state.',
+    '100 or more real chases came within 5 runs of this state.'];
+  $('#wiModel').innerHTML = `<b>The model.</b> Gradient-boosted trees (Spark MLlib), trained on ${m.splits.train.rows.toLocaleString('en')} balls of real T20 matches up to ${m.splits.train.to.slice(0, 4)}. On ${m.test_rows.toLocaleString('en')} balls from 2025–26 it never saw: AUC ${m.test.auc.toFixed(3)}, log loss ${m.test.log_loss.toFixed(3)}, calibration error ${(m.test.ece * 100).toFixed(1)} pp. Shaded on the chart: fewer than 25 real chases nearby.`;
+  const minW = o => { for (let w = 1; w <= 10; w++) if (g.p[o - 1][w - 1]) return w; return 10; };
+  const draw = (row, sup, r, max) => {
+    const X0 = 62, X1 = 578, Y0 = 16, Y1 = 158;
+    const x = v => X0 + (v - 1) / Math.max(1, max - 1) * (X1 - X0), y = p => Y1 - p / 1000 * (Y1 - Y0);
+    let s = '';
+    for (let i = 0; i < row.length;) {
+      if (sup[i] >= '2') { i++; continue; }
+      let j = i;
+      while (j < row.length && sup[j] < '2') j++;
+      s += `<rect class="rare" x="${(x(i + 1) - 2).toFixed(1)}" y="${Y0}" width="${(x(j) - x(i + 1) + 4).toFixed(1)}" height="${Y1 - Y0}"/>`;
+      i = j;
+    }
+    [0, 500, 1000].forEach(p => { s += `<line class="ax" x1="${X0}" x2="${X1}" y1="${y(p)}" y2="${y(p)}"/><text class="tx" x="${X0 - 8}" y="${y(p) + 4}" text-anchor="end">${p / 10}%</text>`; });
+    [1, ...[50, 100, 150, 200].filter(v => v < max - 20), max].forEach(v => { s += `<text class="tx" x="${x(v).toFixed(1)}" y="${Y1 + 22}" text-anchor="middle">${v}</text>`; });
+    s += `<text class="tx" x="${X1}" y="${Y1 + 46}" text-anchor="end">runs needed →</text>`;
+    s += `<polyline class="ln" points="${row.map((p, i) => `${x(i + 1).toFixed(1)},${y(p).toFixed(1)}`).join(' ')}"/>`;
+    s += `<line class="at" x1="${x(r).toFixed(1)}" x2="${x(r).toFixed(1)}" y1="${Y0}" y2="${Y1}"/><circle class="dot" cx="${x(r).toFixed(1)}" cy="${y(row[r - 1]).toFixed(1)}" r="5"/>`;
+    curve.innerHTML = s;
+  };
+  const paint = () => {
+    const o = +O.value, lo = minW(o);
+    W.min = lo; if (+W.value < lo) W.value = lo;
+    const w = +W.value, max = g.max_runs_needed[o - 1];
+    R.max = max; if (+R.value > max) R.value = max;
+    const r = +R.value, row = g.p[o - 1][w - 1], sup = g.support[o - 1][w - 1], [runs, , , n, src] = g.past[o - 1][w - 1];
+    const balls = o * 6, done = 20 - o, lvl = +sup[r - 1];
+    $('#wiOv').textContent = o; $('#wiWv').textContent = w; $('#wiRv').textContent = r;
+    $('#wiP').textContent = (row[r - 1] / 10).toFixed(1) + '%';
+    $('#wiLine').textContent = `${r} needed off ${balls} balls · required rate ${(r * 6 / balls).toFixed(2)} · ${w} wicket${w > 1 ? 's' : ''} in hand`;
+    $('#wiSup').dataset.l = lvl; $('#wiSup span').textContent = SUP[lvl];
+    $('#wiPast').innerHTML = src === 'start'
+      ? `<b>What the sliders don't set.</b> The start of the chase: target ${r}, at a ground whose par score is ${a.venue_par} (the median for 2025–26 men's chases); men's T20.`
+      : `<b>What the sliders don't set.</b> So far: ${runs}/${10 - w} after ${done} over${done > 1 ? 's' : ''}, ${src === 'median' ? `the median of ${n.toLocaleString('en')} real chases at that point` : `scored at par pace, because fewer than 10 real chases were ever ${10 - w} down after ${done} overs`}. Target ${runs + r}; ground par ${a.venue_par}; men's T20.`;
+    curve.setAttribute('aria-label', `Win probability against runs needed, with ${o} overs left and ${w} wickets in hand`);
+    draw(row, sup, r, max);
+  };
+  [O, W, R].forEach(i => i.addEventListener('input', paint));
+  paint();
+}
+
 function dossierHTML(p) {
   return `<div class="d-in">
     <p class="eyebrow">Project details<span class="sep">·</span>${esc(p.date)}${p.team ? `<span class="sep">·</span>${esc(p.team)}` : ''}</p>
@@ -1199,6 +1518,7 @@ function dossierHTML(p) {
       </div>
     </div>
     ${p.story ? `<div class="story"><p class="d-h">What I learned</p><h3>${esc(p.story.title)}</h3><p>${p.story.body}</p></div>` : ''}
+    ${liveHTML(p)}
     ${p.demo === 'assign' ? ASSIGN_HTML : ''}${p.demo === 'wpa' ? wpaHTML() : ''}
   </div>`;
 }
@@ -1220,6 +1540,7 @@ function openDossier(id) {
   d.showModal();
   $('.dz').scrollTop = 0;
   if (p.demo === 'assign') initAssign();
+  if (p.live) initLive(p.live);
 }
 
 /* ================= guide ================= */
@@ -1404,19 +1725,19 @@ RECORD
 Hardik Pajiala. B.E. Computer Engineering, Thapar Institute of Engineering & Technology, 2024-2028, CGPA 8.50/10. Coursework: DSA, DBMS, OOP, Software Engineering, Probability & Statistics, Machine Learning, Deep Learning.
 Contact: ${EMAIL}; linkedin.com/in/hardik-pajiala; github.com/pajiala99; résumé PDF linked at the top of the page. Looking for engineering internships (software, data or ML) and collaborations.
 1) FoodBridge (Jul-Sep 2026, team of 3; Hardik owned the backend API and the matching engine; teammates owned the React frontend and the DB/DevOps side). A food-redistribution platform matching surplus-food donors with recipient organisations. Node.js/Express/TypeScript API: 26 REST endpoints over a 10-table PostgreSQL/PostGIS schema, JWT auth and role guards, and state machines as the single source of truth for donation, match and pickup transitions. Python FastAPI matching service: hard eligibility filters (capacity, distance within the service radius, food compatibility, at least 30 minutes of pickup feasibility); weighted score urgency 0.40, proximity 0.35, capacity 0.25; greedy strategy by default with progressive radius expansion 5 to 25 km and a waitlist; Hungarian algorithm as a second strategy for globally optimal one-to-one assignment; a test shows a case where greedy is suboptimal. PostGIS ST_DWithin/ST_Distance distances; offers expire after 30 minutes and re-match on rejection or timeout. Tested with Vitest and pytest.
-2) Cricket Win-Probability Lakehouse (Aug-Sep 2026, solo). PySpark + Delta Lake medallion lakehouse (bronze/silver/gold): 7,009 nested JSON match documents to 1,667,611 ball-by-ball rows; 12-task build in 180 s on a laptop. Exactly-once Structured Streaming ingestion; revision-safe Delta MERGE upserts (0 lost balls, 0 duplicate keys on the incremental load); declarative data-quality gates (12/12 silver, 7/7 gold checks pass). Spark MLlib gradient-boosted trees vs logistic regression, chosen on validation log loss: AUC 0.777, log loss 0.556, Brier skill score 23.8%, calibration error 1.8 pp on unseen 2025-26 seasons; accuracy rises from 58.5% after 5 overs to 83.7% in the last 5 overs of a chase. Live scoring with applyInPandasWithState plus a streaming/batch parity test. Win Probability Added metric validated against hidden simulator skills (Spearman: batters WPA 0.36 vs strike rate 0.26; bowlers WPA 0.39 vs economy 0.12, but wickets per ball 0.69 is still best). Airflow DAGs, Streamlit dashboard, 14 pytest tests, GitHub Actions CI. Includes a T20 league simulator in Cricsheet format because cricsheet.org blocks automated downloads; also runs on real Cricsheet data. A test caught a caching bug where a MERGE deleted every row; fixed with localCheckpoint().
+2) Cricket Win-Probability Lakehouse (Aug-Sep 2026, solo). PySpark + Delta Lake medallion lakehouse (bronze/silver/gold): 7,009 nested JSON match documents to 1,667,611 ball-by-ball rows; 12-task build in 180 s on a laptop. Exactly-once Structured Streaming ingestion; revision-safe Delta MERGE upserts (0 lost balls, 0 duplicate keys on the incremental load); declarative data-quality gates (12/12 silver, 7/7 gold checks pass). Spark MLlib gradient-boosted trees vs logistic regression, chosen on validation log loss: AUC 0.777, log loss 0.556, Brier skill score 23.8%, calibration error 1.8 pp on unseen 2025-26 seasons; accuracy rises from 58.5% after 5 overs to 83.7% in the last 5 overs of a chase. Live scoring with applyInPandasWithState plus a streaming/batch parity test. Win Probability Added metric validated against hidden simulator skills (Spearman: batters WPA 0.36 vs strike rate 0.26; bowlers WPA 0.39 vs economy 0.12, but wickets per ball 0.69 is still best). Airflow DAGs, Streamlit dashboard, 14 pytest tests, GitHub Actions CI. Includes a T20 league simulator in Cricsheet format because cricsheet.org blocks automated downloads; also runs on real Cricsheet data. A test caught a caching bug where a MERGE deleted every row; fixed with localCheckpoint(). On real data (8,852 T20 matches, Feb 2005 to Apr 2026; trained to 2023, tested on 2025-26) the champion scores AUC 0.845, log loss 0.476, Brier skill score 35.9%, calibration error 0.8 pp. The project panel on this page has a what-if widget: sliders for overs left, wickets in hand and runs needed show that real-data model's own predictions for 39,920 chase states, precomputed with Spark and looked up in the browser, with a warning where few real chases reached the state. Building it exposed a feature flaw: rate_gap is 0 for every first-innings ball, so the model treats a chase exactly on the required rate as partly first-innings (81.2% at -0.01, 65.1% at exactly 0, 75.4% at +0.01); the fix is a separate value and retraining.
 3) E-Commerce Data Lake Pipeline (in progress, team of 3): Kafka to Spark Structured Streaming, JSON validated into a schema (user_id, event_type, page, product_id), written as Parquet. Resolved Kafka-Spark connector and Java/Spark version conflicts.
 4) Malaria Cell Classification with Grad-CAM (Apr-May 2026): TensorFlow/Keras CNN, 96% test accuracy; Grad-CAM heatmaps; evaluated with precision, recall, F1, ROC and a confusion matrix.
 5) Lost & Found Management System (May-Jun 2026): MySQL schema normalised to 3NF with 5 entities covering claims and admin verification; web interface to report and claim items.
 6) PRAMAAN, recruitment-scam investigation agent (Oct 2026, Homingo Hackathon, Agents track). Python, Claude API tool use, Streamlit. Claude plans the investigation and calls five tools: regex entity extraction, red-flag rules (fees, UPI/crypto payment, OTP requests, WhatsApp-only, no interview), domain checks (free-mail recruiter, brand-lookalike domains, RDAP registration age, HTTPS), careers-page verification and scam-report search through Claude's server-side web search. The model never decides the verdict: findings become cited evidence tagged by one of five independent sources, and an ordered rulebook picks Likely genuine, Suspicious, Likely scam or Not enough evidence; it never calls an offer a scam on a single source. Web URLs only count if the search tool really returned them. Tool-call budget (8), timeouts, a fixed playbook when the API is unavailable, prompt-injection test, reusable agent core, live tool-call trace, 61 pytest tests.
-7) Indian Sign Language word recognition (Oct 2026, college minor project in a team). Python, PyTorch, MediaPipe. Pose and hand keypoints become signer-invariant features (64 frames, plus velocities) for a BiLSTM with temporal attention, compared with SVM and Random Forest baselines; 61 word classes, 1,210 clips. The standard split is saturated (one signer, so even Random Forest hits 100%), so he evaluated harder protocols: 49.5% top-1 from one example per word (chance 1.6%) and 94.5% from five; robust to rotation, scale, shift and tempo; occluding one hand drops it to 31.9%. Mirroring augmentation hurt by about 12 points. Live webcam demo with text and Indian-English speech output.
+7) Indian Sign Language word recognition (Oct 2026, college minor project in a team). Python, PyTorch, MediaPipe. Pose and hand keypoints become signer-invariant features (64 frames, plus velocities) for a BiLSTM with temporal attention, compared with SVM and Random Forest baselines; 61 word classes, 1,210 clips. The standard split is saturated (one signer, so even Random Forest hits 100%), so he evaluated harder protocols: 48.9% top-1 from one example per word (chance 1.6%) and 95.6% from five; robust to rotation, scale, shift and tempo; occluding one hand drops it to 25.8%. Mirroring augmentation hurt by about 10 points. He found and fixed a bug in the mirroring code (it swapped the hands but not the arms) and reran every affected experiment. Live webcam demo with text and Indian-English speech output. The model also runs in the visitor's browser on this page, on held-out clips or a webcam: exported to ONNX and run with onnxruntime-web, keypoints from MediaPipe's JavaScript tasks, and the feature code ported to JavaScript. Checked three ways: ONNX vs PyTorch on the 182 held-out clips (same word on all 182, probabilities within 5e-7); JavaScript vs numpy features bit-identical on all 1,210 clips; and end to end on the same 182 held-out video files, where the browser and Python chose the same word on 181 of 182; the one difference is a near-tie between radish and cry on the least confident clip, which re-encoding the video already flips in Python.
 8) SafeTrail (Oct-Nov 2026, BIOS 2026 hackathon at Thapar, team of 2 with Gaurvit; Hardik was the top contributor). Won FIRST PLACE at BIOS 2026; the certificate (no. PRN-BI26-001, issued 3 Nov 2026) is shown on this page. A trail-safety PWA for treks, pilgrimages and national parks: geofenced danger zones that alert with an alarm, voice and a red frame; an SOS saved on the phone and sent when signal returns, with SMS as a fallback; a responder view with a live map, SOS grouped into incidents, safety checks and Ed25519-signed digital passes that work offline; a family link that shows trip status but never location. The AI is never in the emergency path: alerts, SOS, counts and priority are plain code, and LLMs only write and translate safety packs, warnings, incident reports and summaries, with a labelled standard text when the AI can't be used. A budget governor estimates each AI call and drops to a smaller model or standard text before it overspends; validators reject invented facts; prompt-injection attempts become flags, never blocks. FastAPI + SQLModel backend, React + TypeScript + Vite PWA with MapLibre, Server-Sent Events with a polling fallback for free tunnels; 86 backend tests. Benchmark of four builds on a simulated 100-trip scenario: 82% fewer tokens per trip than a naive build; on a repeat day 72% of AI calls came from an exact cache; counts 100% correct. Repo: github.com/pajiala99/BIOS-SafeTrail.
 9) Smriti (Sep 2026, Smart India Hackathon, problem statement SIH26003 from the Ministry of Development of North Eastern Region, team project built on Hardik's laptop). A memory and cognitive-care companion for elders with dementia in North East India. Web app (React, TypeScript, Vite, Tailwind): an elder screen with a large orientation clock, read-aloud (Web Speech), audio clues, daily routine, family voice messages, a Bihu rhythm game and an SOS bar; a caregiver dashboard with cognitive-engagement and sundowning charts, routine pace, tasks, voice memos and a geofence map; an Assamese folk-flute sound synthesised with the Web Audio API. Flutter tablet build: offline SQLite, a 5-tone hearing screen (500 Hz to 6 kHz) that switches the app to visual cues, the Luka-Suri memory game with adaptive difficulty, and a decline alert on a 15%+ score drop. No result is claimed for SIH.
 10) Academic Timetable Generator (Oct 2026). Java, JavaFX, MySQL via JDBC. Timetabling as constrained graph colouring; maximum-clique and Hall's-theorem checks prove infeasibility before search and explain it; backtracking with MRV, forward checking, exact room matching and restarts meets every hard constraint; simulated annealing optimises soft constraints (idle gaps, teaching load, spacing, building changes).
 Hackathons: BIOS 2026 (first place, SafeTrail), Smart India Hackathon (Smriti), Homingo Hackathon Agents track (PRAMAAN).
 Leadership: Batch Group Leader at Thapar (2025-present), the link between faculty and batchmates, moderates a 300-student community. Volunteer at Saturnalia 2025 (Thapar's annual fest), coordinated logistics with 25 volunteers, registrations and stage events.
 Skills: Python, SQL, TypeScript/JavaScript, Java, C/C++, R; Spark, Delta Lake, Kafka, Airflow; Node.js, Express, FastAPI, PostgreSQL/PostGIS, MySQL, React, PWAs, Server-Sent Events; TensorFlow, Keras, PyTorch, MediaPipe, Spark MLlib; LLM agents with the Claude API (tool use, web search), LLM guardrails, budgets and evaluation; pytest, Vitest, Git, GitHub Actions.
-Honest gaps: no industry internship yet; no cloud deployments yet (projects run locally).
+Honest gaps: no industry internship yet; no cloud deployments yet (projects run locally; two models also run in the visitor's browser on this static page).
 Off the clock: gym, running, music, anime.`;
 
 const INTENTS = [
@@ -1425,7 +1746,7 @@ const INTENTS = [
   { k: ['phone', 'number', 'call', 'whatsapp'], a: `Email is the channel he chose for this page: ${EMAIL}. Start there.` },
   { k: ['foodbridge', 'food bridge', 'backend', 'api', 'apis', 'node', 'express', 'typescript', 'postgres', 'postgresql', 'postgis', 'jwt', 'rest', 'endpoint', 'server'], a: 'On FoodBridge he owned the backend and the matching engine, in a team of three: 26 REST endpoints over a ten-table PostgreSQL schema, JWT auth and role guards, and state machines guarding every donation, match and pickup. Open the project on this page. The matcher has a demo.' },
   { k: ['matching', 'hungarian', 'algorithm', 'algorithms', 'greedy', 'assignment', 'dsa', 'optimi'], a: 'The FoodBridge matcher filters out ineligible pairs, then scores the rest: urgency 0.40, proximity 0.35, capacity 0.25. Greedy runs by default, widening the radius from 5 to 25 km. The Hungarian algorithm solves the whole matrix when a globally optimal assignment matters. He wrote a test showing greedy can lose.' },
-  { k: ['cricket', 'lakehouse', 'delta', 'spark', 'pyspark', 'win probability', 'wpa', 'airflow', 'medallion', 'streaming'], a: 'The cricket lakehouse turns 7,009 nested JSON documents into 1.67 million ball-by-ball rows through bronze, silver and gold Delta tables, in 180 seconds. It has exactly-once ingestion, MERGE upserts that handle corrected data, quality gates, and a win-probability model that scores live, ball by ball.' },
+  { k: ['cricket', 'lakehouse', 'delta', 'spark', 'pyspark', 'win probability', 'wpa', 'airflow', 'medallion', 'streaming'], a: 'The cricket lakehouse turns 7,009 nested JSON documents into 1.67 million ball-by-ball rows through bronze, silver and gold Delta tables, in 180 seconds. It has exactly-once ingestion, MERGE upserts that handle corrected data, quality gates, and a win-probability model that scores live, ball by ball. Its project panel has a what-if slider showing the real-data model’s own predictions.' },
   { k: ['kafka', 'ecommerce', 'e commerce', 'clickstream', 'parquet', 'etl'], a: 'The e-commerce pipeline is still in progress, in a team of three: Kafka clickstream events, parsed and validated in Spark Structured Streaming, written out as Parquet. He was the one who untangled the Kafka–Spark connector and Java version conflicts.' },
   { k: ['malaria', 'cnn', 'grad cam', 'gradcam', 'vision', 'image', 'images', 'deep learning', 'tensorflow', 'keras', 'medical'], a: 'The malaria classifier is a TensorFlow/Keras CNN with 96% test accuracy, checked with precision, recall, F1, ROC and a confusion matrix. Grad-CAM heatmaps show where it looked. In medicine, the right answer for the wrong reason is still wrong.' },
   { k: ['lost', 'found', 'mysql', '3nf', 'normalisation', 'normalization', 'schema', 'database', 'dbms', 'sql'], a: 'His database work ranges from the Lost & Found system, a 3NF MySQL schema of five entities for claims and admin verification, to FoodBridge’s ten-table PostgreSQL and PostGIS schema with spatial queries.' },
@@ -1434,7 +1755,8 @@ const INTENTS = [
   { k: ['smriti', 'dementia', 'elder', 'elderly', 'alzheimer', 'memory', 'caregiver', 'north east', 'assam', 'assamese', 'flutter', 'mobile', 'tablet'], a: 'Smriti was his team’s Smart India Hackathon project, SIH26003: a memory and care companion for elders with dementia in North East India. There is a React web app with an elder screen and a caregiver dashboard, and an offline Flutter tablet build with a hearing screen and an adaptive memory game.' },
   { k: ['timetable', 'scheduling', 'schedule', 'graph colouring', 'graph coloring', 'backtracking', 'annealing', 'java', 'javafx', 'constraint'], a: 'His timetable generator treats scheduling as graph colouring. Clique and Hall’s-theorem checks prove when no timetable can exist, backtracking meets every hard constraint, and simulated annealing improves the soft ones. It is a JavaFX app over MySQL.' },
   { k: ['pramaan', 'agent', 'agents', 'agentic', 'llm', 'llms', 'claude', 'anthropic', 'genai', 'generative ai', 'tool use', 'scam', 'fraud'], a: 'PRAMAAN is his hackathon agent for spotting recruitment scams. Claude chooses which of five checks to run, from domain registration age to a web search for complaints, but fixed rules decide the verdict from cited evidence. It never calls an offer a scam on a single source, and it has 61 tests.' },
-  { k: ['sign language', 'isl', 'mediapipe', 'bilstm', 'lstm', 'pytorch', 'torch', 'gesture', 'webcam', 'keypoint', 'keypoints', 'accessibility'], a: 'His sign-language project turns MediaPipe hand and pose keypoints into words, then speech, live on a webcam, using a BiLSTM with attention in PyTorch. The standard test split was too easy, so he measured harder things: 49.5% from one example per word, and an ablation where mirroring hurt by 12 points.' },
+  { k: ['sign language', 'isl', 'mediapipe', 'bilstm', 'lstm', 'pytorch', 'torch', 'gesture', 'webcam', 'keypoint', 'keypoints', 'accessibility'], a: 'His sign-language project turns MediaPipe hand and pose keypoints into words, then speech, live on a webcam, using a BiLSTM with attention in PyTorch. The standard test split was too easy, so he measured harder things: 48.9% from one example per word, and an ablation where mirroring hurt by 10 points. It also runs in your browser on this page, and chose the same word as the Python pipeline on 181 of 182 held-out clips.' },
+  { k: ['demo', 'demos', 'try it', 'try the', 'try his', 'try one', 'try a', 'try them', 'try out', 'live demo', 'models live', 'model live', 'live model', 'live models', 'runs live', 'run live', 'in action', 'browser', 'onnx', 'onnxruntime', 'what if', 'slider', 'interactive', 'play with'], a: 'Two of his models run right on this page, in your browser. The sign-language BiLSTM, exported to ONNX and fed by MediaPipe’s JavaScript tasks, reads held-out clips or your webcam. The cricket panel has a what-if slider showing the win-probability model’s own predictions. Open either project to try them.' },
   { k: ['big data', 'ml engineer', 'data engineer', 'specialist', 'versatile', 'generalist', 'kind of engineer', 'what type', 'which role', 'dominant', 'only data', 'only ml', 'full stack', 'one trick'], a: 'He isn\u2019t limited to one area. His projects cover backend APIs, data engineering, algorithms, machine learning, AI agents and automated testing. If you need someone who can build the API, the pipeline and the model, and test all three, that is his profile.' },
   { k: ['ml', 'machine learning', 'model', 'models', 'ai', 'calibration', 'auc', 'accuracy'], a: 'His ML work is measured, not decorated. A Spark MLlib gradient-boosted model scored AUC 0.777 with 1.8 points of calibration error on seasons it never saw, chosen over logistic regression on validation log loss. The malaria CNN reached 96%, and his sign-language BiLSTM was judged on harder protocols than its saturated test split. He grades probabilities, not just accuracy.' },
   { k: ['education', 'cgpa', 'gpa', 'grade', 'grades', 'college', 'university', 'thapar', 'degree', 'coursework', 'graduate', 'graduation', 'student'], a: 'B.E. Computer Engineering at Thapar Institute of Engineering & Technology, 2024 to 2028, with a CGPA of 8.50 out of 10. His coursework includes DSA, DBMS, OOP, software engineering, probability and statistics, machine learning and deep learning.' },
@@ -1600,6 +1922,7 @@ function bindGlobal() {
   const dz = $('#dossier');
   $('#dClose').addEventListener('click', () => dz.close());
   dz.addEventListener('click', e => { if (e.target === dz) dz.close(); });
+  dz.addEventListener('close', stopLive);   // turns the webcam off and stops any clip run
   let buf = '';
   addEventListener('keydown', e => {
     const tg = e.target; const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(tg.tagName || '') || tg.isContentEditable;
@@ -1625,5 +1948,7 @@ initGuide();
 initChat();
 initPalette();
 bindGlobal();
+openFromHash();
+addEventListener('hashchange', openFromHash);
 })();
 </script>
