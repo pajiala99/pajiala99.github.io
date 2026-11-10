@@ -9,13 +9,13 @@ fan homage to Hunter × Hunter.
 
 Projects featured: SafeTrail (first place, BIOS 2026 hackathon), Cricket
 Win-Probability Lakehouse, FoodBridge, PRAMAAN (AI agent), Smriti (Smart India Hackathon),
-Indian Sign Language Recognition, Academic Timetable Generator, E-Commerce Data Lake Pipeline,
+Ishara (Indian Sign Language recognition), Academic Timetable Generator, E-Commerce Data Lake Pipeline,
 Malaria Cell Classification, Lost & Found System.
 
 Two models run live in the visitor's browser, with no server behind them:
 
 - **[Sign-language recognition](https://pajiala99.github.io/#demo-isl)**: the BiLSTM from
-  [isl-recognition](https://github.com/pajiala99/isl-recognition), exported to ONNX and run with onnxruntime-web, with
+  [ishara](https://github.com/pajiala99/ishara), exported to ONNX and run with onnxruntime-web, with
   MediaPipe's JavaScript tasks tracking the body and hands, on held-out test clips or the webcam. `assets/isl/isl.js` is a
   copy of that repo's `web/isl.js`, where the parity checks against the Python pipeline live.
 - **[Cricket win probability](https://pajiala99.github.io/#demo-cricket)**: the real-data model from
