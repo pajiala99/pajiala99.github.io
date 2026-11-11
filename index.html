@@ -355,6 +355,13 @@ dialog::backdrop{background:rgba(4,6,16,.74);backdrop-filter:blur(5px)}
 .facts{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:0}
 .facts dt{color:var(--text-2);font-size:14px}
 .facts dd{margin:0;font:600 14px var(--mono);color:var(--text);text-align:right;font-variant-numeric:tabular-nums}
+.shots{margin-top:28px}
+.shot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.shot-grid figure{margin:0}
+.shot-grid a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line-soft);transition:transform .2s,border-color .2s}
+.shot-grid a:hover{transform:translateY(-2px);border-color:var(--accent)}
+.shot-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top}
+.shot-grid figcaption{font-size:13px;line-height:1.45;color:var(--text-2);margin-top:7px}
 .story{margin-top:28px;padding:20px 22px;border-radius:14px;background:var(--ink);border:1px solid var(--line-soft)}
 .story h3{font:700 19px var(--display);margin-bottom:8px;color:var(--accent)}
 .story p{margin:0;color:var(--text-2);max-width:75ch}
@@ -599,6 +606,7 @@ td .mk.mo{right:3px}
     <button class="proof-item" type="button" data-open="safetrail"><b>SafeTrail</b><span>first place, BIOS 2026</span><i>✓</i></button>
     <button class="proof-item" type="button" data-open="cricket"><b>Cricket lakehouse</b><span>19 / 19 quality checks pass</span><i>✓</i></button>
     <button class="proof-item" type="button" data-open="pramaan"><b>PRAMAAN</b><span>61 tests, prompt injection included</span><i>✓</i></button>
+    <button class="proof-item" type="button" data-open="parchi"><b>Parchi</b><span>serverless AWS pipeline, 118 tests</span><i>✓</i></button>
     <button class="proof-item" type="button" data-open="isl"><b>Sign-language model</b><span>runs in your browser, same word as Python on 181 / 182 clips</span><i>✓</i></button>
   </div>
 
@@ -1015,7 +1023,13 @@ const PROJECTS = [
     ],
     facts: [['AWS services', '9'], ['Tests', '118, end to end included'], ['Cost per 1,000 documents', 'about $10, ~99% of it OCR'], ['Idle cost', 'effectively $0'], ['Status', 'Validated and built; not deployed yet']],
     story: { title: 'Why there is a queue in the middle', body: 'S3 could call the Lambda function directly, but Textract only accepts a few requests per second. A queue absorbs bursts, retries failures and keeps failed uploads in a dead-letter queue instead of losing them, while Lambda scales its workers with the queue and never past the cap.' },
-    demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/parchi' }] },
+    proof: { src: 'assets/parchi/architecture.jpg', alt: 'Parchi architecture: browser, CloudFront, API Gateway and Lambda; S3 events into SQS, a Lambda worker calling Textract, DynamoDB and SNS', caption: 'Every box is a managed AWS service; dashed arrows are events.' },
+    shots: [
+      { src: 'assets/parchi/dashboard.jpg', alt: 'Parchi dashboard with five filed bills, the live pipeline strip and spend charts', caption: 'Five bills filed; every AWS hop ticked on the live pipeline strip.' },
+      { src: 'assets/parchi/document.jpg', alt: 'A noisy phone photo of a pharmacy bill beside the extracted fields, a FILED stamp and the checks', caption: 'A noisy phone photo read field by field, with confidences and checks.' },
+      { src: 'assets/parchi/document-dark.jpg', alt: 'A GST tax invoice in dark mode with CGST and SGST added up', caption: 'A GST invoice in dark mode: CGST + SGST added, GSTIN verified.' }
+    ],
+    demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/parchi' }, { label: 'Course report (PDF)', href: 'https://github.com/pajiala99/parchi/blob/main/docs/REPORT.pdf' }] },
   { id: 'timetable', title: 'Academic Timetable Generator', sub: 'Clash-free timetables for a whole department', date: 'Oct 2026', team: 'Team of 3, with Parth Zutshi and Shikhar Goel',
     nen: ['con', 'enh'], metric: ['2-stage', 'backtracking + simulated annealing'],
     summary: 'Builds clash-free weekly timetables for a department, and explains when no timetable can exist.',
@@ -1272,6 +1286,8 @@ function stopLive() { const s = liveStop; liveStop = null; if (s) s(); }
 function liveHTML(p) { return p.live === 'isl' ? ISL_HTML : p.live === 'winprob' ? WINPROB_HTML : ''; }
 function initLive(id) { if (id === 'isl') initIsl(); else if (id === 'winprob') initWinprob(); }
 function openFromHash() {
+  const direct = /^#project-([a-z]+)$/.exec(location.hash);
+  if (direct && PROJ_BY[direct[1]]) { openDossier(direct[1]); return; }
   const m = /^#demo-(isl|cricket)$/.exec(location.hash);
   if (!m) return;
   openDossier(m[1]);
@@ -1552,6 +1568,7 @@ function dossierHTML(p) {
       </div>
     </div>
     ${p.story ? `<div class="story"><p class="d-h">What I learned</p><h3>${esc(p.story.title)}</h3><p>${p.story.body}</p></div>` : ''}
+    ${p.shots ? `<div class="shots"><h3 class="d-h">Screenshots</h3><div class="shot-grid">${p.shots.map(x => `<figure><a href="${x.src}" target="_blank" rel="noopener"><img src="${x.src}" alt="${esc(x.alt)}" loading="lazy"></a><figcaption>${esc(x.caption)}</figcaption></figure>`).join('')}</div></div>` : ''}
     ${liveHTML(p)}
     ${p.demo === 'assign' ? ASSIGN_HTML : ''}${p.demo === 'wpa' ? wpaHTML() : ''}
   </div>`;
