@@ -142,7 +142,7 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 /* ---------- about ---------- */
 
 /* ---------- aura ---------- */
-.aura-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.aura-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
 .skill-list{border-top:1px solid var(--line-soft)}
 .type{width:100%;display:grid;grid-template-columns:10px 210px minmax(0,1fr);align-items:baseline;gap:4px 18px;padding:18px 14px;text-align:left;border:0;border-bottom:1px solid var(--line-soft);background:none;color:var(--text);cursor:pointer;transition:background .2s}
 .type:hover{background:var(--ink-2)}
@@ -153,47 +153,14 @@ h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.14
 .type .skill-tools{font-size:15px;line-height:1.6;color:var(--text-2)}
 .type .sep{margin:0 3px 0 7px;color:var(--muted)}
 .type .tool{white-space:nowrap}
-.glass-fig{margin:0;position:sticky;top:96px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.glass-fig .label{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px}
-.glass-fig .label [lang=ja]{font-family:var(--display);color:var(--accent)}
-#glass{width:100%;max-width:290px;height:auto;overflow:visible}
-.glass-fig figcaption{font:500 14px/1.5 var(--sans);color:var(--text-2);text-align:center;min-height:3em;max-width:30ch}
-#glass{--water:#7fb2ea}
-#glass[data-effect="emi"]{--water:var(--emi)}
-#glass[data-effect="tra"]{--water:#b8ecff}
-#glass[data-effect="spe"]{--water:#e8283f}
-#glass .water{fill:var(--water);transition:fill 1.2s}
-#glass .water.front{fill-opacity:.36;animation:wave 3s linear infinite}
-#glass .water.back{fill-opacity:.2;animation:wave 4.6s linear infinite reverse}
-#glass[data-effect="emi"] .water.front{fill-opacity:.6}
 @keyframes wave{to{transform:translateX(-40px)}}
-#glass .lvl{transition:transform 1.3s cubic-bezier(.3,.7,.2,1)}
-#glass[data-effect="enh"] .lvl{transform:translateY(-76px)}
-.glass-line{fill:none;stroke:var(--chain);stroke-width:2.2;stroke-opacity:.85;stroke-linejoin:round}
 .rim{fill:none;stroke:var(--chain);stroke-width:1.5;stroke-opacity:.55}
-#glass .drops path{fill:none;stroke:#9cc4f2;stroke-width:3;stroke-linecap:round;stroke-dasharray:140;stroke-dashoffset:140;opacity:0}
-#glass[data-effect="enh"] .drops path{animation:drip 1.5s 1.05s ease-in forwards}
 @keyframes drip{0%{opacity:.9;stroke-dashoffset:140}100%{opacity:.85;stroke-dashoffset:0}}
-#glass .imp{fill:#eef3ff;stroke:var(--con);stroke-width:1;opacity:0;transform-box:fill-box;transform-origin:center}
-#glass[data-effect="con"] .imp{animation:imp 1.5s ease-out forwards;animation-delay:calc(var(--i)*110ms)}
 @keyframes imp{0%{opacity:0;transform:translateY(-8px) rotate(0)}30%{opacity:1}100%{opacity:1;transform:translateY(var(--sink)) rotate(50deg)}}
-#glass .ripple{fill:none;stroke:#dff4ff;stroke-width:1.4;opacity:0;transform-box:fill-box;transform-origin:center}
-#glass[data-effect="tra"] .ripple{animation:ripple 2s ease-out infinite;animation-delay:calc(var(--i)*.65s)}
 @keyframes ripple{0%{opacity:.85;transform:scale(.15)}100%{opacity:0;transform:scale(1.7)}}
-#glass .taste{font:800 30px var(--display);fill:var(--tra);opacity:0}
-#glass[data-effect="tra"] .taste{animation:taste 2.6s .3s ease-out forwards}
 @keyframes taste{0%{opacity:0;transform:translateY(10px)}40%{opacity:1}100%{opacity:0;transform:translateY(-26px)}}
-#glass .mote{fill:var(--scarlet);opacity:0}
-#glass[data-effect="spe"] .mote{animation:mote 2.4s ease-out infinite;animation-delay:calc(var(--i)*.35s)}
 @keyframes mote{0%{opacity:0;transform:translateY(0)}20%{opacity:1}100%{opacity:0;transform:translateY(-110px)}}
-#glass .leaf{transform-box:fill-box;transform-origin:center}
-#glass .leafpath{fill:#79b862;stroke:#4f8a3e;stroke-width:1.2;transition:fill .9s,stroke .9s}
-#glass .leafvein{fill:none;stroke:#4f8a3e;stroke-width:1;transition:stroke .9s}
-#glass[data-effect="man"] .leaf{animation:orbit 3.4s ease-in-out infinite}
 @keyframes orbit{0%{transform:translateX(0) rotate(0)}25%{transform:translateX(36px) rotate(90deg)}50%{transform:translateX(0) rotate(180deg)}75%{transform:translateX(-36px) rotate(270deg)}100%{transform:translateX(0) rotate(360deg)}}
-#glass[data-effect="spe"] .leafpath{fill:var(--scarlet);stroke:#8e0f20}
-#glass[data-effect="spe"] .leafvein{stroke:#8e0f20}
-#glass[data-effect="spe"] .leaf{animation:wither 1.2s ease-out forwards}
 @keyframes wither{to{transform:scale(.82) rotate(-14deg)}}
 
 /* ---------- hunts ---------- */
@@ -472,9 +439,7 @@ td .mk.mo{right:3px}
 /* ---------- responsive ---------- */
 @media (max-width:1100px){
   .aura-grid{grid-template-columns:1fr}
-  .glass-fig{position:static;order:-1}
-  #glass{max-width:200px}
-}
+    }
 @media (max-width:980px){
   .record-grid{grid-template-columns:1fr 1fr}
   .rec.edu{grid-column:1/-1}
@@ -512,6 +477,91 @@ td .mk.mo{right:3px}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* ---------- dashboard ---------- */
+.dash{padding-block:clamp(22px,4vw,44px) clamp(16px,3vw,28px)}
+.dash-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.tile{position:relative;display:flex;flex-direction:column;gap:10px;text-align:left;color:var(--text);padding:22px;border-radius:18px;background:var(--ink-2);border:1px solid var(--line-soft);font:inherit}
+button.tile{cursor:pointer;transition:transform .18s,border-color .18s,background .18s}
+button.tile:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 60%,transparent);background:var(--ink-3)}
+.t-intro{grid-column:1/8;grid-row:span 2;justify-content:center;padding:clamp(24px,3.4vw,40px)}
+.t-intro h1{font-size:clamp(34px,4.4vw,58px)}
+.t-intro .cta{margin-bottom:0}
+.t-card{grid-column:8/13;grid-row:span 2;align-items:center;justify-content:center;overflow:hidden}
+.t-card .hero-stage{width:100%}
+.t-win{grid-column:1/6;background:linear-gradient(150deg,color-mix(in srgb,var(--accent) 18%,var(--ink-2)),var(--ink-2) 70%);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.t-proj{grid-column:6/10}.t-skills{grid-column:10/13}
+.t-about{grid-column:1/5}.t-exp{grid-column:5/9}.t-demo{grid-column:9/13}
+.t-contact{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.t-contact code{font:600 16px var(--mono)}
+.t-links{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto}
+.t-lbl{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.t-win .t-lbl{color:var(--accent)}
+.t-big{font:800 clamp(26px,2.6vw,34px)/1.05 var(--display);color:var(--text);display:flex;align-items:baseline;gap:8px}
+.t-big b{color:var(--accent);font-weight:800}
+.t-big small{font:500 13px var(--sans);color:var(--muted)}
+.t-txt{color:var(--text-2);font-size:14.5px;line-height:1.55}
+.t-txt b{color:var(--accent)}
+.t-go{margin-top:auto;padding-top:6px;font:700 13.5px var(--sans);color:var(--accent)}
+.t-list{display:flex;flex-wrap:wrap;gap:6px}
+.t-list span{font-size:12.5px;padding:3px 9px;border-radius:99px;border:1px solid var(--line);color:var(--text-2)}
+.t-dots{display:grid;gap:5px}
+.t-dots span{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2)}
+.t-dots i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.t-rules{display:grid;gap:8px}
+.t-rules span{display:flex;gap:10px;align-items:baseline;font:600 15px/1.35 var(--display)}
+.t-rules i{font:700 12px var(--mono);font-style:normal;color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.t-stats{display:flex;gap:18px;flex-wrap:wrap}
+.t-stats span{display:flex;flex-direction:column;font-size:12.5px;color:var(--muted)}
+.t-stats b{font:800 28px/1.1 var(--display);color:var(--accent)}
+@media (max-width:1000px){
+  .t-intro,.t-card{grid-column:1/-1;grid-row:auto}
+  .t-win,.t-proj,.t-skills,.t-about,.t-exp,.t-demo{grid-column:span 6}
+}
+@media (max-width:640px){
+  .dash-grid{grid-template-columns:1fr}
+  .tile,.t-intro,.t-card,.t-win,.t-proj,.t-skills,.t-about,.t-exp,.t-demo,.t-contact{grid-column:1/-1}
+  .t-links{margin-left:0}
+}
+
+/* ---------- guided flow ---------- */
+#flow{width:min(1060px,calc(100vw - 24px));margin:auto}
+.fl{display:flex;flex-direction:column;height:min(860px,calc(100dvh - 24px));background:var(--ink-2);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.fl-head{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line-soft)}
+.fl-tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.fl-tabs button{flex:none;border:0;background:transparent;color:var(--muted);font:600 13.5px var(--sans);padding:8px 12px;border-radius:8px;cursor:pointer}
+.fl-tabs button[aria-current="true"]{background:var(--ink-3);color:var(--accent)}
+.fl-tabs button:hover{color:var(--text)}
+.fl-x{position:static;margin-left:auto}
+.fl-meta{display:flex;align-items:center;gap:14px;padding:14px clamp(18px,4vw,40px) 0;flex-wrap:wrap}
+.fl-meta .eyebrow{margin:0}
+.fl-dots{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.fl-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer}
+.fl-dots button[aria-current="true"]{background:var(--accent);border-color:var(--accent);width:22px;border-radius:99px}
+.fl-count{margin-left:auto;font:500 12px var(--mono);color:var(--muted)}
+.fl-bar{height:2px;background:var(--line-soft);margin-top:12px}
+.fl-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .35s}
+.fl-body{flex:1;overflow-y:auto;overscroll-behavior:contain;outline:none}
+.fl-body > .d-in{animation:flIn .35s ease-out}
+@keyframes flIn{from{opacity:0;transform:translateX(18px)}}
+.fl-foot{display:flex;align-items:center;gap:12px;padding:14px 16px;border-top:1px solid var(--line-soft)}
+.fl-foot #flowNext{margin-left:auto}
+.fl-hint{font:500 12px var(--mono);color:var(--muted)}
+.fl-step h2{font-size:clamp(28px,4vw,42px);margin:6px 0 10px}
+.fl-big{font:800 clamp(48px,7vw,84px)/1 var(--display);color:var(--accent)}
+.fl-text{color:var(--text-2);font-size:17px;max-width:62ch}
+.fl-skill-head{display:flex;align-items:center;gap:12px}
+.fl-skill-head i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.fl-tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:18px 0 26px}
+.fl-tools li{padding:6px 12px;border-radius:99px;border:1px solid color-mix(in srgb,var(--c) 55%,transparent);font-size:14px}
+.fl-used{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.fl-used button{display:flex;flex-direction:column;gap:4px;text-align:left;padding:16px;border-radius:14px;border:1px solid var(--line-soft);background:var(--ink-3);color:var(--text);cursor:pointer;font:inherit}
+.fl-used button:hover{border-color:var(--accent)}
+.fl-used b{font:700 17px var(--display)}
+.fl-used span{font-size:13.5px;color:var(--text-2)}
+.fl-step .rec,.fl-step .contact{max-width:640px}
+@media (max-width:640px){.fl-hint{display:none}.fl-head{flex-wrap:wrap}.fl-tabs{order:3;flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){.fl-body > .d-in{animation:none}}
 </style>
 </head>
 <body>
@@ -551,17 +601,19 @@ td .mk.mo{right:3px}
 
 <main>
   <!-- ============ HERO ============ -->
-  <section class="hero wrap" id="top" data-sec="top">
-    <div class="hero-copy">
-      <p class="eyebrow">Open to software, data &amp; ML internships</p>
-      <h1>I build the <em>whole system</em>, not one layer of it.</h1>
-      <p class="lede">A third-year engineering student. I build backend APIs, data pipelines, machine-learning models, AI agents and the apps on top of them, and I write tests for all of them.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">See my projects</a>
-        <button class="btn ghost" type="button" data-action="ask">Ask about my work</button>
+  <section class="dash wrap" id="top" data-sec="top">
+    <div class="dash-grid">
+      <div class="tile t-intro">
+        <p class="eyebrow">Open to software, data &amp; ML internships</p>
+        <h1>I build the <em>whole system</em>, not one layer of it.</h1>
+        <p class="lede">A third-year engineering student. I build backend APIs, data pipelines, machine-learning models, AI agents and the apps on top of them, and I write tests for all of them.</p>
+        <div class="cta">
+          <button class="btn primary" type="button" data-flow="about">Take the tour <span aria-hidden="true">→</span></button>
+          <button class="btn ghost" type="button" data-flow="projects">Jump to projects</button>
+          <button class="btn ghost" type="button" data-action="ask">Ask about my work</button>
+        </div>
       </div>
-      <button class="win-chip" type="button" data-open="safetrail">🏆 <span><b>First place</b> · BIOS 2026 hackathon</span> <span aria-hidden="true">→</span></button>
-    </div>
+      <div class="tile t-card">
     <div class="hero-stage">
       <canvas id="auraCanvas" aria-hidden="true"></canvas>
       <div class="lic-stage" id="licStage">
@@ -599,6 +651,52 @@ td .mk.mo{right:3px}
         </div>
       </div>
       <p class="stage-hint">Move to tilt · click to flip</p>
+    </div>
+      </div>
+      <button class="tile t-win" type="button" data-flow="projects" data-at="safetrail">
+        <span class="t-lbl">🏆 First place · BIOS 2026</span>
+        <span class="t-big">SafeTrail</span>
+        <span class="t-txt">Trail-safety app: SOS that survives no signal, and an AI that is never in the emergency path. <b>82%</b> fewer AI tokens than a naive build.</span>
+        <span class="t-go">Open the project <span aria-hidden="true">→</span></span>
+      </button>
+      <button class="tile t-proj" type="button" data-flow="projects">
+        <span class="t-lbl">Projects</span>
+        <span class="t-big"><b data-count="projects">12</b><small>built</small></span>
+        <span class="t-list" id="dashProj"></span>
+        <span class="t-go">Walk through them <span aria-hidden="true">→</span></span>
+      </button>
+      <button class="tile t-skills" type="button" data-flow="skills">
+        <span class="t-lbl">Skills</span>
+        <span class="t-big"><b>6</b><small>areas</small></span>
+        <span class="t-dots" id="dashSkills"></span>
+        <span class="t-go">See each area <span aria-hidden="true">→</span></span>
+      </button>
+      <button class="tile t-about" type="button" data-flow="about">
+        <span class="t-lbl">How I work</span>
+        <span class="t-rules"><span><i>1</i>Tests first, or it isn't finished</span><span><i>2</i>Report what I measured</span><span><i>3</i>Own my part, understand the rest</span></span>
+        <span class="t-go">Read the three rules <span aria-hidden="true">→</span></span>
+      </button>
+      <button class="tile t-exp" type="button" data-flow="experience">
+        <span class="t-lbl">Experience</span>
+        <span class="t-stats"><span><b>3</b>hackathons</span><span><b>8.50</b>CGPA</span><span><b>300</b>students led</span></span>
+        <span class="t-go">Hackathons, education &amp; leadership <span aria-hidden="true">→</span></span>
+      </button>
+      <button class="tile t-demo" type="button" data-flow="demos">
+        <span class="t-lbl">Live in your browser</span>
+        <span class="t-big"><b>2</b><small>models, no server</small></span>
+        <span class="t-txt">Sign-language recognition on your webcam, and cricket win probability you can drag.</span>
+        <span class="t-go">Try them <span aria-hidden="true">→</span></span>
+      </button>
+      <div class="tile t-contact">
+        <span class="t-lbl">Contact</span>
+        <code>hardikpajiala@gmail.com</code>
+        <div class="t-links">
+          <button class="btn ghost sm" type="button" data-action="copy">Copy email</button>
+          <a class="btn ghost sm" href="https://linkedin.com/in/hardik-pajiala" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn ghost sm" href="https://github.com/pajiala99" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn ghost sm" href="assets/Hardik-Pajiala-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -639,52 +737,10 @@ td .mk.mo{right:3px}
     <header class="sec-head">
       <p class="eyebrow">Skills</p>
       <h2>What I can do</h2>
-      <p class="sec-lede">The tools I use, in six areas. Click an area to see the glass react.</p>
+      <p class="sec-lede">The tools I use, in six areas. Click an area to see the projects that use it.</p>
     </header>
     <div class="aura-grid">
       <div class="skill-list" id="typeList" role="group" aria-label="Skill areas"></div>
-      <figure class="glass-fig">
-        <p class="label">Inspired by the Hunter × Hunter water test</p>
-        <svg id="glass" viewBox="0 0 260 300" role="img" aria-labelledby="glassTitle">
-          <title id="glassTitle">A glass of water with a leaf floating on it</title>
-          <defs>
-            <clipPath id="gClip"><path d="M63 42 L197 42 L184 262 Q183 270 175 270 L85 270 Q77 270 76 262 Z"/></clipPath>
-            <linearGradient id="gShine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".22" stop-color="#fff" stop-opacity="0"/><stop offset=".86" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".08"/></linearGradient>
-          </defs>
-          <ellipse cx="130" cy="282" rx="72" ry="7" fill="#000" opacity=".4"/>
-          <g clip-path="url(#gClip)">
-            <g class="lvl">
-              <path class="water back" id="waveBack" d=""/>
-              <path class="water front" id="waveFront" d=""/>
-              <g>
-                <polygon class="imp" style="--i:0;--sink:40px" points="96,142 100,137 104,142 100,148"/>
-                <polygon class="imp" style="--i:1;--sink:62px" points="118,150 121,146 124,150 121,154"/>
-                <polygon class="imp" style="--i:2;--sink:30px" points="140,138 145,133 150,138 145,145"/>
-                <polygon class="imp" style="--i:3;--sink:74px" points="160,146 163,142 166,146 163,151"/>
-                <polygon class="imp" style="--i:4;--sink:52px" points="108,165 112,160 116,165 112,171"/>
-                <polygon class="imp" style="--i:5;--sink:44px" points="150,162 153,158 156,162 153,166"/>
-                <polygon class="imp" style="--i:6;--sink:86px" points="128,140 131,136 134,140 131,144"/>
-              </g>
-              <ellipse class="ripple" cx="130" cy="121" rx="36" ry="5" style="--i:0"/>
-              <ellipse class="ripple" cx="130" cy="121" rx="36" ry="5" style="--i:1"/>
-              <ellipse class="ripple" cx="130" cy="121" rx="36" ry="5" style="--i:2"/>
-              <circle class="mote" cx="104" cy="120" r="2.2" style="--i:0"/>
-              <circle class="mote" cx="118" cy="120" r="1.8" style="--i:1"/>
-              <circle class="mote" cx="131" cy="120" r="2.4" style="--i:2"/>
-              <circle class="mote" cx="143" cy="120" r="1.8" style="--i:3"/>
-              <circle class="mote" cx="157" cy="120" r="2.2" style="--i:4"/>
-              <circle class="mote" cx="124" cy="120" r="1.6" style="--i:5"/>
-            </g>
-          </g>
-          <path d="M63 42 L197 42 L184 262 Q183 270 175 270 L85 270 Q77 270 76 262 Z" fill="url(#gShine)"/>
-          <path class="glass-line" d="M60 40 L200 40 L187 263 Q186 273 175 273 L85 273 Q74 273 73 263 Z"/>
-          <ellipse class="rim" cx="130" cy="40" rx="70" ry="4"/>
-          <g class="drops"><path d="M61 44 C55 90 60 130 56 182"/><path d="M199 44 C206 92 199 134 204 190"/><path d="M92 41 C88 50 90 60 86 70"/></g>
-          <text class="taste" x="130" y="98" text-anchor="middle" lang="ja">甘</text>
-          <g class="lvl"><g transform="translate(130 119)"><g class="leaf"><path class="leafpath" d="M-24 0 C-14 -10 10 -10 24 0 C10 10 -14 10 -24 0 Z"/><path class="leafvein" d="M-30 -3 L-24 0 L20 0"/></g></g></g>
-        </svg>
-        <figcaption id="glassCaption" aria-live="polite">Click a skill area.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -838,6 +894,24 @@ td .mk.mo{right:3px}
     <button type="submit" id="chatSend">Ask</button>
   </form>
 </aside>
+
+<dialog id="flow" aria-labelledby="flowTitle">
+  <div class="fl">
+    <div class="fl-head">
+      <button class="btn ghost sm fl-home" type="button" data-flow-close>← Dashboard</button>
+      <nav class="fl-tabs" id="flowTabs" aria-label="Chapters"></nav>
+      <button class="d-close fl-x" type="button" data-flow-close aria-label="Close and go back to the dashboard">×</button>
+    </div>
+    <div class="fl-meta"><p class="eyebrow" id="flowTitle"></p><ol class="fl-dots" id="flowDots"></ol><span class="fl-count" id="flowCount"></span></div>
+    <div class="fl-bar" aria-hidden="true"><i id="flowBar"></i></div>
+    <div class="fl-body" id="flowBody" tabindex="-1"></div>
+    <div class="fl-foot">
+      <button class="btn ghost" type="button" id="flowPrev">← Back</button>
+      <span class="fl-hint">Use ← → keys</span>
+      <button class="btn primary" type="button" id="flowNext">Next →</button>
+    </div>
+  </div>
+</dialog>
 
 <dialog id="dossier" aria-labelledby="dTitle">
   <div class="dz">
@@ -1111,7 +1185,7 @@ const SEC_LABEL = { top: 'Intro', about: 'About', skills: 'Skills', projects: 'P
 const LINES = {
   top: "I'm Kurapika, your guide to Hardik's work. Every number on this page is real. Ask me anything.",
   about: "He works across the stack: APIs, data pipelines, algorithms and models. That's uncommon at his stage.",
-  skills: 'Click a skill area and watch the glass react.',
+  skills: 'Click a skill area to walk through the projects that use it.',
   projects: 'Twelve projects. SafeTrail took first place at BIOS 2026. FoodBridge has a demo worth trying.',
   experience: 'Three hackathons, one first place. And three hundred classmates rely on him to pass information on accurately.',
   contact: 'If his work fits what you need, write to him. The email is right there.',
@@ -1191,24 +1265,6 @@ function setScarlet(on, { persist = true } = {}) {
   refreshAura();
 }
 
-/* ================= glass ================= */
-function wavePath(y, amp, wl) {
-  let d = `M-200 ${y}`;
-  for (let x = -200; x < 480; x += wl) d += ` q${wl / 4} ${-amp} ${wl / 2} 0 t${wl / 2} 0`;
-  return d + ' V420 H-200 Z';
-}
-function buildGlass() {
-  $('#waveFront').setAttribute('d', wavePath(121, 3, 40));
-  $('#waveBack').setAttribute('d', wavePath(118, 4, 40));
-}
-function runEffect(id) {
-  const g = $('#glass');
-  g.removeAttribute('data-effect');
-  void g.getBoundingClientRect();
-  g.setAttribute('data-effect', id);
-  $('#glassCaption').textContent = NEN_BY[id].role + '. ' + NEN_BY[id].effect;
-}
-
 /* ================= skills ================= */
 function buildTypes() {
   $('#typeList').innerHTML = NEN.map(n => `<button class="type" type="button" data-type="${n.id}" style="--c:var(--${n.id})" aria-pressed="false"><span class="k" aria-hidden="true"></span><span class="n">${esc(n.role)}</span><span class="skill-tools">${n.evidence.map(e => `<span class="tool">${esc(e)}</span>`).join('<span class="sep" aria-hidden="true">·</span><span class="sr">,</span> ')}</span></button>`).join('');
@@ -1216,7 +1272,6 @@ function buildTypes() {
 function selectType(id, { speak = true } = {}) {
   currentType = id;
   $$('.type').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.type === id)));
-  runEffect(id);
   refreshAura();
   if (speak) guideSay(TYPE_LINES[id]);
 }
@@ -1989,10 +2044,12 @@ function initPalette() {
 function bindGlobal() {
   document.addEventListener('click', e => {
     const t = e.target;
+    const fl = t.closest('[data-flow]'); if (fl) { openFlow(fl.dataset.flow, fl.dataset.at); return; }
+    if (t.closest('[data-action="copy"]')) { copyEmail(); return; }
     const ask_ = t.closest('[data-action="ask"]'); if (ask_) { openChat(); return; }
     const op = t.closest('[data-open]'); if (op) { openDossier(op.dataset.open); return; }
     const f = t.closest('[data-filter]'); if (f) { filterHunts(f.dataset.filter); if (f.dataset.jump) go('projects'); return; }
-    const ty = t.closest('.type'); if (ty) { selectType(ty.dataset.type); return; }
+    const ty = t.closest('.type'); if (ty) { selectType(ty.dataset.type); openFlow('skills'); flow.i = NEN.findIndex(n => n.id === ty.dataset.type); flowRender(); return; }
     const card = t.closest('.card, .mini'); if (card && !t.closest('a')) { openDossier(card.dataset.id); }
   });
   $('#copyEmail').addEventListener('click', copyEmail);
@@ -2013,8 +2070,109 @@ function bindGlobal() {
   });
 }
 
+
+/* ================= dashboard + guided flow ================= */
+const TOUR = ['about', 'skills', 'projects', 'experience', 'contact'];
+const CH_LABEL = { about: 'How I work', skills: 'Skills', projects: 'Projects', experience: 'Experience', contact: 'Contact', demos: 'Live demos' };
+const noIds = h => h.replace(/\sid="[^"]*"/g, '');
+function projStep(p) { return { title: p.title, id: p.id, p, html: dossierHTML(p) }; }
+function chapterSteps(ch) {
+  if (ch === 'projects') return PROJECTS.map(projStep);
+  if (ch === 'demos') return PROJECTS.filter(p => p.live).map(projStep);
+  if (ch === 'about') {
+    const lede = $('#about .sec-lede').textContent;
+    return $$('#about .vows li').map((li, i) => ({ title: li.querySelector('b').textContent, html: `<div class="d-in fl-step">
+      <p class="fl-big">${i + 1}</p><h2>${esc(li.querySelector('b').textContent)}</h2>
+      <p class="fl-text">${esc(li.querySelector('div span').textContent)}</p>
+      ${i === 0 ? `<p class="fl-text" style="margin-top:22px;font-size:15px">${esc(lede)}</p>` : ''}</div>` }));
+  }
+  if (ch === 'skills') return NEN.map(n => {
+    const used = PROJECTS.filter(p => p.nen.includes(n.id));
+    return { title: n.role, html: `<div class="d-in fl-step" style="--c:var(--${n.id})">
+      <div class="fl-skill-head"><i></i><p class="eyebrow" style="margin:0">Skill area</p></div>
+      <h2>${esc(n.role)}</h2>
+      <ul class="fl-tools">${n.evidence.map(e => `<li>${esc(e)}</li>`).join('')}</ul>
+      <h3 class="d-h">Used in ${used.length} project${used.length === 1 ? '' : 's'}</h3>
+      <div class="fl-used">${used.map(p => `<button type="button" data-fgo="${p.id}"><b>${esc(p.title)}</b><span>${esc(p.summary)}</span></button>`).join('')}</div></div>` };
+  });
+  if (ch === 'experience') return $$('#experience .rec').map(r => ({ title: r.querySelector('h3').textContent,
+    html: `<div class="d-in fl-step"><p class="eyebrow">${r.closest('section').querySelector('.rec-h') && r.parentElement.previousElementSibling ? esc(r.parentElement.previousElementSibling.textContent) : 'Experience'}</p>${noIds(r.outerHTML)}</div>` }));
+  if (ch === 'contact') return [{ title: 'Get in touch', html: `<div class="d-in fl-step"><h2>Get in touch</h2><p class="fl-text">Email is the quickest way to reach me.</p>${noIds($('#contact .contact').outerHTML).replace('class="btn ghost sm" type="button"', 'class="btn ghost sm" type="button" data-action="copy"')}</div>` }];
+  return [];
+}
+const flow = { ch: null, i: 0, steps: [] };
+function flowChapters() { return TOUR.includes(flow.ch) ? TOUR : [flow.ch]; }
+function flowRender() {
+  stopLive();
+  $('#dossierBody').innerHTML = '';
+  const st = flow.steps[flow.i];
+  $('#flowTitle').textContent = CH_LABEL[flow.ch];
+  $('#flowCount').textContent = `${flow.i + 1} / ${flow.steps.length}`;
+  $('#flowDots').innerHTML = flow.steps.length > 1 ? flow.steps.map((x, k) => `<li><button type="button" data-fstep="${k}" aria-label="${esc(x.title)}" aria-current="${k === flow.i}"></button></li>`).join('') : '';
+  $('#flowTabs').innerHTML = flowChapters().map(c => `<button type="button" data-fch="${c}" aria-current="${c === flow.ch}">${CH_LABEL[c]}</button>`).join('');
+  const chs = flowChapters(), ci = chs.indexOf(flow.ch);
+  const total = chs.length > 1 ? (ci + (flow.i + 1) / flow.steps.length) / chs.length : (flow.i + 1) / flow.steps.length;
+  $('#flowBar').style.width = (total * 100).toFixed(1) + '%';
+  const body = $('#flowBody');
+  body.innerHTML = st.html;
+  body.scrollTop = 0;
+  const last = flow.i === flow.steps.length - 1, nextCh = chs[ci + 1], prevCh = chs[ci - 1];
+  $('#flowPrev').disabled = flow.i === 0 && !prevCh;
+  $('#flowNext').innerHTML = !last ? 'Next →' : nextCh ? `Next: ${CH_LABEL[nextCh]} →` : 'Back to dashboard';
+  if (st.p) { if (st.p.demo === 'assign') initAssign(); if (st.p.live) initLive(st.p.live); }
+}
+function openFlow(ch, at) {
+  if (!CH_LABEL[ch]) return;
+  flow.ch = ch; flow.steps = chapterSteps(ch);
+  const k = at ? flow.steps.findIndex(x => x.id === at) : 0;
+  flow.i = Math.max(0, k);
+  const d = $('#flow');
+  if (!d.open) { if ($('#dossier').open) $('#dossier').close(); d.showModal(); }
+  flowRender();
+  $('#flowBody').focus({ preventScroll: true });
+}
+function flowMove(dir) {
+  const chs = flowChapters(), ci = chs.indexOf(flow.ch);
+  if (dir > 0) {
+    if (flow.i < flow.steps.length - 1) flow.i++;
+    else if (chs[ci + 1]) { flow.ch = chs[ci + 1]; flow.steps = chapterSteps(flow.ch); flow.i = 0; }
+    else { $('#flow').close(); return; }
+  } else {
+    if (flow.i > 0) flow.i--;
+    else if (chs[ci - 1]) { flow.ch = chs[ci - 1]; flow.steps = chapterSteps(flow.ch); flow.i = flow.steps.length - 1; }
+    else return;
+  }
+  flowRender();
+}
+function initFlow() {
+  $('#dashProj').innerHTML = PROJECTS.slice(0, 5).map(p => `<span>${esc(p.title)}</span>`).join('') + (PROJECTS.length > 5 ? `<span>+${PROJECTS.length - 5} more</span>` : '');
+  $$('[data-count="projects"]').forEach(b => { b.textContent = PROJECTS.length; });
+  $('#dashSkills').innerHTML = NEN.map(n => `<span style="--c:var(--${n.id})"><i></i>${esc(n.short)}</span>`).join('');
+  const d = $('#flow');
+  $('#flowPrev').addEventListener('click', () => flowMove(-1));
+  $('#flowNext').addEventListener('click', () => flowMove(1));
+  d.addEventListener('close', () => { stopLive(); $('#flowBody').innerHTML = ''; });
+  d.addEventListener('click', e => {
+    const t = e.target;
+    if (t === d || t.closest('[data-flow-close]')) { d.close(); return; }
+    let h;
+    if ((h = t.closest('[data-fch]'))) { flow.ch = h.dataset.fch; flow.steps = chapterSteps(flow.ch); flow.i = 0; flowRender(); }
+    else if ((h = t.closest('[data-fstep]'))) { flow.i = +h.dataset.fstep; flowRender(); }
+    else if ((h = t.closest('[data-fgo], [data-open]'))) { const id = h.dataset.fgo || h.dataset.open; if (!PROJ_BY[id]) return; flow.ch = 'projects'; flow.steps = chapterSteps('projects'); flow.i = flow.steps.findIndex(x => x.id === id); flowRender(); }
+    else if ((h = t.closest('[data-action="copy"]'))) copyEmail();
+    else if ((h = t.closest('[data-action="ask"]'))) { d.close(); openChat(); }
+    else return;
+    e.stopPropagation();
+  });
+  addEventListener('keydown', e => {
+    if (!d.open || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName || '')) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); flowMove(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); flowMove(-1); }
+  });
+  $('#dossier').addEventListener('close', () => { $('#dossierBody').innerHTML = ''; });
+}
+
 /* ================= boot ================= */
-buildGlass();
 buildTypes();
 renderFilters();
 renderHunts();
@@ -2026,6 +2184,7 @@ initNav();
 initGuide();
 initChat();
 initPalette();
+initFlow();
 bindGlobal();
 openFromHash();
 addEventListener('hashchange', openFromHash);
