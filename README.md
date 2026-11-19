@@ -2,10 +2,10 @@
 
 Live at **https://pajiala99.github.io** · [LinkedIn](https://linkedin.com/in/hardik-pajiala)
 
-A single-file interactive portfolio (`index.html`, no build step): projects written up as
+A single-file interactive portfolio (`index.html`, no build step), read as one flow: a landing page, then About, Skills,
+Projects, Experience and Contact, one page at a time with Back and Next. Projects are written up as
 problem → what I built → results → what I learned, a skills list that links each area to the
-projects that use it, and a guide character who answers questions from my record. Themed as a
-fan homage to Hunter × Hunter.
+projects that use it, and a guide, Itachi (a nod to *Naruto*; no artwork from the series), who answers questions from my record.
 
 Projects featured: SafeTrail (first place, BIOS 2026 hackathon), Cricket
 Win-Probability Lakehouse, FoodBridge, PRAMAAN (AI agent), Smriti (Smart India Hackathon),
