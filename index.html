@@ -1103,9 +1103,9 @@ const PROJECTS = [
       'Before searching, a maximum-clique bound and Hall’s-theorem matching checks look for proof that no timetable exists, and explain why in plain words.',
       'A <b>backtracking solver</b> (MRV ordering, forward checking, exact room matching, random restarts) meets every hard constraint.',
       '<b>Simulated annealing</b> then improves it: fewer idle gaps, even teaching load, spaced-out sessions and fewer building changes.',
-      'A JavaFX desktop app and a browser version on the same engine, over MySQL (or embedded H2): double-period labs, lab groups, teachers’ daily limits, a lunch break no session crosses, and PDF and CSV export.'
+      'A JavaFX desktop app and a browser version on the same engine, over MySQL (or embedded H2): double-period labs, lab groups, teachers’ daily limits, a lunch break no session crosses (shown as its own column), room fit that keeps small classes out of big halls, and PDF and CSV export.'
     ],
-    facts: null, story: null, demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/academic-timetable-generator' }] },
+    facts: null, story: null, demo: null, links: [{ label: 'Repository', href: 'https://github.com/pajiala99/academic-timetable-generator' }, { label: 'Download the app (v1.2)', href: 'https://github.com/pajiala99/academic-timetable-generator/releases/latest' }] },
   { id: 'ecom', title: 'E-Commerce Data Lake Pipeline', sub: 'Real-time clickstream pipeline', date: 'In progress', team: 'Team of 3',
     nen: ['tra', 'emi'], metric: ['Live', 'Kafka → Spark → Parquet'],
     summary: 'Streams website click events from Kafka into a clean, query-ready data lake.',
