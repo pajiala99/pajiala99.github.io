@@ -10,7 +10,7 @@ fan homage to Hunter × Hunter.
 
 Projects featured: SafeTrail (first place, BIOS 2026 hackathon), Cricket
 Win-Probability Lakehouse, FoodBridge, PRAMAAN (AI agent), Smriti (Smart India Hackathon),
-Ishara (Indian Sign Language recognition), Academic Timetable Generator, E-Commerce Data Lake Pipeline,
+Ishara (Indian Sign Language recognition), SlotWise (academic timetable generator), E-Commerce Data Lake Pipeline,
 Malaria Cell Classification, Lost & Found System.
 
 Two models run live in the visitor's browser, with no server behind them:
