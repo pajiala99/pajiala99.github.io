@@ -1,6 +1,8 @@
 // Browser port of the ISL pipeline: keypoints.py (MediaPipe hand + pose landmarkers),
-// features.py (signer-invariant features, 64-frame resample, velocities) and the BiLSTM,
-// exported to ONNX by `python -m isl.export_onnx` and run with onnxruntime-web.
+// features.py (signer-invariant features, 64-frame resample, velocities) and the model,
+// exported to ONNX by `python -m isl.export_onnx` and run with onnxruntime-web. The 315-word
+// Transformer needs the aspect fix (x and hand z in frame-height units): pass the frame's
+// width / height as `aspect` when isl_meta.json has aspect_correct.
 //
 // Feature arithmetic follows numpy's float32 rules step by step: every operation numpy does in
 // float32 is rounded with Math.fround here too, and resampling uses np.interp's float64 formula.
@@ -30,11 +32,21 @@ const TINY = f(1e-3);    // numpy compares float32 arrays with a float32 copy of
 const norm2 = (a, b) => f(Math.sqrt(f(f(a * a) + f(b * b))));    // np.linalg.norm over (x, y), float32
 
 /** frames[t] = { pose: Float32Array(33*4), left: Float32Array(21*3), right: Float32Array(21*3),
- *  mask: Float32Array(2) }, the arrays keypoints.py returns per frame. Returns (T, 239) row-major. */
-export function buildFrameFeatures(frames) {
+ *  mask: Float32Array(2) }, the arrays keypoints.py returns per frame. Returns (T, 239) row-major.
+ *  `aspect` (width / height) puts x and the hands' z in frame-height units, as features.py does:
+ *  numpy multiplies the float32 arrays by the aspect rounded to float32, one rounding per value. */
+export function buildFrameFeatures(frames, aspect = null) {
   const T = frames.length, out = new Float32Array(T * F_BASE);
   for (let t = 0; t < T; t++) {
-    const { pose, left, right, mask } = frames[t];
+    let { pose, left, right, mask } = frames[t];
+    if (aspect) {
+      const fa = f(aspect);
+      pose = Float32Array.from(pose); left = Float32Array.from(left); right = Float32Array.from(right);
+      for (let i = 0; i < 33; i++) pose[i * 4] = f(pose[i * 4] * fa);
+      for (const hand of [left, right]) {
+        for (let j = 0; j < N_HAND; j++) { hand[j * 3] = f(hand[j * 3] * fa); hand[j * 3 + 2] = f(hand[j * 3 + 2] * fa); }
+      }
+    }
     let k = t * F_BASE;
     // _body_frame: shoulder-centred origin and shoulder-width scale
     const lsx = pose[L_SHOULDER * 4], lsy = pose[L_SHOULDER * 4 + 1];
@@ -150,8 +162,8 @@ export function withDeltas(seq, T, C) {
 }
 
 /** Raw landmark frames -> the (64, 478) tensor the model reads, exactly as dataset.py builds it. */
-export function framesToInput(frames) {
-  const feats = buildFrameFeatures(frames);
+export function framesToInput(frames, aspect = null) {
+  const feats = buildFrameFeatures(frames, aspect);
   return withDeltas(resample(feats, frames.length, F_BASE), SEQ_LEN, F_BASE);
 }
 
@@ -289,9 +301,9 @@ export class Classifier {
 
   constructor(ort, session) { this.ort = ort; this.session = session; }
 
-  /** Raw landmark frames -> softmax probabilities over the 61 words. */
-  async predict(frames) {
-    const x = new this.ort.Tensor('float32', framesToInput(frames), [1, SEQ_LEN, F_TOTAL]);
+  /** Raw landmark frames -> softmax probabilities over the model's words. `aspect`: see buildFrameFeatures. */
+  async predict(frames, aspect = null) {
+    const x = new this.ort.Tensor('float32', framesToInput(frames, aspect), [1, SEQ_LEN, F_TOTAL]);
     const out = await this.session.run({ features: x });
     return Float32Array.from(out.probs.data);
   }

@@ -1,97 +1,351 @@
 {
  "classes": [
+  "actor",
+  "adult",
+  "afternoon",
+  "alive",
+  "alright",
+  "animal",
+  "artist",
+  "attack",
+  "author",
+  "baby",
+  "bad",
+  "bag",
+  "ball",
+  "bank",
+  "bathroom",
   "bear",
+  "beautiful",
+  "bed",
+  "bedroom",
+  "bicycle",
+  "big_large",
+  "bill",
+  "bird",
+  "black",
+  "blind",
+  "blue",
+  "boat",
+  "book",
+  "box",
+  "boy",
   "break",
   "brinjal",
+  "brother",
+  "brown",
   "budget",
+  "bus",
   "busy",
   "cabbage",
+  "camera",
+  "car",
+  "card",
   "carrot",
+  "cat",
   "cauliflower",
+  "cell_phone",
+  "chair",
+  "cheap",
+  "child",
   "chilli",
+  "city",
   "clean",
+  "clock",
   "close",
+  "clothing",
+  "cold",
+  "colour",
   "come",
+  "computer",
   "cook",
+  "cool",
+  "court",
+  "cow",
   "crocodile",
+  "crowd",
   "cry",
   "cucumber",
+  "curved",
+  "daughter",
+  "dead",
+  "deaf",
+  "death",
+  "deep",
   "deer",
+  "dirty",
+  "doctor",
+  "dog",
+  "door",
+  "dream",
+  "dress",
   "drink",
+  "dry",
+  "election",
   "elephant",
+  "energy",
+  "evening",
   "exam",
+  "exercise",
+  "expensive",
+  "extra",
+  "fall",
+  "family",
+  "famous",
+  "fan",
+  "fast",
+  "father",
   "fedup",
+  "female",
   "fever",
+  "fish",
+  "flat",
+  "friday",
+  "friend",
+  "gift",
   "giraffe",
+  "girl",
   "give",
+  "god",
+  "good",
   "good_afternoon",
+  "good_evening",
   "good_morning",
+  "good_night",
+  "grandfather",
+  "grandmother",
+  "green",
+  "grey",
+  "ground",
+  "gun",
+  "happy",
+  "hard",
+  "hat",
+  "he",
+  "healthy",
+  "heavy",
   "hello",
+  "high",
+  "horse",
+  "hospital",
+  "hot",
+  "hour",
+  "house",
+  "how_are_you",
   "hug",
+  "husband",
+  "i",
+  "india",
   "injury",
   "interview",
+  "it",
+  "job",
   "jump",
   "karnataka",
   "key",
+  "king",
+  "kitchen",
   "knife",
+  "lamp",
+  "laptop",
+  "lawyer",
   "lemon",
+  "letter",
+  "library",
+  "light",
   "lion",
+  "location",
+  "lock",
+  "long",
+  "loose",
+  "loud",
+  "low",
+  "male",
   "man",
+  "manager",
+  "market",
+  "marriage",
   "maths",
   "maybe",
+  "mean",
+  "medicine",
+  "minute",
+  "monday",
+  "money",
   "monkey",
+  "monsoon",
+  "month",
+  "morning",
+  "mother",
+  "mouse",
+  "narrow",
+  "neighbour",
+  "new",
+  "newspaper",
+  "nice",
+  "night",
+  "office",
+  "old",
   "onion",
+  "orange",
+  "page",
+  "paint",
+  "pant",
+  "paper",
+  "parent",
+  "park",
+  "patient",
+  "peace",
   "peacock",
+  "pen",
+  "pencil",
+  "photograph",
   "pigeon",
+  "pink",
+  "plane",
+  "player",
+  "pleased",
+  "pocket",
+  "police",
+  "poor",
   "pour",
+  "president",
+  "price",
+  "priest",
+  "queen",
+  "quiet",
+  "race_(ethnicity)",
+  "radio",
   "radish",
+  "red",
+  "religion",
+  "reporter",
+  "restaurant",
+  "rich",
+  "ring",
+  "sad",
+  "saturday",
+  "school",
+  "science",
+  "screen",
+  "season",
+  "second",
+  "secretary",
+  "shallow",
+  "she",
+  "shirt",
+  "shoes",
+  "short",
+  "sick",
+  "sign",
+  "sister",
+  "skirt",
+  "slow",
+  "small_little",
+  "soap",
+  "soft",
+  "soldier",
+  "son",
   "sparrow",
+  "sport",
+  "spring",
   "still",
+  "store_or_shop",
+  "street_or_road",
+  "strong",
+  "student",
+  "suit",
+  "summer",
+  "sunday",
   "switch",
+  "t-shirt",
+  "table",
+  "tall",
   "tea",
+  "teacher",
+  "team",
+  "technology",
+  "telephone",
+  "television",
   "temple",
   "thank_you",
+  "they",
+  "thick",
+  "thin",
+  "thursday",
   "tiger",
+  "tight",
+  "time",
+  "today",
+  "tomorrow",
+  "tool",
+  "train",
+  "train_station",
+  "train_ticket",
+  "transportation",
+  "truck",
+  "tuesday",
   "turtle",
+  "ugly",
   "umbrella",
   "uncle",
+  "university",
   "vegetables",
   "volcano",
+  "waiter",
+  "war",
+  "warm",
+  "we",
+  "weak",
+  "wednesday",
+  "week",
+  "wet",
   "what_is_your_name",
+  "white",
+  "wide",
   "wife",
+  "window",
+  "winter",
+  "woman",
   "writer",
-  "wrong"
+  "wrong",
+  "year",
+  "yellow",
+  "yesterday",
+  "you",
+  "you_(plural)",
+  "young"
  ],
  "clips": [
   {
    "file": "hello.mp4",
    "word": "hello",
-   "source": "Hello/WIN_20231103_13_22_54_Pro.mp4",
-   "fps": 29.99759880900927,
-   "frame_count": 122,
+   "source": "Hello/WIN_20231103_13_24_44_Pro.mp4",
+   "fps": 30.0,
+   "frame_count": 123,
    "python": {
     "top1": "hello",
-    "p": 0.92026686668396,
+    "p": 0.9666426181793213,
     "top5": [
      [
       "hello",
-      0.92026686668396
+      0.9666426181793213
      ],
      [
-      "tea",
-      0.008631151169538498
+      "giraffe",
+      0.0005960612907074392
      ],
      [
-      "brinjal",
-      0.007706552278250456
-     ],
-     [
-      "switch",
-      0.00527708325535059
+      "green",
+      0.0005429814918898046
      ],
      [
       "man",
-      0.004693785682320595
+      0.0004716377588920295
+     ],
+     [
+      "fedup",
+      0.000459759816294536
      ]
     ]
    }
@@ -99,32 +353,32 @@
   {
    "file": "thank_you.mp4",
    "word": "thank_you",
-   "source": "Thank you/WIN_20231103_13_48_35_Pro.mp4",
+   "source": "Thank you/WIN_20231103_13_47_54_Pro.mp4",
    "fps": 30.0,
-   "frame_count": 128,
+   "frame_count": 150,
    "python": {
     "top1": "thank_you",
-    "p": 0.9341752529144287,
+    "p": 0.9764362573623657,
     "top5": [
      [
       "thank_you",
-      0.9341752529144287
+      0.9764362573623657
+     ],
+     [
+      "green",
+      0.0003594429581426084
+     ],
+     [
+      "tea",
+      0.00034148446866311133
      ],
      [
       "onion",
-      0.004764861427247524
+      0.0002821407688315958
      ],
      [
-      "cry",
-      0.0044054859317839146
-     ],
-     [
-      "hello",
-      0.003858019597828388
-     ],
-     [
-      "bear",
-      0.0036250499542802572
+      "deer",
+      0.0002668614615686238
      ]
     ]
    }
@@ -132,32 +386,32 @@
   {
    "file": "good_morning.mp4",
    "word": "good_morning",
-   "source": "Good Morning/WIN_20231103_13_18_31_Pro.mp4",
+   "source": "Good Morning/WIN_20231103_13_17_49_Pro.mp4",
    "fps": 30.0,
-   "frame_count": 148,
+   "frame_count": 150,
    "python": {
     "top1": "good_morning",
-    "p": 0.903491735458374,
+    "p": 0.9760808944702148,
     "top5": [
      [
       "good_morning",
-      0.903491735458374
-     ],
-     [
-      "fever",
-      0.004930200055241585
-     ],
-     [
-      "maybe",
-      0.003973294049501419
-     ],
-     [
-      "what_is_your_name",
-      0.003897731425240636
+      0.9760808944702148
      ],
      [
       "good_afternoon",
-      0.0033260765485465527
+      0.0005601251614280045
+     ],
+     [
+      "good_night",
+      0.0004104181716684252
+     ],
+     [
+      "onion",
+      0.0003825235180556774
+     ],
+     [
+      "monkey",
+      0.00021860931883566082
      ]
     ]
    }
@@ -165,32 +419,32 @@
   {
    "file": "tea.mp4",
    "word": "tea",
-   "source": "Tea/WIN_20230831_12_06_37_Pro.mp4",
-   "fps": 29.998789434181536,
-   "frame_count": 242,
+   "source": "Tea/WIN_20230831_12_04_12_Pro.mp4",
+   "fps": 30.0,
+   "frame_count": 187,
    "python": {
     "top1": "tea",
-    "p": 0.7391065955162048,
+    "p": 0.9659430980682373,
     "top5": [
      [
       "tea",
-      0.7391065955162048
+      0.9659430980682373
      ],
      [
-      "hello",
-      0.06726385653018951
-     ],
-     [
-      "brinjal",
-      0.05324087664484978
-     ],
-     [
-      "giraffe",
-      0.008852331899106503
+      "deer",
+      0.0005125961615704
      ],
      [
       "good_afternoon",
-      0.006343530956655741
+      0.0004924869281239808
+     ],
+     [
+      "drink",
+      0.00048390973825007677
+     ],
+     [
+      "female",
+      0.0004436797753442079
      ]
     ]
    }
@@ -198,32 +452,32 @@
   {
    "file": "elephant.mp4",
    "word": "elephant",
-   "source": "Elephant/WIN_20231102_12_59_25_Pro.mp4",
+   "source": "Elephant/WIN_20231102_13_01_17_Pro.mp4",
    "fps": 30.0,
-   "frame_count": 204,
+   "frame_count": 147,
    "python": {
     "top1": "elephant",
-    "p": 0.9152873754501343,
+    "p": 0.9530035853385925,
     "top5": [
      [
       "elephant",
-      0.9152873754501343
+      0.9530035853385925
      ],
      [
-      "lemon",
-      0.015024982392787933
-     ],
-     [
-      "wrong",
-      0.004075175616890192
-     ],
-     [
-      "carrot",
-      0.003624193836003542
+      "pocket",
+      0.0009511670796200633
      ],
      [
       "fedup",
-      0.003125387243926525
+      0.0005178544670343399
+     ],
+     [
+      "giraffe",
+      0.0004933757008984685
+     ],
+     [
+      "blue",
+      0.0004851398116443306
      ]
     ]
    }
@@ -231,32 +485,32 @@
   {
    "file": "what_is_your_name.mp4",
    "word": "what_is_your_name",
-   "source": "What is your Name/WIN_20230901_09_59_18_Pro.mp4",
+   "source": "What is your Name/WIN_20230901_09_59_01_Pro.mp4",
    "fps": 30.0,
-   "frame_count": 216,
+   "frame_count": 193,
    "python": {
     "top1": "what_is_your_name",
-    "p": 0.9102135300636292,
+    "p": 0.9592013359069824,
     "top5": [
      [
       "what_is_your_name",
-      0.9102135300636292
+      0.9592013359069824
      ],
      [
-      "writer",
-      0.005116678308695555
+      "long",
+      0.0007103504030965269
      ],
      [
-      "budget",
-      0.004728997591882944
+      "cucumber",
+      0.000600108818616718
      ],
      [
-      "key",
-      0.004614673089236021
+      "maybe",
+      0.0005801303195767105
      ],
      [
-      "deer",
-      0.003436520230025053
+      "grandfather",
+      0.0005028318846598268
      ]
     ]
    }
